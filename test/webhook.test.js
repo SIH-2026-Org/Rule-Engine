@@ -1,3 +1,9 @@
+process.env.META_VERIFY_TOKEN = process.env.META_VERIFY_TOKEN || 'test_verify_token';
+process.env.META_APP_SECRET = process.env.META_APP_SECRET || 'test_app_secret_12345';
+process.env.WHATSAPP_TOKEN = process.env.WHATSAPP_TOKEN || 'test_whatsapp_token';
+process.env.PHONE_NUMBER_ID = process.env.PHONE_NUMBER_ID || '1234567890';
+process.env.SARVAM_API = process.env.SARVAM_API || 'test_sarvam_api_key';
+
 import test from 'node:test';
 import assert from 'node:assert/strict';
 import crypto from 'crypto';

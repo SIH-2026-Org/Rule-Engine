@@ -1,0 +1,10098 @@
+/**
+ * SAARTHI-SETU — Canonical Scheme Database (80 Comprehensive Schemes)
+ *
+ * This database powers the Deterministic Rule Engine (DRE).
+ * Each scheme strictly adheres to the schema defined in scheme.schema.js.
+ * All eligibility checks, financial terms, documents, and channel partners
+ * are based on official Government of India and State Government guidelines.
+ */
+
+export const SCHEMES = [
+  {
+    "scheme_id": "PMMY_SHISHU",
+    "name": "Pradhan Mantri Mudra Yojana - Shishu",
+    "short_name": "PMMY Shishu Loan",
+    "ministry": "Ministry of Finance",
+    "category": "MSME",
+    "description": "Micro-loans up to ₹50,000 for starting or operating small businesses, street vendors, small shops, artisans, and service providers without any collateral.",
+    "tags": [
+      "mudra",
+      "shishu",
+      "micro loan",
+      "shop",
+      "retail",
+      "vendor",
+      "small business",
+      "startup"
+    ],
+    "eligibility": {
+      "age": {
+        "min": 18,
+        "max": 65
+      },
+      "income_annual": {
+        "min": null,
+        "max": null
+      },
+      "gender": [
+        "M",
+        "F",
+        "O"
+      ],
+      "social_categories": [
+        "SC",
+        "ST",
+        "OBC",
+        "GEN",
+        "MINORITY",
+        "EWS",
+        "PWD"
+      ],
+      "activities": [
+        "retail",
+        "services",
+        "manufacturing",
+        "shop",
+        "street_vending",
+        "tailoring",
+        "beauty_services",
+        "food_services",
+        "electronics",
+        "handicraft"
+      ],
+      "activity_categories": [
+        "msme",
+        "services",
+        "agriculture"
+      ],
+      "location": {
+        "states": [
+          "all"
+        ],
+        "urban_only": false,
+        "rural_only": false
+      },
+      "occupation": [
+        "self_employed",
+        "entrepreneur",
+        "farmer"
+      ],
+      "existing_business": null,
+      "disability": null,
+      "minority": null,
+      "min_project_cost": 5000,
+      "max_project_cost": 50000,
+      "custom_rules": []
+    },
+    "financing": {
+      "type": "loan",
+      "max_amount": 50000,
+      "min_amount": 5000,
+      "interest_rate": {
+        "base": 9.5,
+        "subsidy_rate": null,
+        "effective_rate": 9.5
+      },
+      "own_contribution_pct": 0,
+      "tenure_months": {
+        "min": 12,
+        "max": 60
+      },
+      "moratorium_months": 3,
+      "collateral_required": false,
+      "subsidy_amount": null,
+      "subsidy_pct": null,
+      "subsidy_notes": "Zero processing fee and zero margin money required for Shishu loans up to ₹50,000."
+    },
+    "documents": [
+      {
+        "id": "aadhaar",
+        "name": "Aadhaar Card",
+        "required": true,
+        "note": "Identity and address proof"
+      },
+      {
+        "id": "bank_account",
+        "name": "Savings or Current Bank Account Passbook",
+        "required": true,
+        "note": "KYC verified"
+      },
+      {
+        "id": "photo",
+        "name": "Passport Size Photographs (2)",
+        "required": true,
+        "note": "Recent photographs"
+      },
+      {
+        "id": "quotation",
+        "name": "Quotations of items/machinery to be purchased",
+        "required": false,
+        "note": "If purchasing tools"
+      }
+    ],
+    "channel_partners": {
+      "types": [
+        "Commercial Banks",
+        "RRBs",
+        "Small Finance Banks",
+        "MFIs",
+        "NBFCs"
+      ],
+      "pm_suraj_integrated": true
+    },
+    "metadata": {
+      "active": true,
+      "version": "2026-09",
+      "official_url": "https://www.mudra.org.in",
+      "application_portal": "Udyamimitra Portal (udyamimitra.in)",
+      "nodal_agency": "MUDRA / Department of Financial Services",
+      "helpline": "1800-180-1111"
+    }
+  },
+  {
+    "scheme_id": "PMMY_KISHORE",
+    "name": "Pradhan Mantri Mudra Yojana - Kishore",
+    "short_name": "PMMY Kishore Loan",
+    "ministry": "Ministry of Finance",
+    "category": "MSME",
+    "description": "Working capital and equipment loans from ₹50,001 up to ₹5,00,000 for expanding micro-enterprises and purchasing machinery without third-party collateral.",
+    "tags": [
+      "mudra",
+      "kishore",
+      "business expansion",
+      "machinery",
+      "msme",
+      "equipment loan"
+    ],
+    "eligibility": {
+      "age": {
+        "min": 18,
+        "max": 65
+      },
+      "income_annual": {
+        "min": null,
+        "max": null
+      },
+      "gender": [
+        "M",
+        "F",
+        "O"
+      ],
+      "social_categories": [
+        "SC",
+        "ST",
+        "OBC",
+        "GEN",
+        "MINORITY",
+        "EWS",
+        "PWD"
+      ],
+      "activities": [
+        "retail",
+        "services",
+        "manufacturing",
+        "transport",
+        "food_processing",
+        "tailoring",
+        "electronics",
+        "construction"
+      ],
+      "activity_categories": [
+        "msme",
+        "services",
+        "agriculture"
+      ],
+      "location": {
+        "states": [
+          "all"
+        ],
+        "urban_only": false,
+        "rural_only": false
+      },
+      "occupation": [
+        "self_employed",
+        "entrepreneur"
+      ],
+      "existing_business": null,
+      "disability": null,
+      "minority": null,
+      "min_project_cost": 50001,
+      "max_project_cost": 500000,
+      "custom_rules": []
+    },
+    "financing": {
+      "type": "loan",
+      "max_amount": 500000,
+      "min_amount": 50001,
+      "interest_rate": {
+        "base": 10.25,
+        "subsidy_rate": null,
+        "effective_rate": 10.25
+      },
+      "own_contribution_pct": 10,
+      "tenure_months": {
+        "min": 24,
+        "max": 60
+      },
+      "moratorium_months": 6,
+      "collateral_required": false,
+      "subsidy_amount": null,
+      "subsidy_pct": null,
+      "subsidy_notes": "10% borrower margin money required. Covered under Credit Guarantee Fund for Micro Units (CGFMU)."
+    },
+    "documents": [
+      {
+        "id": "aadhaar",
+        "name": "Aadhaar Card",
+        "required": true,
+        "note": "Identity and address proof"
+      },
+      {
+        "id": "pan",
+        "name": "PAN Card",
+        "required": true,
+        "note": "Tax identification"
+      },
+      {
+        "id": "bank_statement",
+        "name": "Last 6 Months Bank Statement",
+        "required": true,
+        "note": "From active bank branch"
+      },
+      {
+        "id": "business_plan",
+        "name": "Brief Business Profile / Quotation for machinery",
+        "required": true,
+        "note": "Summary of activities"
+      },
+      {
+        "id": "udyam_reg",
+        "name": "Udyam Registration Certificate",
+        "required": false,
+        "note": "Free online registration"
+      }
+    ],
+    "channel_partners": {
+      "types": [
+        "Public Sector Banks",
+        "Private Commercial Banks",
+        "RRBs",
+        "NBFCs"
+      ],
+      "pm_suraj_integrated": true
+    },
+    "metadata": {
+      "active": true,
+      "version": "2026-09",
+      "official_url": "https://www.mudra.org.in",
+      "application_portal": "Udyamimitra Portal (udyamimitra.in)",
+      "nodal_agency": "MUDRA / Department of Financial Services",
+      "helpline": "1800-180-1111"
+    }
+  },
+  {
+    "scheme_id": "PMMY_TARUN",
+    "name": "Pradhan Mantri Mudra Yojana - Tarun",
+    "short_name": "PMMY Tarun Loan",
+    "ministry": "Ministry of Finance",
+    "category": "MSME",
+    "description": "Growth and expansion loans from ₹5,00,001 up to ₹10,00,000 for established small businesses upgrading production capacity, fleet, or distribution.",
+    "tags": [
+      "mudra",
+      "tarun",
+      "high loan",
+      "scale up",
+      "commercial vehicle",
+      "production unit"
+    ],
+    "eligibility": {
+      "age": {
+        "min": 18,
+        "max": 65
+      },
+      "income_annual": {
+        "min": null,
+        "max": null
+      },
+      "gender": [
+        "M",
+        "F",
+        "O"
+      ],
+      "social_categories": [
+        "SC",
+        "ST",
+        "OBC",
+        "GEN",
+        "MINORITY",
+        "EWS",
+        "PWD"
+      ],
+      "activities": [
+        "manufacturing",
+        "food_processing",
+        "transport",
+        "wholesale",
+        "retail",
+        "services",
+        "technology"
+      ],
+      "activity_categories": [
+        "msme",
+        "services"
+      ],
+      "location": {
+        "states": [
+          "all"
+        ],
+        "urban_only": false,
+        "rural_only": false
+      },
+      "occupation": [
+        "self_employed",
+        "entrepreneur"
+      ],
+      "existing_business": true,
+      "disability": null,
+      "minority": null,
+      "min_project_cost": 500001,
+      "max_project_cost": 1000000,
+      "custom_rules": []
+    },
+    "financing": {
+      "type": "loan",
+      "max_amount": 1000000,
+      "min_amount": 500001,
+      "interest_rate": {
+        "base": 11,
+        "subsidy_rate": null,
+        "effective_rate": 11
+      },
+      "own_contribution_pct": 15,
+      "tenure_months": {
+        "min": 36,
+        "max": 84
+      },
+      "moratorium_months": 6,
+      "collateral_required": false,
+      "subsidy_amount": null,
+      "subsidy_pct": null,
+      "subsidy_notes": "15% borrower contribution. Guarantee coverage provided by CGFMU without requiring collateral."
+    },
+    "documents": [
+      {
+        "id": "aadhaar",
+        "name": "Aadhaar Card",
+        "required": true,
+        "note": "Identity proof"
+      },
+      {
+        "id": "pan",
+        "name": "PAN Card",
+        "required": true,
+        "note": "Business & applicant PAN"
+      },
+      {
+        "id": "bank_statement",
+        "name": "12 Months Bank Account Statement",
+        "required": true,
+        "note": "Operating account"
+      },
+      {
+        "id": "udyam_reg",
+        "name": "Udyam Registration Certificate",
+        "required": true,
+        "note": "MSME classification proof"
+      },
+      {
+        "id": "project_report",
+        "name": "Projected Balance Sheet / DPR",
+        "required": true,
+        "note": "Cash flow statement"
+      }
+    ],
+    "channel_partners": {
+      "types": [
+        "Commercial Banks",
+        "RRBs",
+        "State Financial Corporations"
+      ],
+      "pm_suraj_integrated": true
+    },
+    "metadata": {
+      "active": true,
+      "version": "2026-09",
+      "official_url": "https://www.mudra.org.in",
+      "application_portal": "Udyamimitra Portal (udyamimitra.in)",
+      "nodal_agency": "MUDRA / Department of Financial Services",
+      "helpline": "1800-180-1111"
+    }
+  },
+  {
+    "scheme_id": "PM_SVANIDHI",
+    "name": "Prime Minister Street Vendor AtmaNirbhar Nidhi",
+    "short_name": "PM SVANidhi Scheme",
+    "ministry": "Ministry of Housing and Urban Affairs",
+    "category": "Urban",
+    "description": "Collateral-free micro-credit facility for urban street vendors and hawkers starting at ₹10,000, scaling to ₹20,000 and ₹50,000 with 7% interest subsidy on timely repayment.",
+    "tags": [
+      "street vendor",
+      "svanidhi",
+      "thela",
+      "rehdi",
+      "hawker",
+      "urban poor",
+      "fruit vendor",
+      "vegetable vendor"
+    ],
+    "eligibility": {
+      "age": {
+        "min": 18,
+        "max": 70
+      },
+      "income_annual": {
+        "min": null,
+        "max": null
+      },
+      "gender": [
+        "M",
+        "F",
+        "O"
+      ],
+      "social_categories": [
+        "SC",
+        "ST",
+        "OBC",
+        "GEN",
+        "MINORITY",
+        "EWS",
+        "PWD"
+      ],
+      "activities": [
+        "street_vending",
+        "hawker",
+        "food_services",
+        "retail"
+      ],
+      "activity_categories": [
+        "services",
+        "msme"
+      ],
+      "location": {
+        "states": [
+          "all"
+        ],
+        "urban_only": true,
+        "rural_only": false
+      },
+      "occupation": [
+        "self_employed",
+        "entrepreneur"
+      ],
+      "existing_business": null,
+      "disability": null,
+      "minority": null,
+      "min_project_cost": 5000,
+      "max_project_cost": 50000,
+      "custom_rules": []
+    },
+    "financing": {
+      "type": "loan",
+      "max_amount": 50000,
+      "min_amount": 10000,
+      "interest_rate": {
+        "base": 7,
+        "subsidy_rate": 7,
+        "effective_rate": 0
+      },
+      "own_contribution_pct": 0,
+      "tenure_months": {
+        "min": 12,
+        "max": 36
+      },
+      "moratorium_months": 0,
+      "collateral_required": false,
+      "subsidy_amount": null,
+      "subsidy_pct": null,
+      "subsidy_notes": "7% interest subvention credited directly to bank account on timely quarterly repayment, plus up to ₹1,200 annual cash-back on digital transactions."
+    },
+    "documents": [
+      {
+        "id": "aadhaar",
+        "name": "Aadhaar Card",
+        "required": true,
+        "note": "Aadhaar linked with mobile"
+      },
+      {
+        "id": "bank_passbook",
+        "name": "Bank Passbook / Account details",
+        "required": true,
+        "note": "Direct benefit transfer account"
+      },
+      {
+        "id": "vendor_id",
+        "name": "Certificate of Vending / ULB Survey Letter",
+        "required": true,
+        "note": "From local municipality or ward member"
+      }
+    ],
+    "channel_partners": {
+      "types": [
+        "Public Sector Banks",
+        "Regional Rural Banks",
+        "Payment Banks",
+        "CSC Centres"
+      ],
+      "pm_suraj_integrated": true
+    },
+    "metadata": {
+      "active": true,
+      "version": "2026-09",
+      "official_url": "https://pmsvanidhi.mohua.gov.in",
+      "application_portal": "PM SVANidhi Portal / Mobile App",
+      "nodal_agency": "MoHUA / SIDBI",
+      "helpline": "1800-11-1979"
+    }
+  },
+  {
+    "scheme_id": "PMEGP",
+    "name": "Prime Minister Employment Generation Programme",
+    "short_name": "PMEGP Subsidy Scheme",
+    "ministry": "Ministry of Micro, Small and Medium Enterprises",
+    "category": "MSME",
+    "description": "Major credit-linked subsidy scheme offering 15% to 35% capital subsidy for establishing new micro-enterprises in manufacturing (up to ₹50 Lakh) and services (up to ₹20 Lakh).",
+    "tags": [
+      "pmegp",
+      "kvic",
+      "subsidy",
+      "manufacturing",
+      "services",
+      "startup grant",
+      "margin money"
+    ],
+    "eligibility": {
+      "age": {
+        "min": 18,
+        "max": 65
+      },
+      "income_annual": {
+        "min": null,
+        "max": null
+      },
+      "gender": [
+        "M",
+        "F",
+        "O"
+      ],
+      "social_categories": [
+        "SC",
+        "ST",
+        "OBC",
+        "GEN",
+        "MINORITY",
+        "EWS",
+        "PWD"
+      ],
+      "activities": [
+        "manufacturing",
+        "services",
+        "food_processing",
+        "tailoring",
+        "carpenter",
+        "handicraft",
+        "weaving",
+        "electronics"
+      ],
+      "activity_categories": [
+        "msme",
+        "services"
+      ],
+      "location": {
+        "states": [
+          "all"
+        ],
+        "urban_only": false,
+        "rural_only": false
+      },
+      "occupation": [
+        "self_employed",
+        "entrepreneur"
+      ],
+      "existing_business": false,
+      "disability": null,
+      "minority": null,
+      "min_project_cost": 100000,
+      "max_project_cost": 5000000,
+      "custom_rules": []
+    },
+    "financing": {
+      "type": "composite",
+      "max_amount": 5000000,
+      "min_amount": 100000,
+      "interest_rate": {
+        "base": 9.5,
+        "subsidy_rate": 0,
+        "effective_rate": 9.5
+      },
+      "own_contribution_pct": 10,
+      "tenure_months": {
+        "min": 36,
+        "max": 84
+      },
+      "moratorium_months": 6,
+      "collateral_required": false,
+      "subsidy_amount": null,
+      "subsidy_pct": 25,
+      "subsidy_notes": "15-25% subsidy for General Category (Urban/Rural); 25-35% subsidy for SC/ST/OBC/Women/PwD/Ex-servicemen."
+    },
+    "documents": [
+      {
+        "id": "aadhaar",
+        "name": "Aadhaar Card",
+        "required": true,
+        "note": "Identity proof"
+      },
+      {
+        "id": "category_cert",
+        "name": "Special Category Certificate (SC/ST/OBC/PwD)",
+        "required": false,
+        "note": "For 25-35% enhanced subsidy"
+      },
+      {
+        "id": "edu_certificate",
+        "name": "8th Standard Pass Certificate",
+        "required": true,
+        "note": "Mandatory if project cost > ₹10 Lakh (mfg) or > ₹5 Lakh (svc)"
+      },
+      {
+        "id": "project_report",
+        "name": "Detailed Project Report (DPR)",
+        "required": true,
+        "note": "Cost of machinery and working capital estimate"
+      },
+      {
+        "id": "training_cert",
+        "name": "EDP Training Certificate",
+        "required": false,
+        "note": "Can be completed online post-sanction"
+      }
+    ],
+    "channel_partners": {
+      "types": [
+        "KVIC",
+        "KVIB",
+        "DIC",
+        "Nationalized Banks",
+        "RRBs"
+      ],
+      "pm_suraj_integrated": true
+    },
+    "metadata": {
+      "active": true,
+      "version": "2026-09",
+      "official_url": "https://www.kviconline.gov.in/pmegpeportal",
+      "application_portal": "PMEGP e-Portal",
+      "nodal_agency": "KVIC (Khadi and Village Industries Commission)",
+      "helpline": "1800-3000-0034"
+    }
+  },
+  {
+    "scheme_id": "STANDUP_INDIA",
+    "name": "Stand-Up India Scheme for SC/ST and Women",
+    "short_name": "Stand-Up India Scheme",
+    "ministry": "Ministry of Finance",
+    "category": "Women",
+    "description": "Bank loans between ₹10 Lakh and ₹1 Crore for setting up a greenfield enterprise in manufacturing, services, agri-allied, or trading by at least one SC/ST and one woman borrower per bank branch.",
+    "tags": [
+      "standup india",
+      "women entrepreneur",
+      "sc st loan",
+      "greenfield enterprise",
+      "crore loan"
+    ],
+    "eligibility": {
+      "age": {
+        "min": 18,
+        "max": 65
+      },
+      "income_annual": {
+        "min": null,
+        "max": null
+      },
+      "gender": [
+        "F",
+        "M"
+      ],
+      "social_categories": [
+        "SC",
+        "ST",
+        "GEN",
+        "OBC",
+        "MINORITY",
+        "EWS"
+      ],
+      "activities": [
+        "manufacturing",
+        "services",
+        "food_processing",
+        "agriculture",
+        "transport",
+        "technology",
+        "retail"
+      ],
+      "activity_categories": [
+        "msme",
+        "services",
+        "agriculture"
+      ],
+      "location": {
+        "states": [
+          "all"
+        ],
+        "urban_only": false,
+        "rural_only": false
+      },
+      "occupation": [
+        "entrepreneur"
+      ],
+      "existing_business": false,
+      "disability": null,
+      "minority": null,
+      "min_project_cost": 1000000,
+      "max_project_cost": 10000000,
+      "custom_rules": [
+        {
+          "field": "social_category",
+          "operator": "in",
+          "value": [
+            "SC",
+            "ST"
+          ],
+          "message": "Male applicants must belong to SC or ST categories; women can belong to any category."
+        }
+      ]
+    },
+    "financing": {
+      "type": "composite",
+      "max_amount": 10000000,
+      "min_amount": 1000000,
+      "interest_rate": {
+        "base": 8.5,
+        "subsidy_rate": 0,
+        "effective_rate": 8.5
+      },
+      "own_contribution_pct": 15,
+      "tenure_months": {
+        "min": 36,
+        "max": 84
+      },
+      "moratorium_months": 18,
+      "collateral_required": false,
+      "subsidy_amount": null,
+      "subsidy_pct": null,
+      "subsidy_notes": "Composite loan (term loan + working capital). Up to 15% margin money can be converged with eligible state subsidies."
+    },
+    "documents": [
+      {
+        "id": "aadhaar",
+        "name": "Aadhaar Card",
+        "required": true,
+        "note": "Identity and address proof"
+      },
+      {
+        "id": "pan",
+        "name": "PAN Card",
+        "required": true,
+        "note": "Personal and entity PAN"
+      },
+      {
+        "id": "category_cert",
+        "name": "Caste Certificate (for SC/ST applicants)",
+        "required": false,
+        "note": "Required if applicant is male"
+      },
+      {
+        "id": "project_report",
+        "name": "Comprehensive DPR / Business Plan",
+        "required": true,
+        "note": "Prepared with bank consultant"
+      },
+      {
+        "id": "lease_agreement",
+        "name": "Land ownership or registered rent/lease deed",
+        "required": true,
+        "note": "Site proof"
+      }
+    ],
+    "channel_partners": {
+      "types": [
+        "Scheduled Commercial Banks",
+        "SIDBI",
+        "NABARD",
+        "District Industries Centres"
+      ],
+      "pm_suraj_integrated": true
+    },
+    "metadata": {
+      "active": true,
+      "version": "2026-09",
+      "official_url": "https://www.standupmitra.in",
+      "application_portal": "Stand-Up Mitra Portal",
+      "nodal_agency": "Department of Financial Services / SIDBI",
+      "helpline": "1800-180-1111"
+    }
+  },
+  {
+    "scheme_id": "PM_VISHWAKARMA",
+    "name": "PM Vishwakarma Kaushal Samman Yojana",
+    "short_name": "PM Vishwakarma Scheme",
+    "ministry": "Ministry of Micro, Small and Medium Enterprises",
+    "category": "SocialWelfare",
+    "description": "Comprehensive support for 18 traditional artisan and craft trades: ₹15,000 tool kit incentive, 5-day skill training with ₹500/day stipend, and collateral-free loans up to ₹3 Lakh @ 5% concessional interest.",
+    "tags": [
+      "vishwakarma",
+      "artisan",
+      "carpenter",
+      "blacksmith",
+      "potter",
+      "sculptor",
+      "cobbler",
+      "mason",
+      "barber",
+      "tailor"
+    ],
+    "eligibility": {
+      "age": {
+        "min": 18,
+        "max": 75
+      },
+      "income_annual": {
+        "min": null,
+        "max": null
+      },
+      "gender": [
+        "M",
+        "F",
+        "O"
+      ],
+      "social_categories": [
+        "SC",
+        "ST",
+        "OBC",
+        "GEN",
+        "MINORITY",
+        "EWS",
+        "PWD"
+      ],
+      "activities": [
+        "tailoring",
+        "carpenter",
+        "handicraft",
+        "construction",
+        "beauty_services",
+        "street_vending"
+      ],
+      "activity_categories": [
+        "msme",
+        "services"
+      ],
+      "location": {
+        "states": [
+          "all"
+        ],
+        "urban_only": false,
+        "rural_only": false
+      },
+      "occupation": [
+        "self_employed",
+        "entrepreneur"
+      ],
+      "existing_business": null,
+      "disability": null,
+      "minority": null,
+      "min_project_cost": 15000,
+      "max_project_cost": 300000,
+      "custom_rules": []
+    },
+    "financing": {
+      "type": "composite",
+      "max_amount": 300000,
+      "min_amount": 15000,
+      "interest_rate": {
+        "base": 13,
+        "subsidy_rate": 8,
+        "effective_rate": 5
+      },
+      "own_contribution_pct": 0,
+      "tenure_months": {
+        "min": 18,
+        "max": 30
+      },
+      "moratorium_months": 0,
+      "collateral_required": false,
+      "subsidy_amount": 15000,
+      "subsidy_pct": null,
+      "subsidy_notes": "₹15,000 free toolkit grant + subvention making effective loan interest only 5% p.a. (Tranche 1: ₹1 Lakh, Tranche 2: ₹2 Lakh)."
+    },
+    "documents": [
+      {
+        "id": "aadhaar",
+        "name": "Aadhaar Card (Mobile linked)",
+        "required": true,
+        "note": "Biometric authentication"
+      },
+      {
+        "id": "bank_passbook",
+        "name": "Bank Passbook / Account details",
+        "required": true,
+        "note": "Active DBT account"
+      },
+      {
+        "id": "ration_card",
+        "name": "Ration Card / Family Proof",
+        "required": true,
+        "note": "One benefit per family rule"
+      }
+    ],
+    "channel_partners": {
+      "types": [
+        "Common Service Centres (CSC)",
+        "Public Sector Banks",
+        "RRBs"
+      ],
+      "pm_suraj_integrated": true
+    },
+    "metadata": {
+      "active": true,
+      "version": "2026-09",
+      "official_url": "https://pmvishwakarma.gov.in",
+      "application_portal": "PM Vishwakarma Portal via CSC",
+      "nodal_agency": "MoMSME / MoSD&E",
+      "helpline": "1800-267-7777"
+    }
+  },
+  {
+    "scheme_id": "NABARD_DEDS",
+    "name": "NABARD Dairy Entrepreneurship Development Scheme",
+    "short_name": "NABARD Dairy Scheme",
+    "ministry": "Ministry of Fisheries, Animal Husbandry and Dairying",
+    "category": "Agriculture",
+    "description": "Capital subsidy scheme for modern dairy farms, milk processing equipment, cold storage, and cattle purchase. 25% subsidy for general and 33.33% for SC/ST beneficiaries.",
+    "tags": [
+      "dairy",
+      "milk",
+      "cattle",
+      "cow",
+      "buffalo",
+      "nabard",
+      "deds",
+      "animal husbandry"
+    ],
+    "eligibility": {
+      "age": {
+        "min": 18,
+        "max": 65
+      },
+      "income_annual": {
+        "min": null,
+        "max": null
+      },
+      "gender": [
+        "M",
+        "F",
+        "O"
+      ],
+      "social_categories": [
+        "SC",
+        "ST",
+        "OBC",
+        "GEN",
+        "MINORITY",
+        "EWS",
+        "PWD"
+      ],
+      "activities": [
+        "dairy",
+        "milk",
+        "cattle",
+        "animal_husbandry",
+        "agriculture"
+      ],
+      "activity_categories": [
+        "agriculture"
+      ],
+      "location": {
+        "states": [
+          "all"
+        ],
+        "urban_only": false,
+        "rural_only": false
+      },
+      "occupation": [
+        "farmer",
+        "self_employed",
+        "entrepreneur"
+      ],
+      "existing_business": null,
+      "disability": null,
+      "minority": null,
+      "min_project_cost": 50000,
+      "max_project_cost": 1500000,
+      "custom_rules": []
+    },
+    "financing": {
+      "type": "composite",
+      "max_amount": 1500000,
+      "min_amount": 50000,
+      "interest_rate": {
+        "base": 8.5,
+        "subsidy_rate": 0,
+        "effective_rate": 8.5
+      },
+      "own_contribution_pct": 10,
+      "tenure_months": {
+        "min": 36,
+        "max": 84
+      },
+      "moratorium_months": 6,
+      "collateral_required": false,
+      "subsidy_amount": null,
+      "subsidy_pct": 25,
+      "subsidy_notes": "Back-ended capital subsidy credited directly to beneficiary reserve fund account: 25% for General, 33.33% for SC/ST and women."
+    },
+    "documents": [
+      {
+        "id": "aadhaar",
+        "name": "Aadhaar Card",
+        "required": true,
+        "note": "Identity and address"
+      },
+      {
+        "id": "category_cert",
+        "name": "Caste Certificate (for 33.33% SC/ST subsidy)",
+        "required": false,
+        "note": "From Tehsildar / SDM"
+      },
+      {
+        "id": "land_doc",
+        "name": "Land Record (Khasra/Khatauni) or Lease Agreement for shed",
+        "required": true,
+        "note": "Farm shed location"
+      },
+      {
+        "id": "quotation",
+        "name": "Quotation for Cattle and Dairy Equipment",
+        "required": true,
+        "note": "From registered dairy coop/breeder"
+      }
+    ],
+    "channel_partners": {
+      "types": [
+        "Commercial Banks",
+        "Regional Rural Banks (RRBs)",
+        "State Cooperative Banks",
+        "NABARD"
+      ],
+      "pm_suraj_integrated": true
+    },
+    "metadata": {
+      "active": true,
+      "version": "2026-09",
+      "official_url": "https://www.nabard.org",
+      "application_portal": "Through Lending Bank Branches / NABARD Portal",
+      "nodal_agency": "NABARD / DAHD",
+      "helpline": "022-26539895"
+    }
+  },
+  {
+    "scheme_id": "PM_FME",
+    "name": "PM Formalisation of Micro food processing Enterprises Scheme",
+    "short_name": "PM-FME Food Processing",
+    "ministry": "Ministry of Food Processing Industries",
+    "category": "MSME",
+    "description": "Credit-linked capital subsidy of 35% (up to ₹10 Lakh) for upgrading individual micro food processing units (pickle, papad, spices, oil, bakery, pulses, juice, dairy products).",
+    "tags": [
+      "food processing",
+      "fme",
+      "bakery",
+      "pickle",
+      "spices",
+      "flour mill",
+      "oil mill",
+      "shg"
+    ],
+    "eligibility": {
+      "age": {
+        "min": 18,
+        "max": 65
+      },
+      "income_annual": {
+        "min": null,
+        "max": null
+      },
+      "gender": [
+        "M",
+        "F",
+        "O"
+      ],
+      "social_categories": [
+        "SC",
+        "ST",
+        "OBC",
+        "GEN",
+        "MINORITY",
+        "EWS",
+        "PWD"
+      ],
+      "activities": [
+        "food_processing",
+        "manufacturing",
+        "retail"
+      ],
+      "activity_categories": [
+        "msme",
+        "agriculture"
+      ],
+      "location": {
+        "states": [
+          "all"
+        ],
+        "urban_only": false,
+        "rural_only": false
+      },
+      "occupation": [
+        "self_employed",
+        "entrepreneur"
+      ],
+      "existing_business": null,
+      "disability": null,
+      "minority": null,
+      "min_project_cost": 100000,
+      "max_project_cost": 3000000,
+      "custom_rules": []
+    },
+    "financing": {
+      "type": "composite",
+      "max_amount": 3000000,
+      "min_amount": 100000,
+      "interest_rate": {
+        "base": 9,
+        "subsidy_rate": 0,
+        "effective_rate": 9
+      },
+      "own_contribution_pct": 10,
+      "tenure_months": {
+        "min": 36,
+        "max": 84
+      },
+      "moratorium_months": 6,
+      "collateral_required": false,
+      "subsidy_amount": 1000000,
+      "subsidy_pct": 35,
+      "subsidy_notes": "35% capital subsidy on eligible project cost, capped at a maximum of ₹10,00,000 per micro food enterprise."
+    },
+    "documents": [
+      {
+        "id": "aadhaar",
+        "name": "Aadhaar Card",
+        "required": true,
+        "note": "Identity proof"
+      },
+      {
+        "id": "pan",
+        "name": "PAN Card",
+        "required": true,
+        "note": "Tax proof"
+      },
+      {
+        "id": "bank_statement",
+        "name": "6-Month Bank Statement",
+        "required": true,
+        "note": "Financial assessment"
+      },
+      {
+        "id": "project_report",
+        "name": "Project DPR / Equipment Quotation",
+        "required": true,
+        "note": "Food processing machinery"
+      },
+      {
+        "id": "udyam_reg",
+        "name": "Udyam Registration Certificate",
+        "required": false,
+        "note": "MSME registration"
+      }
+    ],
+    "channel_partners": {
+      "types": [
+        "Scheduled Commercial Banks",
+        "State Nodal Agencies (SNA)",
+        "District Resource Persons (DRP)"
+      ],
+      "pm_suraj_integrated": true
+    },
+    "metadata": {
+      "active": true,
+      "version": "2026-09",
+      "official_url": "https://pmfme.mofpi.gov.in",
+      "application_portal": "PM FME MIS Portal",
+      "nodal_agency": "MoFPI / NIFTEM",
+      "helpline": "1800-111-555"
+    }
+  },
+  {
+    "scheme_id": "PMMSY",
+    "name": "Pradhan Mantri Matsya Sampada Yojana",
+    "short_name": "PM Matsya Sampada Yojana",
+    "ministry": "Ministry of Fisheries, Animal Husbandry and Dairying",
+    "category": "Agriculture",
+    "description": "Financial assistance and up to 60% capital subsidy for aquaculture ponds, biofloc, fish feeds, motorized boats, ornamental fisheries, and cold chain logistics.",
+    "tags": [
+      "fishery",
+      "fish farming",
+      "aquaculture",
+      "biofloc",
+      "boat",
+      "marine",
+      "pond",
+      "matsya"
+    ],
+    "eligibility": {
+      "age": {
+        "min": 18,
+        "max": 65
+      },
+      "income_annual": {
+        "min": null,
+        "max": null
+      },
+      "gender": [
+        "M",
+        "F",
+        "O"
+      ],
+      "social_categories": [
+        "SC",
+        "ST",
+        "OBC",
+        "GEN",
+        "MINORITY",
+        "EWS",
+        "PWD"
+      ],
+      "activities": [
+        "fishery",
+        "agriculture",
+        "transport"
+      ],
+      "activity_categories": [
+        "agriculture"
+      ],
+      "location": {
+        "states": [
+          "all"
+        ],
+        "urban_only": false,
+        "rural_only": false
+      },
+      "occupation": [
+        "farmer",
+        "self_employed",
+        "entrepreneur"
+      ],
+      "existing_business": null,
+      "disability": null,
+      "minority": null,
+      "min_project_cost": 100000,
+      "max_project_cost": 5000000,
+      "custom_rules": []
+    },
+    "financing": {
+      "type": "composite",
+      "max_amount": 5000000,
+      "min_amount": 100000,
+      "interest_rate": {
+        "base": 8.5,
+        "subsidy_rate": 0,
+        "effective_rate": 8.5
+      },
+      "own_contribution_pct": 10,
+      "tenure_months": {
+        "min": 36,
+        "max": 84
+      },
+      "moratorium_months": 6,
+      "collateral_required": false,
+      "subsidy_amount": null,
+      "subsidy_pct": 40,
+      "subsidy_notes": "40% subsidy for General Category; 60% financial assistance for SC, ST, and Women beneficiaries."
+    },
+    "documents": [
+      {
+        "id": "aadhaar",
+        "name": "Aadhaar Card",
+        "required": true,
+        "note": "Identity proof"
+      },
+      {
+        "id": "land_doc",
+        "name": "Land Record / Waterbody lease deed (minimum 7-10 years)",
+        "required": true,
+        "note": "Pond site ownership"
+      },
+      {
+        "id": "category_cert",
+        "name": "Caste Certificate (for 60% subsidy for SC/ST)",
+        "required": false,
+        "note": "From Tehsildar"
+      },
+      {
+        "id": "project_report",
+        "name": "Detailed Fishery Project Report",
+        "required": true,
+        "note": "Cost of fingerlings, feed, pond construction"
+      }
+    ],
+    "channel_partners": {
+      "types": [
+        "National Fisheries Development Board (NFDB)",
+        "State Fisheries Departments",
+        "Banks"
+      ],
+      "pm_suraj_integrated": true
+    },
+    "metadata": {
+      "active": true,
+      "version": "2026-09",
+      "official_url": "https://pmmsy.dof.gov.in",
+      "application_portal": "PMMSY Official Portal",
+      "nodal_agency": "Department of Fisheries / NFDB",
+      "helpline": "1800-425-1660"
+    }
+  },
+  {
+    "scheme_id": "NLM_EDP",
+    "name": "National Livestock Mission - Entrepreneurship Development",
+    "short_name": "NLM Livestock Entrepreneurship",
+    "ministry": "Ministry of Fisheries, Animal Husbandry and Dairying",
+    "category": "Agriculture",
+    "description": "50% capital subsidy (up to ₹50 Lakh) for setting up commercial breeding farms for poultry, sheep, goat, piggery, and fodder production units.",
+    "tags": [
+      "poultry",
+      "goat",
+      "sheep",
+      "piggery",
+      "fodder",
+      "animal husbandry",
+      "breeding farm",
+      "murgi"
+    ],
+    "eligibility": {
+      "age": {
+        "min": 18,
+        "max": 65
+      },
+      "income_annual": {
+        "min": null,
+        "max": null
+      },
+      "gender": [
+        "M",
+        "F",
+        "O"
+      ],
+      "social_categories": [
+        "SC",
+        "ST",
+        "OBC",
+        "GEN",
+        "MINORITY",
+        "EWS",
+        "PWD"
+      ],
+      "activities": [
+        "poultry",
+        "animal_husbandry",
+        "agriculture"
+      ],
+      "activity_categories": [
+        "agriculture"
+      ],
+      "location": {
+        "states": [
+          "all"
+        ],
+        "urban_only": false,
+        "rural_only": false
+      },
+      "occupation": [
+        "farmer",
+        "entrepreneur"
+      ],
+      "existing_business": null,
+      "disability": null,
+      "minority": null,
+      "min_project_cost": 500000,
+      "max_project_cost": 10000000,
+      "custom_rules": []
+    },
+    "financing": {
+      "type": "composite",
+      "max_amount": 10000000,
+      "min_amount": 500000,
+      "interest_rate": {
+        "base": 9,
+        "subsidy_rate": 0,
+        "effective_rate": 9
+      },
+      "own_contribution_pct": 10,
+      "tenure_months": {
+        "min": 36,
+        "max": 84
+      },
+      "moratorium_months": 6,
+      "collateral_required": false,
+      "subsidy_amount": 5000000,
+      "subsidy_pct": 50,
+      "subsidy_notes": "50% direct capital subsidy released in two equal tranches: 1st tranche on bank loan sanction, 2nd tranche on asset verification."
+    },
+    "documents": [
+      {
+        "id": "aadhaar",
+        "name": "Aadhaar Card",
+        "required": true,
+        "note": "Identity proof"
+      },
+      {
+        "id": "pan",
+        "name": "PAN Card",
+        "required": true,
+        "note": "Applicant PAN"
+      },
+      {
+        "id": "land_doc",
+        "name": "Land Record (Khatauni/Khasra) indicating clear title for farm",
+        "required": true,
+        "note": "Shed area"
+      },
+      {
+        "id": "experience_cert",
+        "name": "Training / Prior Experience Certificate in livestock",
+        "required": true,
+        "note": "From Krishi Vigyan Kendra (KVK)"
+      },
+      {
+        "id": "project_report",
+        "name": "Techno-Economic Feasibility DPR",
+        "required": true,
+        "note": "Certified by CA / Bank empanelled agency"
+      }
+    ],
+    "channel_partners": {
+      "types": [
+        "SIDBI",
+        "State Animal Husbandry Departments",
+        "Commercial Banks",
+        "RRBs"
+      ],
+      "pm_suraj_integrated": true
+    },
+    "metadata": {
+      "active": true,
+      "version": "2026-09",
+      "official_url": "https://nlm.udyamimitra.in",
+      "application_portal": "NLM Portal on Udyamimitra",
+      "nodal_agency": "Department of Animal Husbandry and Dairying",
+      "helpline": "011-23389620"
+    }
+  },
+  {
+    "scheme_id": "AIF",
+    "name": "Agriculture Infrastructure Fund",
+    "short_name": "Agri Infrastructure Fund (AIF)",
+    "ministry": "Ministry of Agriculture and Farmers Welfare",
+    "category": "Agriculture",
+    "description": "Medium-long term debt financing for post-harvest infrastructure (cold chains, warehouses, sorting/grading units, packhouses) with 3% interest subvention up to ₹2 Crore.",
+    "tags": [
+      "agriculture",
+      "cold storage",
+      "warehouse",
+      "packhouse",
+      "sorting",
+      "grading",
+      "post harvest"
+    ],
+    "eligibility": {
+      "age": {
+        "min": 18,
+        "max": 70
+      },
+      "income_annual": {
+        "min": null,
+        "max": null
+      },
+      "gender": [
+        "M",
+        "F",
+        "O"
+      ],
+      "social_categories": [
+        "SC",
+        "ST",
+        "OBC",
+        "GEN",
+        "MINORITY",
+        "EWS",
+        "PWD"
+      ],
+      "activities": [
+        "agriculture",
+        "food_processing",
+        "logistics",
+        "energy"
+      ],
+      "activity_categories": [
+        "agriculture",
+        "msme"
+      ],
+      "location": {
+        "states": [
+          "all"
+        ],
+        "urban_only": false,
+        "rural_only": false
+      },
+      "occupation": [
+        "farmer",
+        "entrepreneur"
+      ],
+      "existing_business": null,
+      "disability": null,
+      "minority": null,
+      "min_project_cost": 500000,
+      "max_project_cost": 20000000,
+      "custom_rules": []
+    },
+    "financing": {
+      "type": "loan",
+      "max_amount": 20000000,
+      "min_amount": 500000,
+      "interest_rate": {
+        "base": 9,
+        "subsidy_rate": 3,
+        "effective_rate": 6
+      },
+      "own_contribution_pct": 10,
+      "tenure_months": {
+        "min": 36,
+        "max": 120
+      },
+      "moratorium_months": 24,
+      "collateral_required": false,
+      "subsidy_amount": null,
+      "subsidy_pct": null,
+      "subsidy_notes": "3% per annum interest subvention up to a loan limit of ₹2 Crore for a maximum period of 7 years, plus CGTMSE credit guarantee fee paid by government."
+    },
+    "documents": [
+      {
+        "id": "aadhaar",
+        "name": "Aadhaar Card",
+        "required": true,
+        "note": "Identity proof"
+      },
+      {
+        "id": "land_doc",
+        "name": "Registered Land Ownership / Long Lease Record",
+        "required": true,
+        "note": "Construction site"
+      },
+      {
+        "id": "project_report",
+        "name": "DPR of Post-Harvest Facility",
+        "required": true,
+        "note": "With architecture and machinery cost"
+      },
+      {
+        "id": "bank_statement",
+        "name": "Bank Account Statements (last 12 months)",
+        "required": true,
+        "note": "Operating account"
+      }
+    ],
+    "channel_partners": {
+      "types": [
+        "Commercial Banks",
+        "Cooperative Banks",
+        "RRBs",
+        "NABARD"
+      ],
+      "pm_suraj_integrated": true
+    },
+    "metadata": {
+      "active": true,
+      "version": "2026-09",
+      "official_url": "https://agriinfra.dac.gov.in",
+      "application_portal": "AIF Portal",
+      "nodal_agency": "Ministry of Agriculture / NABARD",
+      "helpline": "1800-180-1551"
+    }
+  },
+  {
+    "scheme_id": "KCC",
+    "name": "Kisan Credit Card Scheme",
+    "short_name": "Kisan Credit Card (KCC)",
+    "ministry": "Ministry of Agriculture and Farmers Welfare",
+    "category": "Agriculture",
+    "description": "Instant revolving credit limit for crop cultivation, animal husbandry, and fisheries working capital up to ₹3,00,000 at a heavily subsidized effective interest rate of 4% p.a.",
+    "tags": [
+      "kcc",
+      "kisan credit card",
+      "farmer loan",
+      "crop loan",
+      "dairy working capital",
+      "4 percent"
+    ],
+    "eligibility": {
+      "age": {
+        "min": 18,
+        "max": 75
+      },
+      "income_annual": {
+        "min": null,
+        "max": null
+      },
+      "gender": [
+        "M",
+        "F",
+        "O"
+      ],
+      "social_categories": [
+        "SC",
+        "ST",
+        "OBC",
+        "GEN",
+        "MINORITY",
+        "EWS",
+        "PWD"
+      ],
+      "activities": [
+        "agriculture",
+        "dairy",
+        "poultry",
+        "fishery",
+        "animal_husbandry"
+      ],
+      "activity_categories": [
+        "agriculture"
+      ],
+      "location": {
+        "states": [
+          "all"
+        ],
+        "urban_only": false,
+        "rural_only": false
+      },
+      "occupation": [
+        "farmer"
+      ],
+      "existing_business": null,
+      "disability": null,
+      "minority": null,
+      "min_project_cost": 10000,
+      "max_project_cost": 300000,
+      "custom_rules": []
+    },
+    "financing": {
+      "type": "loan",
+      "max_amount": 300000,
+      "min_amount": 10000,
+      "interest_rate": {
+        "base": 7,
+        "subsidy_rate": 3,
+        "effective_rate": 4
+      },
+      "own_contribution_pct": 0,
+      "tenure_months": {
+        "min": 12,
+        "max": 60
+      },
+      "moratorium_months": 0,
+      "collateral_required": false,
+      "subsidy_amount": null,
+      "subsidy_pct": null,
+      "subsidy_notes": "Base interest 7%. Government gives 3% Prompt Repayment Incentive (PRI), bringing net effective interest down to just 4% per annum."
+    },
+    "documents": [
+      {
+        "id": "aadhaar",
+        "name": "Aadhaar Card",
+        "required": true,
+        "note": "Identity and address proof"
+      },
+      {
+        "id": "land_doc",
+        "name": "Revenue Land Document (Khasra/Khatauni) or Tenant Farmer Proof",
+        "required": true,
+        "note": "Cultivation proof"
+      },
+      {
+        "id": "photo",
+        "name": "Passport Size Photographs (2)",
+        "required": true,
+        "note": "Recent photos"
+      }
+    ],
+    "channel_partners": {
+      "types": [
+        "Public Sector Banks",
+        "Regional Rural Banks (RRBs)",
+        "Primary Agricultural Credit Societies (PACS)"
+      ],
+      "pm_suraj_integrated": true
+    },
+    "metadata": {
+      "active": true,
+      "version": "2026-09",
+      "official_url": "https://myscheme.gov.in/schemes/kcc",
+      "application_portal": "Any Commercial Bank / CSC PM-Kisan portal",
+      "nodal_agency": "Department of Agriculture & Farmers Welfare",
+      "helpline": "155261"
+    }
+  },
+  {
+    "scheme_id": "PM_KUSUM",
+    "name": "PM-KUSUM Component B - Standalone Solar Pumps",
+    "short_name": "PM-KUSUM Solar Pump Scheme",
+    "ministry": "Ministry of New and Renewable Energy",
+    "category": "Agriculture",
+    "description": "60% total government subsidy (30% Centre + 30% State) for individual farmers to install standalone solar water irrigation pumps (up to 7.5 HP) replacing diesel pumps.",
+    "tags": [
+      "solar pump",
+      "kusum",
+      "irrigation",
+      "diesel pump replacement",
+      "solar energy",
+      "renewable",
+      "farmer subsidy"
+    ],
+    "eligibility": {
+      "age": {
+        "min": 18,
+        "max": 70
+      },
+      "income_annual": {
+        "min": null,
+        "max": null
+      },
+      "gender": [
+        "M",
+        "F",
+        "O"
+      ],
+      "social_categories": [
+        "SC",
+        "ST",
+        "OBC",
+        "GEN",
+        "MINORITY",
+        "EWS",
+        "PWD"
+      ],
+      "activities": [
+        "agriculture",
+        "energy"
+      ],
+      "activity_categories": [
+        "agriculture"
+      ],
+      "location": {
+        "states": [
+          "all"
+        ],
+        "urban_only": false,
+        "rural_only": true
+      },
+      "occupation": [
+        "farmer"
+      ],
+      "existing_business": null,
+      "disability": null,
+      "minority": null,
+      "min_project_cost": 150000,
+      "max_project_cost": 450000,
+      "custom_rules": []
+    },
+    "financing": {
+      "type": "subsidy",
+      "max_amount": 450000,
+      "min_amount": 150000,
+      "interest_rate": {
+        "base": 8.5,
+        "subsidy_rate": 0,
+        "effective_rate": 8.5
+      },
+      "own_contribution_pct": 10,
+      "tenure_months": {
+        "min": 36,
+        "max": 60
+      },
+      "moratorium_months": 0,
+      "collateral_required": false,
+      "subsidy_amount": null,
+      "subsidy_pct": 60,
+      "subsidy_notes": "30% Central Government subsidy + 30% State Government subsidy = 60% total grant. Remaining 30% can be financed via bank loan; farmer pays only 10% cash."
+    },
+    "documents": [
+      {
+        "id": "aadhaar",
+        "name": "Aadhaar Card",
+        "required": true,
+        "note": "Identity proof"
+      },
+      {
+        "id": "land_doc",
+        "name": "Land Record (Jamabandi/Khasra) with boring/well proof",
+        "required": true,
+        "note": "Water source proof"
+      },
+      {
+        "id": "bank_passbook",
+        "name": "Bank Account Passbook",
+        "required": true,
+        "note": "For subsidy processing"
+      }
+    ],
+    "channel_partners": {
+      "types": [
+        "State Renewable Energy Agencies (e.g. RREC, MEDA, HAREDA)",
+        "Commercial Banks",
+        "CSC"
+      ],
+      "pm_suraj_integrated": true
+    },
+    "metadata": {
+      "active": true,
+      "version": "2026-09",
+      "official_url": "https://pmkusum.mnre.gov.in",
+      "application_portal": "State Nodal Agency Renewable Energy Portals",
+      "nodal_agency": "Ministry of New and Renewable Energy",
+      "helpline": "1800-180-3333"
+    }
+  },
+  {
+    "scheme_id": "MAHILA_COIR",
+    "name": "Mahila Coir Yojana (Self-Employment for Rural Women)",
+    "short_name": "Mahila Coir Yojana",
+    "ministry": "Ministry of Micro, Small and Medium Enterprises",
+    "category": "Women",
+    "description": "Exclusive 75% capital subsidy scheme on motorized coir spinning ratts and yarn making machinery for rural women artisans, promoting self-employment in coastal/rural areas.",
+    "tags": [
+      "women scheme",
+      "coir",
+      "spinning ratt",
+      "rural women",
+      "handicraft",
+      "fibre",
+      "cottage industry"
+    ],
+    "eligibility": {
+      "age": {
+        "min": 18,
+        "max": 60
+      },
+      "income_annual": {
+        "min": null,
+        "max": null
+      },
+      "gender": [
+        "F"
+      ],
+      "social_categories": [
+        "SC",
+        "ST",
+        "OBC",
+        "GEN",
+        "MINORITY",
+        "EWS",
+        "PWD"
+      ],
+      "activities": [
+        "weaving",
+        "handicraft",
+        "manufacturing"
+      ],
+      "activity_categories": [
+        "msme"
+      ],
+      "location": {
+        "states": [
+          "all"
+        ],
+        "urban_only": false,
+        "rural_only": true
+      },
+      "occupation": [
+        "self_employed",
+        "entrepreneur"
+      ],
+      "existing_business": null,
+      "disability": null,
+      "minority": null,
+      "min_project_cost": 25000,
+      "max_project_cost": 100000,
+      "custom_rules": []
+    },
+    "financing": {
+      "type": "subsidy",
+      "max_amount": 100000,
+      "min_amount": 25000,
+      "interest_rate": {
+        "base": 0,
+        "subsidy_rate": 0,
+        "effective_rate": 0
+      },
+      "own_contribution_pct": 25,
+      "tenure_months": {
+        "min": 12,
+        "max": 36
+      },
+      "moratorium_months": 0,
+      "collateral_required": false,
+      "subsidy_amount": null,
+      "subsidy_pct": 75,
+      "subsidy_notes": "75% of the total equipment cost is provided as government subsidy. The woman artisan contributes only 25%."
+    },
+    "documents": [
+      {
+        "id": "aadhaar",
+        "name": "Aadhaar Card",
+        "required": true,
+        "note": "Identity and address proof"
+      },
+      {
+        "id": "bank_passbook",
+        "name": "Bank Passbook copy",
+        "required": true,
+        "note": "DBT bank account"
+      },
+      {
+        "id": "training_cert",
+        "name": "Coir Board Training Completion Certificate",
+        "required": true,
+        "note": "2-month spinning training provided free by Coir Board"
+      }
+    ],
+    "channel_partners": {
+      "types": [
+        "Coir Board",
+        "District Industries Centres",
+        "Self Help Groups"
+      ],
+      "pm_suraj_integrated": true
+    },
+    "metadata": {
+      "active": true,
+      "version": "2026-09",
+      "official_url": "https://coirboard.gov.in",
+      "application_portal": "Coir Board Regional Field Offices",
+      "nodal_agency": "Coir Board / MoMSME",
+      "helpline": "0484-2351988"
+    }
+  },
+  {
+    "scheme_id": "NSFDC_TERM_LOAN",
+    "name": "NSFDC Concessional Term Loan for Scheduled Castes",
+    "short_name": "NSFDC SC Term Loan",
+    "ministry": "Ministry of Social Justice and Empowerment",
+    "category": "SocialWelfare",
+    "description": "Concessional finance up to ₹50 Lakh at low interest rates (6% to 9% p.a.) for Scheduled Caste entrepreneurs to start income-generating enterprises.",
+    "tags": [
+      "nsfdc",
+      "sc loan",
+      "dalit entrepreneur",
+      "scheduled caste",
+      "concessional interest",
+      "pm suraj"
+    ],
+    "eligibility": {
+      "age": {
+        "min": 18,
+        "max": 65
+      },
+      "income_annual": {
+        "min": null,
+        "max": 300000
+      },
+      "gender": [
+        "M",
+        "F",
+        "O"
+      ],
+      "social_categories": [
+        "SC"
+      ],
+      "activities": [
+        "transport",
+        "services",
+        "retail",
+        "manufacturing",
+        "agriculture",
+        "dairy",
+        "tailoring",
+        "electronics"
+      ],
+      "activity_categories": [
+        "msme",
+        "services",
+        "agriculture"
+      ],
+      "location": {
+        "states": [
+          "all"
+        ],
+        "urban_only": false,
+        "rural_only": false
+      },
+      "occupation": [
+        "self_employed",
+        "entrepreneur"
+      ],
+      "existing_business": null,
+      "disability": null,
+      "minority": null,
+      "min_project_cost": 50000,
+      "max_project_cost": 5000000,
+      "custom_rules": []
+    },
+    "financing": {
+      "type": "loan",
+      "max_amount": 5000000,
+      "min_amount": 50000,
+      "interest_rate": {
+        "base": 6,
+        "subsidy_rate": 0,
+        "effective_rate": 6
+      },
+      "own_contribution_pct": 5,
+      "tenure_months": {
+        "min": 36,
+        "max": 120
+      },
+      "moratorium_months": 6,
+      "collateral_required": false,
+      "subsidy_amount": null,
+      "subsidy_pct": null,
+      "subsidy_notes": "Highly concessional interest: 6% for loans up to ₹5 Lakh, 8-9% for loans above ₹5 Lakh. Up to 95% project cost funded."
+    },
+    "documents": [
+      {
+        "id": "aadhaar",
+        "name": "Aadhaar Card",
+        "required": true,
+        "note": "Identity proof"
+      },
+      {
+        "id": "category_cert",
+        "name": "SC Caste Certificate from authorized revenue authority",
+        "required": true,
+        "note": "Mandatory"
+      },
+      {
+        "id": "income_cert",
+        "name": "Income Certificate (Family income <= ₹3 Lakh)",
+        "required": true,
+        "note": "From Tehsildar / SDM"
+      },
+      {
+        "id": "project_report",
+        "name": "Project Cost Quotation / DPR",
+        "required": true,
+        "note": "Brief business activity plan"
+      }
+    ],
+    "channel_partners": {
+      "types": [
+        "State Channelising Agencies (SCA)",
+        "Regional Rural Banks",
+        "Public Sector Banks"
+      ],
+      "pm_suraj_integrated": true
+    },
+    "metadata": {
+      "active": true,
+      "version": "2026-09",
+      "official_url": "https://nsfdc.nic.in",
+      "application_portal": "PM-SURAJ Portal (pmsuraj.dosje.gov.in)",
+      "nodal_agency": "NSFDC / MoSJ&E",
+      "helpline": "1800-11-0505"
+    }
+  },
+  {
+    "scheme_id": "NSTFDC_TERM_LOAN",
+    "name": "NSTFDC Concessional Term Loan for Scheduled Tribes",
+    "short_name": "NSTFDC ST Term Loan",
+    "ministry": "Ministry of Tribal Affairs",
+    "category": "SocialWelfare",
+    "description": "Up to ₹50 Lakh at an attractive 6% interest rate for Scheduled Tribe (ST) beneficiaries to undertake economically viable self-employment and micro-enterprises.",
+    "tags": [
+      "nstfdc",
+      "st loan",
+      "tribal entrepreneur",
+      "scheduled tribe",
+      "adivasi loan",
+      "pm suraj"
+    ],
+    "eligibility": {
+      "age": {
+        "min": 18,
+        "max": 65
+      },
+      "income_annual": {
+        "min": null,
+        "max": 300000
+      },
+      "gender": [
+        "M",
+        "F",
+        "O"
+      ],
+      "social_categories": [
+        "ST"
+      ],
+      "activities": [
+        "agriculture",
+        "handicraft",
+        "dairy",
+        "poultry",
+        "forest_produce",
+        "retail",
+        "services"
+      ],
+      "activity_categories": [
+        "agriculture",
+        "msme",
+        "services"
+      ],
+      "location": {
+        "states": [
+          "all"
+        ],
+        "urban_only": false,
+        "rural_only": false
+      },
+      "occupation": [
+        "self_employed",
+        "entrepreneur"
+      ],
+      "existing_business": null,
+      "disability": null,
+      "minority": null,
+      "min_project_cost": 50000,
+      "max_project_cost": 5000000,
+      "custom_rules": []
+    },
+    "financing": {
+      "type": "loan",
+      "max_amount": 5000000,
+      "min_amount": 50000,
+      "interest_rate": {
+        "base": 6,
+        "subsidy_rate": 0,
+        "effective_rate": 6
+      },
+      "own_contribution_pct": 5,
+      "tenure_months": {
+        "min": 36,
+        "max": 120
+      },
+      "moratorium_months": 6,
+      "collateral_required": false,
+      "subsidy_amount": null,
+      "subsidy_pct": null,
+      "subsidy_notes": "Fixed concessional 6% interest rate for ST entrepreneurs. Up to 90% loan component provided."
+    },
+    "documents": [
+      {
+        "id": "aadhaar",
+        "name": "Aadhaar Card",
+        "required": true,
+        "note": "Identity and address proof"
+      },
+      {
+        "id": "category_cert",
+        "name": "ST Tribal Caste Certificate",
+        "required": true,
+        "note": "From Competent Authority"
+      },
+      {
+        "id": "income_cert",
+        "name": "Income Certificate (Family income <= ₹3 Lakh p.a.)",
+        "required": true,
+        "note": "Revenue authority"
+      },
+      {
+        "id": "bank_passbook",
+        "name": "Bank Passbook copy",
+        "required": true,
+        "note": "Active account"
+      }
+    ],
+    "channel_partners": {
+      "types": [
+        "State Tribal Development Corporations",
+        "RRBs",
+        "Public Sector Banks"
+      ],
+      "pm_suraj_integrated": true
+    },
+    "metadata": {
+      "active": true,
+      "version": "2026-09",
+      "official_url": "https://nstfdc.tribal.gov.in",
+      "application_portal": "PM-SURAJ Portal (pmsuraj.dosje.gov.in)",
+      "nodal_agency": "NSTFDC / Ministry of Tribal Affairs",
+      "helpline": "011-26712530"
+    }
+  },
+  {
+    "scheme_id": "NBCFDC_TERM_LOAN",
+    "name": "NBCFDC General Term Loan Scheme for OBCs",
+    "short_name": "NBCFDC OBC Term Loan",
+    "ministry": "Ministry of Social Justice and Empowerment",
+    "category": "SocialWelfare",
+    "description": "Concessional loan up to ₹15 Lakh at 6% to 8% p.a. for Other Backward Classes (OBC) entrepreneurs having annual family income under ₹3 Lakh.",
+    "tags": [
+      "nbcfdc",
+      "obc loan",
+      "other backward classes",
+      "concessional loan",
+      "pm suraj"
+    ],
+    "eligibility": {
+      "age": {
+        "min": 18,
+        "max": 65
+      },
+      "income_annual": {
+        "min": null,
+        "max": 300000
+      },
+      "gender": [
+        "M",
+        "F",
+        "O"
+      ],
+      "social_categories": [
+        "OBC"
+      ],
+      "activities": [
+        "retail",
+        "services",
+        "agriculture",
+        "manufacturing",
+        "transport",
+        "tailoring",
+        "dairy"
+      ],
+      "activity_categories": [
+        "msme",
+        "services",
+        "agriculture"
+      ],
+      "location": {
+        "states": [
+          "all"
+        ],
+        "urban_only": false,
+        "rural_only": false
+      },
+      "occupation": [
+        "self_employed",
+        "entrepreneur"
+      ],
+      "existing_business": null,
+      "disability": null,
+      "minority": null,
+      "min_project_cost": 50000,
+      "max_project_cost": 1500000,
+      "custom_rules": []
+    },
+    "financing": {
+      "type": "loan",
+      "max_amount": 1500000,
+      "min_amount": 50000,
+      "interest_rate": {
+        "base": 7,
+        "subsidy_rate": 0,
+        "effective_rate": 7
+      },
+      "own_contribution_pct": 10,
+      "tenure_months": {
+        "min": 36,
+        "max": 96
+      },
+      "moratorium_months": 6,
+      "collateral_required": false,
+      "subsidy_amount": null,
+      "subsidy_pct": null,
+      "subsidy_notes": "Low interest rates: 6% for loans up to ₹5 Lakh; 7-8% for loans between ₹5 Lakh and ₹15 Lakh."
+    },
+    "documents": [
+      {
+        "id": "aadhaar",
+        "name": "Aadhaar Card",
+        "required": true,
+        "note": "Identity proof"
+      },
+      {
+        "id": "category_cert",
+        "name": "OBC Certificate (Non-Creamy Layer)",
+        "required": true,
+        "note": "From Sub-Divisional Magistrate"
+      },
+      {
+        "id": "income_cert",
+        "name": "Income Certificate (Family income <= ₹3 Lakh)",
+        "required": true,
+        "note": "Tehsildar issued"
+      },
+      {
+        "id": "project_report",
+        "name": "Quotations of equipment / brief project description",
+        "required": true,
+        "note": "Machinery quotation"
+      }
+    ],
+    "channel_partners": {
+      "types": [
+        "State Backward Classes Development Corporations",
+        "RRBs",
+        "Public Sector Banks"
+      ],
+      "pm_suraj_integrated": true
+    },
+    "metadata": {
+      "active": true,
+      "version": "2026-09",
+      "official_url": "https://nbcfdc.gov.in",
+      "application_portal": "PM-SURAJ Portal (pmsuraj.dosje.gov.in)",
+      "nodal_agency": "NBCFDC / MoSJ&E",
+      "helpline": "1800-11-2015"
+    }
+  },
+  {
+    "scheme_id": "VCF_SC",
+    "name": "Venture Capital Fund for Scheduled Castes",
+    "short_name": "VCF for SC Entrepreneurs",
+    "ministry": "Ministry of Social Justice and Empowerment",
+    "category": "SocialWelfare",
+    "description": "Equity and debt capital from ₹15 Lakh up to ₹5 Crore for SC-promoted innovative enterprises, tech startups, and manufacturing businesses with at least 51% SC shareholding.",
+    "tags": [
+      "venture capital",
+      "equity",
+      "sc startup",
+      "dalit business",
+      "high growth",
+      "ifci"
+    ],
+    "eligibility": {
+      "age": {
+        "min": 18,
+        "max": 65
+      },
+      "income_annual": {
+        "min": null,
+        "max": null
+      },
+      "gender": [
+        "M",
+        "F",
+        "O"
+      ],
+      "social_categories": [
+        "SC"
+      ],
+      "activities": [
+        "manufacturing",
+        "technology",
+        "services",
+        "food_processing",
+        "energy"
+      ],
+      "activity_categories": [
+        "msme",
+        "services"
+      ],
+      "location": {
+        "states": [
+          "all"
+        ],
+        "urban_only": false,
+        "rural_only": false
+      },
+      "occupation": [
+        "entrepreneur"
+      ],
+      "existing_business": null,
+      "disability": null,
+      "minority": null,
+      "min_project_cost": 1500000,
+      "max_project_cost": 50000000,
+      "custom_rules": []
+    },
+    "financing": {
+      "type": "composite",
+      "max_amount": 50000000,
+      "min_amount": 1500000,
+      "interest_rate": {
+        "base": 8,
+        "subsidy_rate": 0,
+        "effective_rate": 8
+      },
+      "own_contribution_pct": 15,
+      "tenure_months": {
+        "min": 36,
+        "max": 120
+      },
+      "moratorium_months": 12,
+      "collateral_required": false,
+      "subsidy_amount": null,
+      "subsidy_pct": null,
+      "subsidy_notes": "Concessional debt/equity funding @ 8% p.a. (7.75% for women/disabled SC entrepreneurs)."
+    },
+    "documents": [
+      {
+        "id": "aadhaar",
+        "name": "Aadhaar Card of Promoters",
+        "required": true,
+        "note": "Promoters KYC"
+      },
+      {
+        "id": "pan",
+        "name": "Company & Promoter PAN Card",
+        "required": true,
+        "note": "Entity proof"
+      },
+      {
+        "id": "category_cert",
+        "name": "SC Caste Certificate of Key Promoters (>= 51% holding)",
+        "required": true,
+        "note": "Mandatory"
+      },
+      {
+        "id": "project_report",
+        "name": "Detailed Business Plan and Financial Projections",
+        "required": true,
+        "note": "Comprehensive DPR"
+      }
+    ],
+    "channel_partners": {
+      "types": [
+        "IFCI Venture Capital Funds Ltd.",
+        "SIDBI",
+        "PM-SURAJ"
+      ],
+      "pm_suraj_integrated": true
+    },
+    "metadata": {
+      "active": true,
+      "version": "2026-09",
+      "official_url": "https://vcfsc.in",
+      "application_portal": "VCF-SC Online Portal",
+      "nodal_agency": "IFCI Venture / MoSJ&E",
+      "helpline": "011-41732500"
+    }
+  },
+  {
+    "scheme_id": "PMAJAY",
+    "name": "Pradhan Mantri Anusuchit Jaati Abhyuday Yojana",
+    "short_name": "PM-AJAY Livelihood Grant",
+    "ministry": "Ministry of Social Justice and Empowerment",
+    "category": "SocialWelfare",
+    "description": "Grant-in-aid up to ₹50,000 or 50% of the project cost for poorest SC families to establish small retail shops, tailoring units, or animal husbandry livelihoods without repayment burden.",
+    "tags": [
+      "pmajay",
+      "sc grant",
+      "livelihood grant",
+      "free grant",
+      "bpl grant",
+      "sc development"
+    ],
+    "eligibility": {
+      "age": {
+        "min": 18,
+        "max": 65
+      },
+      "income_annual": {
+        "min": null,
+        "max": 250000
+      },
+      "gender": [
+        "M",
+        "F",
+        "O"
+      ],
+      "social_categories": [
+        "SC"
+      ],
+      "activities": [
+        "retail",
+        "services",
+        "tailoring",
+        "dairy",
+        "poultry",
+        "street_vending",
+        "handicraft"
+      ],
+      "activity_categories": [
+        "msme",
+        "agriculture",
+        "services"
+      ],
+      "location": {
+        "states": [
+          "all"
+        ],
+        "urban_only": false,
+        "rural_only": false
+      },
+      "occupation": [
+        "self_employed"
+      ],
+      "existing_business": false,
+      "disability": null,
+      "minority": null,
+      "min_project_cost": 20000,
+      "max_project_cost": 100000,
+      "custom_rules": []
+    },
+    "financing": {
+      "type": "grant",
+      "max_amount": 50000,
+      "min_amount": 20000,
+      "interest_rate": {
+        "base": 0,
+        "subsidy_rate": 0,
+        "effective_rate": 0
+      },
+      "own_contribution_pct": 0,
+      "tenure_months": {
+        "min": 0,
+        "max": 0
+      },
+      "moratorium_months": 0,
+      "collateral_required": false,
+      "subsidy_amount": 50000,
+      "subsidy_pct": 50,
+      "subsidy_notes": "100% grant up to ₹50,000 or 50% of project cost (whichever is lower) with zero repayment."
+    },
+    "documents": [
+      {
+        "id": "aadhaar",
+        "name": "Aadhaar Card",
+        "required": true,
+        "note": "Identity and address proof"
+      },
+      {
+        "id": "category_cert",
+        "name": "SC Certificate",
+        "required": true,
+        "note": "Revenue authority issued"
+      },
+      {
+        "id": "income_cert",
+        "name": "Income Certificate / BPL Ration Card",
+        "required": true,
+        "note": "Economic criteria"
+      },
+      {
+        "id": "bank_passbook",
+        "name": "Bank Passbook copy",
+        "required": true,
+        "note": "Direct grant transfer"
+      }
+    ],
+    "channel_partners": {
+      "types": [
+        "District Social Welfare Offices",
+        "State Scheduled Caste Corporations"
+      ],
+      "pm_suraj_integrated": true
+    },
+    "metadata": {
+      "active": true,
+      "version": "2026-09",
+      "official_url": "https://pmajay.dosje.gov.in",
+      "application_portal": "District Social Welfare Officer / PM-AJAY Portal",
+      "nodal_agency": "Department of Social Justice and Empowerment",
+      "helpline": "1800-11-0505"
+    }
+  },
+  {
+    "scheme_id": "AHVY",
+    "name": "Ambedkar Hastshilp Vikas Yojana for Artisans",
+    "short_name": "Ambedkar Hastshilp Vikas Yojana",
+    "ministry": "Ministry of Textiles",
+    "category": "SocialWelfare",
+    "description": "Empowers rural handicraft artisans by organizing them into Self Help Groups, providing design and technological upgrades, raw material banks, and market linkage grants.",
+    "tags": [
+      "handicraft",
+      "artisan",
+      "ahvy",
+      "pottery",
+      "sculpture",
+      "bamboo",
+      "cluster grant",
+      "textiles"
+    ],
+    "eligibility": {
+      "age": {
+        "min": 18,
+        "max": 65
+      },
+      "income_annual": {
+        "min": null,
+        "max": null
+      },
+      "gender": [
+        "M",
+        "F",
+        "O"
+      ],
+      "social_categories": [
+        "SC",
+        "ST",
+        "OBC",
+        "GEN",
+        "MINORITY",
+        "EWS",
+        "PWD"
+      ],
+      "activities": [
+        "handicraft",
+        "manufacturing",
+        "retail"
+      ],
+      "activity_categories": [
+        "msme"
+      ],
+      "location": {
+        "states": [
+          "all"
+        ],
+        "urban_only": false,
+        "rural_only": false
+      },
+      "occupation": [
+        "self_employed",
+        "entrepreneur"
+      ],
+      "existing_business": null,
+      "disability": null,
+      "minority": null,
+      "min_project_cost": 20000,
+      "max_project_cost": 200000,
+      "custom_rules": []
+    },
+    "financing": {
+      "type": "grant",
+      "max_amount": 200000,
+      "min_amount": 20000,
+      "interest_rate": {
+        "base": 0,
+        "subsidy_rate": 0,
+        "effective_rate": 0
+      },
+      "own_contribution_pct": 0,
+      "tenure_months": {
+        "min": 0,
+        "max": 0
+      },
+      "moratorium_months": 0,
+      "collateral_required": false,
+      "subsidy_amount": 200000,
+      "subsidy_pct": 100,
+      "subsidy_notes": "Non-repayable financial assistance for modern craft toolkits, design development workshops, and stall subsidy at Dilli Haat and exhibitions."
+    },
+    "documents": [
+      {
+        "id": "aadhaar",
+        "name": "Aadhaar Card",
+        "required": true,
+        "note": "Artisan identity"
+      },
+      {
+        "id": "artisan_card",
+        "name": "Pehchan Artisan Identity Card",
+        "required": true,
+        "note": "Issued by DC Handicrafts"
+      },
+      {
+        "id": "bank_passbook",
+        "name": "Bank Passbook copy",
+        "required": true,
+        "note": "Direct grant transfer"
+      }
+    ],
+    "channel_partners": {
+      "types": [
+        "Office of Development Commissioner (Handicrafts)",
+        "Export Promotion Council for Handicrafts"
+      ],
+      "pm_suraj_integrated": false
+    },
+    "metadata": {
+      "active": true,
+      "version": "2026-09",
+      "official_url": "https://handicrafts.nic.in",
+      "application_portal": "DC Handicrafts Regional Service Centres",
+      "nodal_agency": "Ministry of Textiles",
+      "helpline": "1800-208-4800"
+    }
+  },
+  {
+    "scheme_id": "NHDP",
+    "name": "National Handloom Development Programme",
+    "short_name": "National Handloom Scheme",
+    "ministry": "Ministry of Textiles",
+    "category": "MSME",
+    "description": "Up to 90% grant on pneumatic/electronic Jacquard looms, subsidized yarn with 15% price benefit, and ₹10,000 margin money for individual weavers.",
+    "tags": [
+      "handloom",
+      "weaver",
+      "bunkar",
+      "loom",
+      "yarn subsidy",
+      "jacquard",
+      "khaddar",
+      "saree"
+    ],
+    "eligibility": {
+      "age": {
+        "min": 18,
+        "max": 70
+      },
+      "income_annual": {
+        "min": null,
+        "max": null
+      },
+      "gender": [
+        "M",
+        "F",
+        "O"
+      ],
+      "social_categories": [
+        "SC",
+        "ST",
+        "OBC",
+        "GEN",
+        "MINORITY",
+        "EWS",
+        "PWD"
+      ],
+      "activities": [
+        "weaving",
+        "handicraft",
+        "manufacturing"
+      ],
+      "activity_categories": [
+        "msme"
+      ],
+      "location": {
+        "states": [
+          "all"
+        ],
+        "urban_only": false,
+        "rural_only": false
+      },
+      "occupation": [
+        "self_employed",
+        "entrepreneur"
+      ],
+      "existing_business": null,
+      "disability": null,
+      "minority": null,
+      "min_project_cost": 25000,
+      "max_project_cost": 200000,
+      "custom_rules": []
+    },
+    "financing": {
+      "type": "grant",
+      "max_amount": 200000,
+      "min_amount": 25000,
+      "interest_rate": {
+        "base": 0,
+        "subsidy_rate": 0,
+        "effective_rate": 0
+      },
+      "own_contribution_pct": 10,
+      "tenure_months": {
+        "min": 0,
+        "max": 0
+      },
+      "moratorium_months": 0,
+      "collateral_required": false,
+      "subsidy_amount": null,
+      "subsidy_pct": 90,
+      "subsidy_notes": "90% grant on technological upgrade of looms and accessories. Government contributes ₹90 for every ₹100 cost."
+    },
+    "documents": [
+      {
+        "id": "aadhaar",
+        "name": "Aadhaar Card",
+        "required": true,
+        "note": "Identity proof"
+      },
+      {
+        "id": "weaver_id",
+        "name": "Weaver ID Card / Pehchan Card",
+        "required": true,
+        "note": "Issued by DC Handlooms"
+      },
+      {
+        "id": "bank_passbook",
+        "name": "Bank Passbook copy",
+        "required": true,
+        "note": "Direct grant account"
+      }
+    ],
+    "channel_partners": {
+      "types": [
+        "Weavers Service Centres (WSC)",
+        "State Handloom Apex Societies",
+        "National Handloom Development Corporation"
+      ],
+      "pm_suraj_integrated": false
+    },
+    "metadata": {
+      "active": true,
+      "version": "2026-09",
+      "official_url": "https://handlooms.nic.in",
+      "application_portal": "DC Handlooms Weavers Service Centres",
+      "nodal_agency": "Development Commissioner (Handlooms)",
+      "helpline": "1800-208-9988"
+    }
+  },
+  {
+    "scheme_id": "GVY",
+    "name": "Gramodyog Vikas Yojana for Village Industry Artisans",
+    "short_name": "Gramodyog Vikas Yojana",
+    "ministry": "Ministry of Micro, Small and Medium Enterprises",
+    "category": "Rural",
+    "description": "Free toolkits, processing machinery, and training for village artisans in honey bee keeping (Honey Mission), pottery making (Kumhar Sashaktikaran), and incense stick making.",
+    "tags": [
+      "honey mission",
+      "potter",
+      "kumhar",
+      "agarbatti",
+      "leather",
+      "village industry",
+      "kvic toolkit"
+    ],
+    "eligibility": {
+      "age": {
+        "min": 18,
+        "max": 65
+      },
+      "income_annual": {
+        "min": null,
+        "max": null
+      },
+      "gender": [
+        "M",
+        "F",
+        "O"
+      ],
+      "social_categories": [
+        "SC",
+        "ST",
+        "OBC",
+        "GEN",
+        "MINORITY",
+        "EWS",
+        "PWD"
+      ],
+      "activities": [
+        "handicraft",
+        "manufacturing",
+        "agriculture"
+      ],
+      "activity_categories": [
+        "msme",
+        "agriculture"
+      ],
+      "location": {
+        "states": [
+          "all"
+        ],
+        "urban_only": false,
+        "rural_only": true
+      },
+      "occupation": [
+        "self_employed"
+      ],
+      "existing_business": null,
+      "disability": null,
+      "minority": null,
+      "min_project_cost": 15000,
+      "max_project_cost": 100000,
+      "custom_rules": []
+    },
+    "financing": {
+      "type": "grant",
+      "max_amount": 100000,
+      "min_amount": 15000,
+      "interest_rate": {
+        "base": 0,
+        "subsidy_rate": 0,
+        "effective_rate": 0
+      },
+      "own_contribution_pct": 0,
+      "tenure_months": {
+        "min": 0,
+        "max": 0
+      },
+      "moratorium_months": 0,
+      "collateral_required": false,
+      "subsidy_amount": 100000,
+      "subsidy_pct": 100,
+      "subsidy_notes": "100% free distribution of motorized pottery wheels, bee boxes, and modern processing kits after 10-day certified training."
+    },
+    "documents": [
+      {
+        "id": "aadhaar",
+        "name": "Aadhaar Card",
+        "required": true,
+        "note": "Identity and address"
+      },
+      {
+        "id": "ration_card",
+        "name": "Ration Card / Proof of Rural Residence",
+        "required": true,
+        "note": "Rural check"
+      },
+      {
+        "id": "photo",
+        "name": "Passport Size Photographs (2)",
+        "required": true,
+        "note": "Registration photo"
+      }
+    ],
+    "channel_partners": {
+      "types": [
+        "KVIC State Offices",
+        "KVIB",
+        "Khadi Institutions"
+      ],
+      "pm_suraj_integrated": false
+    },
+    "metadata": {
+      "active": true,
+      "version": "2026-09",
+      "official_url": "https://kvic.gov.in",
+      "application_portal": "KVIC Portal / District Khadi Offices",
+      "nodal_agency": "Khadi and Village Industries Commission",
+      "helpline": "1800-3000-0034"
+    }
+  },
+  {
+    "scheme_id": "SFURTI",
+    "name": "Scheme of Fund for Regeneration of Traditional Industries",
+    "short_name": "SFURTI Artisan Clusters",
+    "ministry": "Ministry of Micro, Small and Medium Enterprises",
+    "category": "MSME",
+    "description": "Grant of up to ₹2.5 Crore (regular cluster) or ₹5 Crore (major cluster) for building Common Facility Centres (CFCs), packaging, and modern machinery for artisan groups.",
+    "tags": [
+      "sfurti",
+      "artisan cluster",
+      "khadi cluster",
+      "handicraft cluster",
+      "common facility centre",
+      "cfc grant"
+    ],
+    "eligibility": {
+      "age": {
+        "min": 18,
+        "max": 70
+      },
+      "income_annual": {
+        "min": null,
+        "max": null
+      },
+      "gender": [
+        "M",
+        "F",
+        "O"
+      ],
+      "social_categories": [
+        "SC",
+        "ST",
+        "OBC",
+        "GEN",
+        "MINORITY",
+        "EWS",
+        "PWD"
+      ],
+      "activities": [
+        "handicraft",
+        "weaving",
+        "food_processing",
+        "manufacturing"
+      ],
+      "activity_categories": [
+        "msme"
+      ],
+      "location": {
+        "states": [
+          "all"
+        ],
+        "urban_only": false,
+        "rural_only": false
+      },
+      "occupation": [
+        "entrepreneur",
+        "self_employed"
+      ],
+      "existing_business": true,
+      "disability": null,
+      "minority": null,
+      "min_project_cost": 1000000,
+      "max_project_cost": 25000000,
+      "custom_rules": []
+    },
+    "financing": {
+      "type": "grant",
+      "max_amount": 25000000,
+      "min_amount": 1000000,
+      "interest_rate": {
+        "base": 0,
+        "subsidy_rate": 0,
+        "effective_rate": 0
+      },
+      "own_contribution_pct": 10,
+      "tenure_months": {
+        "min": 0,
+        "max": 0
+      },
+      "moratorium_months": 0,
+      "collateral_required": false,
+      "subsidy_amount": 25000000,
+      "subsidy_pct": 90,
+      "subsidy_notes": "Up to 90% grant from Central Government for Common Facility Centre (CFC) infrastructure, machinery, and market development."
+    },
+    "documents": [
+      {
+        "id": "aadhaar",
+        "name": "Aadhaar Cards of Cluster SPV Promoters",
+        "required": true,
+        "note": "SPV KYC"
+      },
+      {
+        "id": "spv_reg",
+        "name": "SPV / Cooperative / Producer Company Registration Certificate",
+        "required": true,
+        "note": "Legal entity"
+      },
+      {
+        "id": "land_doc",
+        "name": "Land Record for Common Facility Centre (CFC)",
+        "required": true,
+        "note": "Minimum 15-year lease or ownership"
+      },
+      {
+        "id": "project_report",
+        "name": "Comprehensive Diagnostic Study Report (DSR) & DPR",
+        "required": true,
+        "note": "Prepared with Nodal Agency"
+      }
+    ],
+    "channel_partners": {
+      "types": [
+        "KVIC",
+        "Coir Board",
+        "NIMSME",
+        "IEDS"
+      ],
+      "pm_suraj_integrated": false
+    },
+    "metadata": {
+      "active": true,
+      "version": "2026-09",
+      "official_url": "https://sfurti.msme.gov.in",
+      "application_portal": "SFURTI Management Information System",
+      "nodal_agency": "Ministry of MSME",
+      "helpline": "011-23062745"
+    }
+  },
+  {
+    "scheme_id": "ASPIRE",
+    "name": "A Scheme for Promotion of Innovation, Rural Industries & Entrepreneurship",
+    "short_name": "ASPIRE Rural Incubation",
+    "ministry": "Ministry of Micro, Small and Medium Enterprises",
+    "category": "Rural",
+    "description": "Supports creation of Livelihood Business Incubators (LBI) and provides seed capital grants up to ₹1 Crore for training youth and handholding them into local agri-business startups.",
+    "tags": [
+      "aspire",
+      "rural startup",
+      "business incubator",
+      "lbi",
+      "agri business",
+      "skill incubation"
+    ],
+    "eligibility": {
+      "age": {
+        "min": 18,
+        "max": 50
+      },
+      "income_annual": {
+        "min": null,
+        "max": null
+      },
+      "gender": [
+        "M",
+        "F",
+        "O"
+      ],
+      "social_categories": [
+        "SC",
+        "ST",
+        "OBC",
+        "GEN",
+        "MINORITY",
+        "EWS",
+        "PWD"
+      ],
+      "activities": [
+        "food_processing",
+        "agriculture",
+        "manufacturing",
+        "technology"
+      ],
+      "activity_categories": [
+        "msme",
+        "agriculture"
+      ],
+      "location": {
+        "states": [
+          "all"
+        ],
+        "urban_only": false,
+        "rural_only": true
+      },
+      "occupation": [
+        "entrepreneur"
+      ],
+      "existing_business": null,
+      "disability": null,
+      "minority": null,
+      "min_project_cost": 500000,
+      "max_project_cost": 10000000,
+      "custom_rules": []
+    },
+    "financing": {
+      "type": "grant",
+      "max_amount": 10000000,
+      "min_amount": 500000,
+      "interest_rate": {
+        "base": 0,
+        "subsidy_rate": 0,
+        "effective_rate": 0
+      },
+      "own_contribution_pct": 10,
+      "tenure_months": {
+        "min": 0,
+        "max": 0
+      },
+      "moratorium_months": 0,
+      "collateral_required": false,
+      "subsidy_amount": 10000000,
+      "subsidy_pct": 90,
+      "subsidy_notes": "100% grant up to ₹100 Lakh for Government agencies / 75% up to ₹75 Lakh for private institutions to set up business incubation centres."
+    },
+    "documents": [
+      {
+        "id": "aadhaar",
+        "name": "Aadhaar of Lead Entrepreneur / Agency Head",
+        "required": true,
+        "note": "Identity proof"
+      },
+      {
+        "id": "pan",
+        "name": "PAN Card of Applicant Entity",
+        "required": true,
+        "note": "Tax registration"
+      },
+      {
+        "id": "project_report",
+        "name": "Livelihood Business Incubator Proposal",
+        "required": true,
+        "note": "Course curriculum & trade focus"
+      }
+    ],
+    "channel_partners": {
+      "types": [
+        "NSIC",
+        "KVIC",
+        "Coir Board",
+        "SIDBI"
+      ],
+      "pm_suraj_integrated": false
+    },
+    "metadata": {
+      "active": true,
+      "version": "2026-09",
+      "official_url": "https://aspire.msme.gov.in",
+      "application_portal": "ASPIRE e-Portal",
+      "nodal_agency": "Ministry of MSME",
+      "helpline": "011-23061543"
+    }
+  },
+  {
+    "scheme_id": "SISFS",
+    "name": "Startup India Seed Fund Scheme",
+    "short_name": "Startup India Seed Fund",
+    "ministry": "Ministry of Commerce and Industry",
+    "category": "MSME",
+    "description": "Financial assistance up to ₹20 Lakh as grant for proof of concept, prototype development, and product trials, plus up to ₹50 Lakh via convertible debentures for market entry.",
+    "tags": [
+      "startup",
+      "dpiit",
+      "seed fund",
+      "prototype",
+      "technology",
+      "proof of concept",
+      "innovation"
+    ],
+    "eligibility": {
+      "age": {
+        "min": 18,
+        "max": 60
+      },
+      "income_annual": {
+        "min": null,
+        "max": null
+      },
+      "gender": [
+        "M",
+        "F",
+        "O"
+      ],
+      "social_categories": [
+        "SC",
+        "ST",
+        "OBC",
+        "GEN",
+        "MINORITY",
+        "EWS",
+        "PWD"
+      ],
+      "activities": [
+        "technology",
+        "electronics",
+        "food_processing",
+        "manufacturing",
+        "services",
+        "energy"
+      ],
+      "activity_categories": [
+        "msme",
+        "services"
+      ],
+      "location": {
+        "states": [
+          "all"
+        ],
+        "urban_only": false,
+        "rural_only": false
+      },
+      "occupation": [
+        "entrepreneur"
+      ],
+      "existing_business": true,
+      "disability": null,
+      "minority": null,
+      "min_project_cost": 500000,
+      "max_project_cost": 5000000,
+      "custom_rules": []
+    },
+    "financing": {
+      "type": "composite",
+      "max_amount": 5000000,
+      "min_amount": 500000,
+      "interest_rate": {
+        "base": 0,
+        "subsidy_rate": 0,
+        "effective_rate": 0
+      },
+      "own_contribution_pct": 0,
+      "tenure_months": {
+        "min": 12,
+        "max": 60
+      },
+      "moratorium_months": 12,
+      "collateral_required": false,
+      "subsidy_amount": 2000000,
+      "subsidy_pct": null,
+      "subsidy_notes": "Up to ₹20,00,000 pure grant for prototype development; up to ₹50,00,000 convertible debt/equity for commercialization."
+    },
+    "documents": [
+      {
+        "id": "aadhaar",
+        "name": "Aadhaar of Founder Directors",
+        "required": true,
+        "note": "Founders KYC"
+      },
+      {
+        "id": "dpiit_cert",
+        "name": "DPIIT Startup Recognition Certificate",
+        "required": true,
+        "note": "From startupindia.gov.in"
+      },
+      {
+        "id": "pitch_deck",
+        "name": "Pitch Deck & Business Plan",
+        "required": true,
+        "note": "Problem statement, solution, and budget"
+      },
+      {
+        "id": "cin_cert",
+        "name": "Certificate of Incorporation & Company PAN",
+        "required": true,
+        "note": "Incorporated <= 2 years"
+      }
+    ],
+    "channel_partners": {
+      "types": [
+        "DPIIT Empanelled Incubators",
+        "IIT/IIM Incubators",
+        "Science & Tech Parks"
+      ],
+      "pm_suraj_integrated": false
+    },
+    "metadata": {
+      "active": true,
+      "version": "2026-09",
+      "official_url": "https://seedfund.startupindia.gov.in",
+      "application_portal": "Startup India Seed Fund Portal",
+      "nodal_agency": "DPIIT / Startup India",
+      "helpline": "1800-115-565"
+    }
+  },
+  {
+    "scheme_id": "CGTMSE",
+    "name": "Credit Guarantee Scheme for Micro and Small Enterprises",
+    "short_name": "CGTMSE Collateral-Free Cover",
+    "ministry": "Ministry of Micro, Small and Medium Enterprises",
+    "category": "Financial",
+    "description": "Enables micro and small entrepreneurs to secure collateral-free bank loans up to ₹5 Crore with government guarantee cover up to 85% (up to 90% for women and aspirational districts).",
+    "tags": [
+      "cgtmse",
+      "collateral free",
+      "bank guarantee",
+      "no property mortgage",
+      "msme loan",
+      "sidbi"
+    ],
+    "eligibility": {
+      "age": {
+        "min": 18,
+        "max": 65
+      },
+      "income_annual": {
+        "min": null,
+        "max": null
+      },
+      "gender": [
+        "M",
+        "F",
+        "O"
+      ],
+      "social_categories": [
+        "SC",
+        "ST",
+        "OBC",
+        "GEN",
+        "MINORITY",
+        "EWS",
+        "PWD"
+      ],
+      "activities": [
+        "manufacturing",
+        "services",
+        "retail",
+        "food_processing",
+        "tailoring",
+        "electronics",
+        "transport"
+      ],
+      "activity_categories": [
+        "msme",
+        "services"
+      ],
+      "location": {
+        "states": [
+          "all"
+        ],
+        "urban_only": false,
+        "rural_only": false
+      },
+      "occupation": [
+        "entrepreneur",
+        "self_employed"
+      ],
+      "existing_business": null,
+      "disability": null,
+      "minority": null,
+      "min_project_cost": 500000,
+      "max_project_cost": 50000000,
+      "custom_rules": []
+    },
+    "financing": {
+      "type": "guarantee",
+      "max_amount": 50000000,
+      "min_amount": 500000,
+      "interest_rate": {
+        "base": 9.5,
+        "subsidy_rate": 0,
+        "effective_rate": 9.5
+      },
+      "own_contribution_pct": 10,
+      "tenure_months": {
+        "min": 36,
+        "max": 84
+      },
+      "moratorium_months": 6,
+      "collateral_required": false,
+      "subsidy_amount": null,
+      "subsidy_pct": null,
+      "subsidy_notes": "CGTMSE provides 75% to 85% credit guarantee cover to the lending bank, removing the requirement of collateral security or third-party guarantee."
+    },
+    "documents": [
+      {
+        "id": "aadhaar",
+        "name": "Aadhaar Card",
+        "required": true,
+        "note": "Promoter KYC"
+      },
+      {
+        "id": "pan",
+        "name": "PAN Card",
+        "required": true,
+        "note": "Personal and entity PAN"
+      },
+      {
+        "id": "udyam_reg",
+        "name": "Udyam Registration Certificate",
+        "required": true,
+        "note": "Active MSME status"
+      },
+      {
+        "id": "project_report",
+        "name": "Bank DPR with Machinery Invoices",
+        "required": true,
+        "note": "For term loan assessment"
+      },
+      {
+        "id": "bank_statement",
+        "name": "Last 12 Months Bank Statements",
+        "required": true,
+        "note": "Financial track record"
+      }
+    ],
+    "channel_partners": {
+      "types": [
+        "All Scheduled Commercial Banks",
+        "Select Regional Rural Banks",
+        "SIDBI"
+      ],
+      "pm_suraj_integrated": true
+    },
+    "metadata": {
+      "active": true,
+      "version": "2026-09",
+      "official_url": "https://www.cgtmse.in",
+      "application_portal": "Through any Scheduled Bank Branch",
+      "nodal_agency": "CGTMSE / SIDBI",
+      "helpline": "022-67531100"
+    }
+  },
+  {
+    "scheme_id": "DAY_NRLM",
+    "name": "Deendayal Antyodaya Yojana - National Rural Livelihoods Mission",
+    "short_name": "DAY-NRLM Women SHG Loan",
+    "ministry": "Ministry of Rural Development",
+    "category": "Rural",
+    "description": "Revolving fund and bank credit linkage for rural women Self Help Groups (SHGs) up to ₹10-20 Lakh @ 7% subsidized interest with additional 3% subvention for prompt repayment (net 4%).",
+    "tags": [
+      "nrlm",
+      "shg",
+      "self help group",
+      "rural women",
+      "bachat gat",
+      "4 percent interest",
+      "women empowerment"
+    ],
+    "eligibility": {
+      "age": {
+        "min": 18,
+        "max": 60
+      },
+      "income_annual": {
+        "min": null,
+        "max": 250000
+      },
+      "gender": [
+        "F"
+      ],
+      "social_categories": [
+        "SC",
+        "ST",
+        "OBC",
+        "GEN",
+        "MINORITY",
+        "EWS",
+        "PWD"
+      ],
+      "activities": [
+        "dairy",
+        "poultry",
+        "tailoring",
+        "handicraft",
+        "retail",
+        "food_processing",
+        "agriculture"
+      ],
+      "activity_categories": [
+        "agriculture",
+        "msme",
+        "services"
+      ],
+      "location": {
+        "states": [
+          "all"
+        ],
+        "urban_only": false,
+        "rural_only": true
+      },
+      "occupation": [
+        "self_employed"
+      ],
+      "existing_business": null,
+      "disability": null,
+      "minority": null,
+      "min_project_cost": 25000,
+      "max_project_cost": 1000000,
+      "custom_rules": []
+    },
+    "financing": {
+      "type": "composite",
+      "max_amount": 1000000,
+      "min_amount": 25000,
+      "interest_rate": {
+        "base": 7,
+        "subsidy_rate": 3,
+        "effective_rate": 4
+      },
+      "own_contribution_pct": 0,
+      "tenure_months": {
+        "min": 24,
+        "max": 60
+      },
+      "moratorium_months": 0,
+      "collateral_required": false,
+      "subsidy_amount": 15000,
+      "subsidy_pct": null,
+      "subsidy_notes": "Revolving Fund of ₹15,000 + Community Investment Fund up to ₹1.5 Lakh + Bank linkage loan @ effective 4% interest upon timely repayment."
+    },
+    "documents": [
+      {
+        "id": "aadhaar",
+        "name": "Aadhaar of SHG Members",
+        "required": true,
+        "note": "All members KYC"
+      },
+      {
+        "id": "shg_resolution",
+        "name": "SHG Loan Resolution Book & Minutes",
+        "required": true,
+        "note": "Approved by all members"
+      },
+      {
+        "id": "bank_passbook",
+        "name": "SHG Savings Bank Account Passbook",
+        "required": true,
+        "note": "Active minimum 6 months"
+      }
+    ],
+    "channel_partners": {
+      "types": [
+        "Public Sector Banks",
+        "Regional Rural Banks (RRBs)",
+        "State Rural Livelihood Missions (SRLM)"
+      ],
+      "pm_suraj_integrated": true
+    },
+    "metadata": {
+      "active": true,
+      "version": "2026-09",
+      "official_url": "https://aajeevika.gov.in",
+      "application_portal": "Through Village Organisation (VO) / Bank Branch",
+      "nodal_agency": "Ministry of Rural Development",
+      "helpline": "1800-180-1551"
+    }
+  },
+  {
+    "scheme_id": "DAY_NULM",
+    "name": "Deendayal Antyodaya Yojana - National Urban Livelihoods Mission",
+    "short_name": "DAY-NULM Urban Self-Employment",
+    "ministry": "Ministry of Housing and Urban Affairs",
+    "category": "Urban",
+    "description": "Subsidized micro-enterprise loans for urban poor individuals up to ₹2 Lakh and groups up to ₹10 Lakh with interest subvention over and above 7% p.a.",
+    "tags": [
+      "nulm",
+      "urban poor",
+      "self employment",
+      "sep",
+      "interest subsidy",
+      "city enterprise"
+    ],
+    "eligibility": {
+      "age": {
+        "min": 18,
+        "max": 60
+      },
+      "income_annual": {
+        "min": null,
+        "max": 200000
+      },
+      "gender": [
+        "M",
+        "F",
+        "O"
+      ],
+      "social_categories": [
+        "SC",
+        "ST",
+        "OBC",
+        "GEN",
+        "MINORITY",
+        "EWS",
+        "PWD"
+      ],
+      "activities": [
+        "retail",
+        "services",
+        "tailoring",
+        "electronics",
+        "food_services",
+        "beauty_services"
+      ],
+      "activity_categories": [
+        "services",
+        "msme"
+      ],
+      "location": {
+        "states": [
+          "all"
+        ],
+        "urban_only": true,
+        "rural_only": false
+      },
+      "occupation": [
+        "self_employed",
+        "entrepreneur"
+      ],
+      "existing_business": null,
+      "disability": null,
+      "minority": null,
+      "min_project_cost": 20000,
+      "max_project_cost": 200000,
+      "custom_rules": []
+    },
+    "financing": {
+      "type": "loan",
+      "max_amount": 200000,
+      "min_amount": 20000,
+      "interest_rate": {
+        "base": 10,
+        "subsidy_rate": 3,
+        "effective_rate": 7
+      },
+      "own_contribution_pct": 5,
+      "tenure_months": {
+        "min": 36,
+        "max": 60
+      },
+      "moratorium_months": 6,
+      "collateral_required": false,
+      "subsidy_amount": null,
+      "subsidy_pct": null,
+      "subsidy_notes": "All interest charged above 7% p.a. is reimbursed directly to the bank as interest subvention by the Central Government."
+    },
+    "documents": [
+      {
+        "id": "aadhaar",
+        "name": "Aadhaar Card",
+        "required": true,
+        "note": "Identity and address proof"
+      },
+      {
+        "id": "income_cert",
+        "name": "Urban Poor Certificate / BPL proof",
+        "required": true,
+        "note": "Issued by Municipality / Ward"
+      },
+      {
+        "id": "project_report",
+        "name": "Basic Business Cost Estimate",
+        "required": true,
+        "note": "Equipment estimate"
+      },
+      {
+        "id": "bank_passbook",
+        "name": "Bank Account Passbook copy",
+        "required": true,
+        "note": "Active account"
+      }
+    ],
+    "channel_partners": {
+      "types": [
+        "Urban Local Bodies (ULB)",
+        "City Mission Management Units (CMMU)",
+        "Commercial Banks"
+      ],
+      "pm_suraj_integrated": true
+    },
+    "metadata": {
+      "active": true,
+      "version": "2026-09",
+      "official_url": "https://nulm.gov.in",
+      "application_portal": "NULM Portal / ULB City Livelihood Centre",
+      "nodal_agency": "Ministry of Housing and Urban Affairs",
+      "helpline": "1800-11-1979"
+    }
+  },
+  {
+    "scheme_id": "SVAMITVA",
+    "name": "SVAMITVA Property Card Loan Linkage",
+    "short_name": "SVAMITVA Property Card Loan",
+    "ministry": "Ministry of Panchayati Raj",
+    "category": "Rural",
+    "description": "Enables rural property owners with drone-surveyed SVAMITVA Property Cards to monetize their residential village abadi land as clear financial collateral for commercial and agricultural loans.",
+    "tags": [
+      "svamitva",
+      "property card",
+      "village property",
+      "abadi land",
+      "rural collateral",
+      "panchayati raj"
+    ],
+    "eligibility": {
+      "age": {
+        "min": 18,
+        "max": 70
+      },
+      "income_annual": {
+        "min": null,
+        "max": null
+      },
+      "gender": [
+        "M",
+        "F",
+        "O"
+      ],
+      "social_categories": [
+        "SC",
+        "ST",
+        "OBC",
+        "GEN",
+        "MINORITY",
+        "EWS",
+        "PWD"
+      ],
+      "activities": [
+        "agriculture",
+        "dairy",
+        "manufacturing",
+        "retail",
+        "services",
+        "transport"
+      ],
+      "activity_categories": [
+        "agriculture",
+        "msme",
+        "services"
+      ],
+      "location": {
+        "states": [
+          "all"
+        ],
+        "urban_only": false,
+        "rural_only": true
+      },
+      "occupation": [
+        "farmer",
+        "self_employed",
+        "entrepreneur"
+      ],
+      "existing_business": null,
+      "disability": null,
+      "minority": null,
+      "min_project_cost": 50000,
+      "max_project_cost": 2500000,
+      "custom_rules": []
+    },
+    "financing": {
+      "type": "loan",
+      "max_amount": 2500000,
+      "min_amount": 50000,
+      "interest_rate": {
+        "base": 8.75,
+        "subsidy_rate": 0,
+        "effective_rate": 8.75
+      },
+      "own_contribution_pct": 10,
+      "tenure_months": {
+        "min": 36,
+        "max": 120
+      },
+      "moratorium_months": 6,
+      "collateral_required": true,
+      "subsidy_amount": null,
+      "subsidy_pct": null,
+      "subsidy_notes": "SVAMITVA Property Cards provide legally verified ownership of village land, unlocking institutional bank loans at standard agricultural/home loan interest rates."
+    },
+    "documents": [
+      {
+        "id": "aadhaar",
+        "name": "Aadhaar Card",
+        "required": true,
+        "note": "Identity and biometric verification"
+      },
+      {
+        "id": "svamitva_card",
+        "name": "SVAMITVA Property Card / Gharouni",
+        "required": true,
+        "note": "Issued by State Revenue Dept / Panchayati Raj"
+      },
+      {
+        "id": "project_report",
+        "name": "Loan Purpose Application / Business Quotation",
+        "required": true,
+        "note": "Details of utilization"
+      },
+      {
+        "id": "bank_statement",
+        "name": "Bank Passbook / 6-Month Statement",
+        "required": true,
+        "note": "Savings account"
+      }
+    ],
+    "channel_partners": {
+      "types": [
+        "Public Sector Banks",
+        "Regional Rural Banks",
+        "State Cooperative Banks"
+      ],
+      "pm_suraj_integrated": true
+    },
+    "metadata": {
+      "active": true,
+      "version": "2026-09",
+      "official_url": "https://svamitva.nic.in",
+      "application_portal": "Through any Scheduled Bank Branch using SVAMITVA Card",
+      "nodal_agency": "Ministry of Panchayati Raj / Survey of India",
+      "helpline": "011-23389012"
+    }
+  },
+  {
+    "scheme_id": "TREAD_WOMEN",
+    "name": "Trade Related Entrepreneurship Assistance and Development for Women",
+    "short_name": "TREAD Scheme for Women",
+    "ministry": "Ministry of Micro, Small and Medium Enterprises",
+    "category": "Women",
+    "description": "Promotes women entrepreneurship through government grant of up to 30% of project cost (max ₹30 Lakh) via NGOs/Institutions, with remaining 70% financed by banks.",
+    "tags": [
+      "tread",
+      "women grant",
+      "self help group",
+      "ngo",
+      "non farm enterprise",
+      "women entrepreneur"
+    ],
+    "eligibility": {
+      "age": {
+        "min": 18,
+        "max": 60
+      },
+      "income_annual": {
+        "min": null,
+        "max": null
+      },
+      "gender": [
+        "F"
+      ],
+      "social_categories": [
+        "SC",
+        "ST",
+        "OBC",
+        "GEN",
+        "MINORITY",
+        "EWS",
+        "PWD"
+      ],
+      "activities": [
+        "tailoring",
+        "handicraft",
+        "food_processing",
+        "retail",
+        "services",
+        "weaving"
+      ],
+      "activity_categories": [
+        "msme",
+        "services"
+      ],
+      "location": {
+        "states": [
+          "all"
+        ],
+        "urban_only": false,
+        "rural_only": false
+      },
+      "occupation": [
+        "self_employed",
+        "entrepreneur"
+      ],
+      "existing_business": null,
+      "disability": null,
+      "minority": null,
+      "min_project_cost": 50000,
+      "max_project_cost": 3000000,
+      "custom_rules": []
+    },
+    "financing": {
+      "type": "composite",
+      "max_amount": 3000000,
+      "min_amount": 50000,
+      "interest_rate": {
+        "base": 8.5,
+        "subsidy_rate": 0,
+        "effective_rate": 8.5
+      },
+      "own_contribution_pct": 10,
+      "tenure_months": {
+        "min": 24,
+        "max": 60
+      },
+      "moratorium_months": 6,
+      "collateral_required": false,
+      "subsidy_amount": null,
+      "subsidy_pct": 30,
+      "subsidy_notes": "Government provides 30% of total project cost as grant; remaining 70% is financed through bank loan."
+    },
+    "documents": [
+      {
+        "id": "aadhaar",
+        "name": "Aadhaar Card of Woman Entrepreneur",
+        "required": true,
+        "note": "Identity proof"
+      },
+      {
+        "id": "bank_passbook",
+        "name": "Bank Passbook / Account details",
+        "required": true,
+        "note": "Active account"
+      },
+      {
+        "id": "project_report",
+        "name": "Project Proposal via Sponsoring NGO / SHG",
+        "required": true,
+        "note": "Endorsed proposal"
+      }
+    ],
+    "channel_partners": {
+      "types": [
+        "Micro-Finance Institutions",
+        "Commercial Banks",
+        "District Industries Centres"
+      ],
+      "pm_suraj_integrated": true
+    },
+    "metadata": {
+      "active": true,
+      "version": "2026-09",
+      "official_url": "https://msme.gov.in/tread-scheme-women",
+      "application_portal": "Through MSME-Development Institutes / DIC",
+      "nodal_agency": "Office of DC-MSME",
+      "helpline": "1800-180-6763"
+    }
+  },
+  {
+    "scheme_id": "ANNAPURNA",
+    "name": "Annapurna Scheme for Women Food Catering Units",
+    "short_name": "Annapurna Catering Loan",
+    "ministry": "Ministry of Finance",
+    "category": "Women",
+    "description": "Special loan up to ₹50,000 for women establishing packaged food, tiffin, catering, and snack businesses to purchase cooking utensils, water filters, and lunch boxes.",
+    "tags": [
+      "annapurna",
+      "food catering",
+      "tiffin service",
+      "canteen",
+      "women food enterprise",
+      "kitchen equipment"
+    ],
+    "eligibility": {
+      "age": {
+        "min": 18,
+        "max": 60
+      },
+      "income_annual": {
+        "min": null,
+        "max": null
+      },
+      "gender": [
+        "F"
+      ],
+      "social_categories": [
+        "SC",
+        "ST",
+        "OBC",
+        "GEN",
+        "MINORITY",
+        "EWS",
+        "PWD"
+      ],
+      "activities": [
+        "food_services",
+        "food_processing",
+        "retail"
+      ],
+      "activity_categories": [
+        "services",
+        "msme"
+      ],
+      "location": {
+        "states": [
+          "all"
+        ],
+        "urban_only": false,
+        "rural_only": false
+      },
+      "occupation": [
+        "self_employed",
+        "entrepreneur"
+      ],
+      "existing_business": null,
+      "disability": null,
+      "minority": null,
+      "min_project_cost": 10000,
+      "max_project_cost": 50000,
+      "custom_rules": []
+    },
+    "financing": {
+      "type": "loan",
+      "max_amount": 50000,
+      "min_amount": 10000,
+      "interest_rate": {
+        "base": 9,
+        "subsidy_rate": null,
+        "effective_rate": 9
+      },
+      "own_contribution_pct": 0,
+      "tenure_months": {
+        "min": 12,
+        "max": 36
+      },
+      "moratorium_months": 1,
+      "collateral_required": false,
+      "subsidy_amount": null,
+      "subsidy_pct": null,
+      "subsidy_notes": "Repayable in 36 monthly instalments with 1 month moratorium."
+    },
+    "documents": [
+      {
+        "id": "aadhaar",
+        "name": "Aadhaar Card",
+        "required": true,
+        "note": "Identity and address proof"
+      },
+      {
+        "id": "bank_passbook",
+        "name": "Bank Passbook copy",
+        "required": true,
+        "note": "KYC compliant"
+      },
+      {
+        "id": "quotation",
+        "name": "Quotation for kitchen/catering utensils and appliances",
+        "required": true,
+        "note": "Items estimate"
+      }
+    ],
+    "channel_partners": {
+      "types": [
+        "Public Sector Banks",
+        "State Bank of India",
+        "Select Regional Rural Banks"
+      ],
+      "pm_suraj_integrated": true
+    },
+    "metadata": {
+      "active": true,
+      "version": "2026-09",
+      "official_url": "https://myscheme.gov.in/schemes/annapurna",
+      "application_portal": "Through Public Sector Bank Branches",
+      "nodal_agency": "Department of Financial Services",
+      "helpline": "1800-11-2211"
+    }
+  },
+  {
+    "scheme_id": "STREE_SHAKTI",
+    "name": "Stree Shakti Package for Women Entrepreneurs",
+    "short_name": "Stree Shakti Package",
+    "ministry": "Ministry of Finance",
+    "category": "Women",
+    "description": "Concessional credit package for enterprises with majority (> 50%) women ownership, offering 0.5% interest rate discount on loans above ₹2 Lakh and zero margin money up to ₹50,000.",
+    "tags": [
+      "stree shakti",
+      "sbi women loan",
+      "interest concession",
+      "majority women ownership",
+      "retail",
+      "msme"
+    ],
+    "eligibility": {
+      "age": {
+        "min": 18,
+        "max": 65
+      },
+      "income_annual": {
+        "min": null,
+        "max": null
+      },
+      "gender": [
+        "F"
+      ],
+      "social_categories": [
+        "SC",
+        "ST",
+        "OBC",
+        "GEN",
+        "MINORITY",
+        "EWS",
+        "PWD"
+      ],
+      "activities": [
+        "retail",
+        "services",
+        "manufacturing",
+        "tailoring",
+        "beauty_services",
+        "food_processing"
+      ],
+      "activity_categories": [
+        "msme",
+        "services"
+      ],
+      "location": {
+        "states": [
+          "all"
+        ],
+        "urban_only": false,
+        "rural_only": false
+      },
+      "occupation": [
+        "entrepreneur",
+        "self_employed"
+      ],
+      "existing_business": null,
+      "disability": null,
+      "minority": null,
+      "min_project_cost": 50000,
+      "max_project_cost": 5000000,
+      "custom_rules": []
+    },
+    "financing": {
+      "type": "loan",
+      "max_amount": 5000000,
+      "min_amount": 50000,
+      "interest_rate": {
+        "base": 9,
+        "subsidy_rate": 0.5,
+        "effective_rate": 8.5
+      },
+      "own_contribution_pct": 10,
+      "tenure_months": {
+        "min": 24,
+        "max": 84
+      },
+      "moratorium_months": 6,
+      "collateral_required": false,
+      "subsidy_amount": null,
+      "subsidy_pct": null,
+      "subsidy_notes": "0.50% interest concession on loans exceeding ₹2,00,000. Zero margin required up to ₹50,000."
+    },
+    "documents": [
+      {
+        "id": "aadhaar",
+        "name": "Aadhaar Card of Woman Promoter",
+        "required": true,
+        "note": "Identity proof"
+      },
+      {
+        "id": "pan",
+        "name": "PAN Card",
+        "required": true,
+        "note": "Business/Personal PAN"
+      },
+      {
+        "id": "partnership_deed",
+        "name": "Partnership Deed / Shareholding Pattern proving > 50% women equity",
+        "required": true,
+        "note": "Ownership proof"
+      },
+      {
+        "id": "bank_statement",
+        "name": "Last 6 Months Bank Statement",
+        "required": true,
+        "note": "Active account"
+      }
+    ],
+    "channel_partners": {
+      "types": [
+        "State Bank of India",
+        "Commercial Banks"
+      ],
+      "pm_suraj_integrated": true
+    },
+    "metadata": {
+      "active": true,
+      "version": "2026-09",
+      "official_url": "https://sbi.co.in/web/business/sme/sme-loans/stree-shakti-package",
+      "application_portal": "State Bank of India SME Branches",
+      "nodal_agency": "State Bank of India / DFS",
+      "helpline": "1800-1234"
+    }
+  },
+  {
+    "scheme_id": "DENA_SHAKTI",
+    "name": "Dena Shakti Scheme for Women Entrepreneurs",
+    "short_name": "Dena Shakti Scheme",
+    "ministry": "Ministry of Finance",
+    "category": "Women",
+    "description": "Financial assistance up to ₹20 Lakh for women in agriculture, manufacturing, micro-credit, retail shops, and allied activities with a 0.25% interest concession.",
+    "tags": [
+      "dena shakti",
+      "women retail",
+      "handicraft loan",
+      "micro enterprise",
+      "agriculture women"
+    ],
+    "eligibility": {
+      "age": {
+        "min": 18,
+        "max": 65
+      },
+      "income_annual": {
+        "min": null,
+        "max": null
+      },
+      "gender": [
+        "F"
+      ],
+      "social_categories": [
+        "SC",
+        "ST",
+        "OBC",
+        "GEN",
+        "MINORITY",
+        "EWS",
+        "PWD"
+      ],
+      "activities": [
+        "agriculture",
+        "retail",
+        "services",
+        "manufacturing",
+        "handicraft",
+        "tailoring"
+      ],
+      "activity_categories": [
+        "msme",
+        "services",
+        "agriculture"
+      ],
+      "location": {
+        "states": [
+          "all"
+        ],
+        "urban_only": false,
+        "rural_only": false
+      },
+      "occupation": [
+        "self_employed",
+        "entrepreneur"
+      ],
+      "existing_business": null,
+      "disability": null,
+      "minority": null,
+      "min_project_cost": 25000,
+      "max_project_cost": 2000000,
+      "custom_rules": []
+    },
+    "financing": {
+      "type": "loan",
+      "max_amount": 2000000,
+      "min_amount": 25000,
+      "interest_rate": {
+        "base": 8.75,
+        "subsidy_rate": 0.25,
+        "effective_rate": 8.5
+      },
+      "own_contribution_pct": 10,
+      "tenure_months": {
+        "min": 24,
+        "max": 60
+      },
+      "moratorium_months": 6,
+      "collateral_required": false,
+      "subsidy_amount": null,
+      "subsidy_pct": null,
+      "subsidy_notes": "0.25% interest rate discount for women-owned micro enterprises."
+    },
+    "documents": [
+      {
+        "id": "aadhaar",
+        "name": "Aadhaar Card",
+        "required": true,
+        "note": "Identity and address proof"
+      },
+      {
+        "id": "pan",
+        "name": "PAN Card",
+        "required": true,
+        "note": "Tax identification"
+      },
+      {
+        "id": "project_report",
+        "name": "Business Quotation / Plan",
+        "required": true,
+        "note": "Equipment purchase"
+      }
+    ],
+    "channel_partners": {
+      "types": [
+        "Bank of Baroda",
+        "Nationalized Banks"
+      ],
+      "pm_suraj_integrated": true
+    },
+    "metadata": {
+      "active": true,
+      "version": "2026-09",
+      "official_url": "https://www.bankofbaroda.in",
+      "application_portal": "Bank of Baroda Branches",
+      "nodal_agency": "Bank of Baroda",
+      "helpline": "1800-5700"
+    }
+  },
+  {
+    "scheme_id": "CENT_KALYANI",
+    "name": "Cent Kalyani Scheme for Women Entrepreneurs",
+    "short_name": "Cent Kalyani Loan",
+    "ministry": "Ministry of Finance",
+    "category": "Women",
+    "description": "Loan facility up to ₹1 Crore for women entrepreneurs starting or expanding MSME units, small shops, beauty parlours, day-care centres, or tailoring boutiques with zero processing fees.",
+    "tags": [
+      "cent kalyani",
+      "beauty parlour",
+      "boutique",
+      "day care",
+      "women clinic",
+      "central bank"
+    ],
+    "eligibility": {
+      "age": {
+        "min": 18,
+        "max": 65
+      },
+      "income_annual": {
+        "min": null,
+        "max": null
+      },
+      "gender": [
+        "F"
+      ],
+      "social_categories": [
+        "SC",
+        "ST",
+        "OBC",
+        "GEN",
+        "MINORITY",
+        "EWS",
+        "PWD"
+      ],
+      "activities": [
+        "beauty_services",
+        "tailoring",
+        "health_services",
+        "education",
+        "retail",
+        "services",
+        "manufacturing"
+      ],
+      "activity_categories": [
+        "msme",
+        "services"
+      ],
+      "location": {
+        "states": [
+          "all"
+        ],
+        "urban_only": false,
+        "rural_only": false
+      },
+      "occupation": [
+        "entrepreneur",
+        "self_employed"
+      ],
+      "existing_business": null,
+      "disability": null,
+      "minority": null,
+      "min_project_cost": 50000,
+      "max_project_cost": 10000000,
+      "custom_rules": []
+    },
+    "financing": {
+      "type": "loan",
+      "max_amount": 10000000,
+      "min_amount": 50000,
+      "interest_rate": {
+        "base": 8.75,
+        "subsidy_rate": null,
+        "effective_rate": 8.75
+      },
+      "own_contribution_pct": 10,
+      "tenure_months": {
+        "min": 36,
+        "max": 84
+      },
+      "moratorium_months": 6,
+      "collateral_required": false,
+      "subsidy_amount": null,
+      "subsidy_pct": null,
+      "subsidy_notes": "Zero margin money required for loans up to ₹10 Lakh; zero processing fees."
+    },
+    "documents": [
+      {
+        "id": "aadhaar",
+        "name": "Aadhaar Card",
+        "required": true,
+        "note": "Identity proof"
+      },
+      {
+        "id": "pan",
+        "name": "PAN Card",
+        "required": true,
+        "note": "Tax registration"
+      },
+      {
+        "id": "bank_statement",
+        "name": "Bank Statement (Last 6 months)",
+        "required": true,
+        "note": "Bank statement"
+      },
+      {
+        "id": "project_report",
+        "name": "Project Report with Machinery details",
+        "required": true,
+        "note": "Equipment estimate"
+      }
+    ],
+    "channel_partners": {
+      "types": [
+        "Central Bank of India",
+        "Public Sector Banks"
+      ],
+      "pm_suraj_integrated": true
+    },
+    "metadata": {
+      "active": true,
+      "version": "2026-09",
+      "official_url": "https://centralbankofindia.co.in",
+      "application_portal": "Central Bank of India Branches",
+      "nodal_agency": "Central Bank of India",
+      "helpline": "1800-22-1911"
+    }
+  },
+  {
+    "scheme_id": "UDYOGINI",
+    "name": "Udyogini Scheme for Women Empowerment",
+    "short_name": "Udyogini Scheme for Women",
+    "ministry": "Ministry of Women and Child Development",
+    "category": "Women",
+    "description": "Subsidized loan up to ₹3 Lakh for women starting small businesses in 88 scheduled activities (bakeries, grocery, tailoring, dairy) with up to 30% capital subsidy for SC/ST and poor women.",
+    "tags": [
+      "udyogini",
+      "women subsidy",
+      "grocery",
+      "bakery",
+      "tailoring",
+      "women development"
+    ],
+    "eligibility": {
+      "age": {
+        "min": 18,
+        "max": 55
+      },
+      "income_annual": {
+        "min": null,
+        "max": 150000
+      },
+      "gender": [
+        "F"
+      ],
+      "social_categories": [
+        "SC",
+        "ST",
+        "OBC",
+        "GEN",
+        "MINORITY",
+        "EWS",
+        "PWD"
+      ],
+      "activities": [
+        "retail",
+        "services",
+        "tailoring",
+        "dairy",
+        "food_services",
+        "food_processing",
+        "beauty_services"
+      ],
+      "activity_categories": [
+        "msme",
+        "services",
+        "agriculture"
+      ],
+      "location": {
+        "states": [
+          "all"
+        ],
+        "urban_only": false,
+        "rural_only": false
+      },
+      "occupation": [
+        "self_employed",
+        "entrepreneur"
+      ],
+      "existing_business": null,
+      "disability": null,
+      "minority": null,
+      "min_project_cost": 25000,
+      "max_project_cost": 300000,
+      "custom_rules": []
+    },
+    "financing": {
+      "type": "composite",
+      "max_amount": 300000,
+      "min_amount": 25000,
+      "interest_rate": {
+        "base": 8.5,
+        "subsidy_rate": 0,
+        "effective_rate": 8.5
+      },
+      "own_contribution_pct": 5,
+      "tenure_months": {
+        "min": 24,
+        "max": 60
+      },
+      "moratorium_months": 3,
+      "collateral_required": false,
+      "subsidy_amount": null,
+      "subsidy_pct": 30,
+      "subsidy_notes": "Up to 30% subsidy on loan amount for SC/ST and special category women; up to 20% for General and OBC."
+    },
+    "documents": [
+      {
+        "id": "aadhaar",
+        "name": "Aadhaar Card",
+        "required": true,
+        "note": "Identity and address proof"
+      },
+      {
+        "id": "income_cert",
+        "name": "Income Certificate (Family income <= ₹1.5 Lakh)",
+        "required": true,
+        "note": "Not required for SC/ST"
+      },
+      {
+        "id": "bank_passbook",
+        "name": "Bank Passbook copy",
+        "required": true,
+        "note": "Active account"
+      }
+    ],
+    "channel_partners": {
+      "types": [
+        "State Women Development Corporations",
+        "Commercial Banks",
+        "RRBs"
+      ],
+      "pm_suraj_integrated": true
+    },
+    "metadata": {
+      "active": true,
+      "version": "2026-09",
+      "official_url": "https://myscheme.gov.in/schemes/udyogini",
+      "application_portal": "State Women Development Corporation Offices / Commercial Banks",
+      "nodal_agency": "Women Development Corporation",
+      "helpline": "1800-425-9333"
+    }
+  },
+  {
+    "scheme_id": "MAHILA_SAMRIDDHI",
+    "name": "Mahila Samriddhi Yojana for Backward Class Women",
+    "short_name": "Mahila Samriddhi Yojana",
+    "ministry": "Ministry of Social Justice and Empowerment",
+    "category": "Women",
+    "description": "Micro-finance credit up to ₹1,40,000 at a rock-bottom interest rate of 4% per annum for backward class and marginalized women forming self-help groups or individual ventures.",
+    "tags": [
+      "mahila samriddhi",
+      "nbcfdc",
+      "4 percent interest",
+      "women micro finance",
+      "backward class women"
+    ],
+    "eligibility": {
+      "age": {
+        "min": 18,
+        "max": 60
+      },
+      "income_annual": {
+        "min": null,
+        "max": 300000
+      },
+      "gender": [
+        "F"
+      ],
+      "social_categories": [
+        "OBC",
+        "SC",
+        "ST"
+      ],
+      "activities": [
+        "retail",
+        "services",
+        "tailoring",
+        "dairy",
+        "handicraft",
+        "street_vending"
+      ],
+      "activity_categories": [
+        "msme",
+        "services",
+        "agriculture"
+      ],
+      "location": {
+        "states": [
+          "all"
+        ],
+        "urban_only": false,
+        "rural_only": false
+      },
+      "occupation": [
+        "self_employed"
+      ],
+      "existing_business": null,
+      "disability": null,
+      "minority": null,
+      "min_project_cost": 10000,
+      "max_project_cost": 140000,
+      "custom_rules": []
+    },
+    "financing": {
+      "type": "loan",
+      "max_amount": 140000,
+      "min_amount": 10000,
+      "interest_rate": {
+        "base": 4,
+        "subsidy_rate": null,
+        "effective_rate": 4
+      },
+      "own_contribution_pct": 0,
+      "tenure_months": {
+        "min": 12,
+        "max": 48
+      },
+      "moratorium_months": 3,
+      "collateral_required": false,
+      "subsidy_amount": null,
+      "subsidy_pct": null,
+      "subsidy_notes": "Direct micro-finance at 4% fixed annual interest. Zero collateral and zero processing fee."
+    },
+    "documents": [
+      {
+        "id": "aadhaar",
+        "name": "Aadhaar Card",
+        "required": true,
+        "note": "Identity proof"
+      },
+      {
+        "id": "category_cert",
+        "name": "OBC / SC Certificate",
+        "required": true,
+        "note": "Competent authority"
+      },
+      {
+        "id": "income_cert",
+        "name": "Income Certificate (Family income <= ₹3 Lakh)",
+        "required": true,
+        "note": "Tehsildar issued"
+      }
+    ],
+    "channel_partners": {
+      "types": [
+        "State Channelising Agencies (SCA)",
+        "Select Public Sector Banks",
+        "RRBs"
+      ],
+      "pm_suraj_integrated": true
+    },
+    "metadata": {
+      "active": true,
+      "version": "2026-09",
+      "official_url": "https://nbcfdc.gov.in/schemes",
+      "application_portal": "PM-SURAJ Portal (pmsuraj.dosje.gov.in)",
+      "nodal_agency": "NBCFDC / MoSJ&E",
+      "helpline": "1800-11-2015"
+    }
+  },
+  {
+    "scheme_id": "LAKHPATI_DIDI",
+    "name": "Lakhpati Didi National Rural Livelihood Initiative",
+    "short_name": "Lakhpati Didi Scheme",
+    "ministry": "Ministry of Rural Development",
+    "category": "Women",
+    "description": "Comprehensive livelihood enhancement package enabling rural SHG women to take up diverse micro-enterprises (drone pilots, LED bulb assembly, organic manure, solar repair) earning ₹1 Lakh+ net annually.",
+    "tags": [
+      "lakhpati didi",
+      "nrlm",
+      "drone didi",
+      "shg women",
+      "sustainable livelihood",
+      "rural enterprise"
+    ],
+    "eligibility": {
+      "age": {
+        "min": 18,
+        "max": 55
+      },
+      "income_annual": {
+        "min": null,
+        "max": 250000
+      },
+      "gender": [
+        "F"
+      ],
+      "social_categories": [
+        "SC",
+        "ST",
+        "OBC",
+        "GEN",
+        "MINORITY",
+        "EWS",
+        "PWD"
+      ],
+      "activities": [
+        "agriculture",
+        "dairy",
+        "poultry",
+        "manufacturing",
+        "services",
+        "technology",
+        "energy"
+      ],
+      "activity_categories": [
+        "agriculture",
+        "msme",
+        "services"
+      ],
+      "location": {
+        "states": [
+          "all"
+        ],
+        "urban_only": false,
+        "rural_only": true
+      },
+      "occupation": [
+        "self_employed",
+        "entrepreneur"
+      ],
+      "existing_business": null,
+      "disability": null,
+      "minority": null,
+      "min_project_cost": 25000,
+      "max_project_cost": 500000,
+      "custom_rules": []
+    },
+    "financing": {
+      "type": "composite",
+      "max_amount": 500000,
+      "min_amount": 25000,
+      "interest_rate": {
+        "base": 7,
+        "subsidy_rate": 3,
+        "effective_rate": 4
+      },
+      "own_contribution_pct": 0,
+      "tenure_months": {
+        "min": 24,
+        "max": 60
+      },
+      "moratorium_months": 6,
+      "collateral_required": false,
+      "subsidy_amount": null,
+      "subsidy_pct": null,
+      "subsidy_notes": "Subsidized loan at 4% effective interest via Community Investment Fund + convergence with government assets."
+    },
+    "documents": [
+      {
+        "id": "aadhaar",
+        "name": "Aadhaar Card",
+        "required": true,
+        "note": "Identity proof"
+      },
+      {
+        "id": "shg_resolution",
+        "name": "SHG Membership Certificate / Resolution Book",
+        "required": true,
+        "note": "From Village Organisation"
+      },
+      {
+        "id": "bank_passbook",
+        "name": "Bank Passbook copy",
+        "required": true,
+        "note": "DBT bank account"
+      }
+    ],
+    "channel_partners": {
+      "types": [
+        "State Rural Livelihood Missions (SRLM)",
+        "Gram Panchayats",
+        "Commercial Banks"
+      ],
+      "pm_suraj_integrated": true
+    },
+    "metadata": {
+      "active": true,
+      "version": "2026-09",
+      "official_url": "https://aajeevika.gov.in",
+      "application_portal": "Through Cluster Level Federation (CLF) / Village Organisation (VO)",
+      "nodal_agency": "Ministry of Rural Development",
+      "helpline": "1800-180-1551"
+    }
+  },
+  {
+    "scheme_id": "PMMVY",
+    "name": "Pradhan Mantri Matru Vandana Yojana",
+    "short_name": "PM Matru Vandana Yojana",
+    "ministry": "Ministry of Women and Child Development",
+    "category": "Women",
+    "description": "Direct benefit cash incentive of ₹5,000 in instalments to pregnant women and lactating mothers for wage compensation during childbirth, enabling nutritional recovery.",
+    "tags": [
+      "pmmvy",
+      "maternity benefit",
+      "pregnant women",
+      "dbt cash grant",
+      "nutrition grant",
+      "lactating mother"
+    ],
+    "eligibility": {
+      "age": {
+        "min": 19,
+        "max": 45
+      },
+      "income_annual": {
+        "min": null,
+        "max": 800000
+      },
+      "gender": [
+        "F"
+      ],
+      "social_categories": [
+        "SC",
+        "ST",
+        "OBC",
+        "GEN",
+        "MINORITY",
+        "EWS",
+        "PWD"
+      ],
+      "activities": [
+        "services",
+        "retail",
+        "agriculture",
+        "self_employed"
+      ],
+      "activity_categories": [
+        "services",
+        "agriculture"
+      ],
+      "location": {
+        "states": [
+          "all"
+        ],
+        "urban_only": false,
+        "rural_only": false
+      },
+      "occupation": [
+        "self_employed"
+      ],
+      "existing_business": null,
+      "disability": null,
+      "minority": null,
+      "min_project_cost": 0,
+      "max_project_cost": 5000,
+      "custom_rules": []
+    },
+    "financing": {
+      "type": "grant",
+      "max_amount": 5000,
+      "min_amount": 5000,
+      "interest_rate": {
+        "base": 0,
+        "subsidy_rate": 0,
+        "effective_rate": 0
+      },
+      "own_contribution_pct": 0,
+      "tenure_months": {
+        "min": 0,
+        "max": 0
+      },
+      "moratorium_months": 0,
+      "collateral_required": false,
+      "subsidy_amount": 5000,
+      "subsidy_pct": 100,
+      "subsidy_notes": "100% direct benefit transfer into beneficiary Aadhaar-linked bank account in two instalments upon health milestone checkups."
+    },
+    "documents": [
+      {
+        "id": "aadhaar",
+        "name": "Aadhaar of Mother and Husband",
+        "required": true,
+        "note": "Identity proof"
+      },
+      {
+        "id": "mcp_card",
+        "name": "Mother and Child Protection (MCP) Card",
+        "required": true,
+        "note": "From Anganwadi Centre"
+      },
+      {
+        "id": "bank_passbook",
+        "name": "Aadhaar seeded Bank Passbook copy",
+        "required": true,
+        "note": "Direct cash transfer"
+      }
+    ],
+    "channel_partners": {
+      "types": [
+        "Anganwadi Centres",
+        "Primary Health Centres (PHC)",
+        "ASHA Workers"
+      ],
+      "pm_suraj_integrated": false
+    },
+    "metadata": {
+      "active": true,
+      "version": "2026-09",
+      "official_url": "https://pmmvy.wcd.gov.in",
+      "application_portal": "PMMVY Citizen Login Portal / Anganwadi Centre",
+      "nodal_agency": "Ministry of Women and Child Development",
+      "helpline": "1098"
+    }
+  },
+  {
+    "scheme_id": "CRECHE_LOAN",
+    "name": "Palna / National Creche Micro-Enterprise Scheme",
+    "short_name": "Palna Daycare Micro-Credit",
+    "ministry": "Ministry of Women and Child Development",
+    "category": "Women",
+    "description": "Supports women entrepreneurs and SHGs setting up community crèches and child daycare centres with startup toolkits, recurring operational subsidies, and low-interest equipment loans.",
+    "tags": [
+      "creche",
+      "daycare",
+      "palna",
+      "child care",
+      "women service",
+      "early childhood"
+    ],
+    "eligibility": {
+      "age": {
+        "min": 21,
+        "max": 60
+      },
+      "income_annual": {
+        "min": null,
+        "max": null
+      },
+      "gender": [
+        "F"
+      ],
+      "social_categories": [
+        "SC",
+        "ST",
+        "OBC",
+        "GEN",
+        "MINORITY",
+        "EWS",
+        "PWD"
+      ],
+      "activities": [
+        "education",
+        "services"
+      ],
+      "activity_categories": [
+        "services",
+        "education"
+      ],
+      "location": {
+        "states": [
+          "all"
+        ],
+        "urban_only": false,
+        "rural_only": false
+      },
+      "occupation": [
+        "self_employed",
+        "entrepreneur"
+      ],
+      "existing_business": null,
+      "disability": null,
+      "minority": null,
+      "min_project_cost": 25000,
+      "max_project_cost": 200000,
+      "custom_rules": []
+    },
+    "financing": {
+      "type": "composite",
+      "max_amount": 200000,
+      "min_amount": 25000,
+      "interest_rate": {
+        "base": 8.5,
+        "subsidy_rate": null,
+        "effective_rate": 8.5
+      },
+      "own_contribution_pct": 10,
+      "tenure_months": {
+        "min": 12,
+        "max": 48
+      },
+      "moratorium_months": 3,
+      "collateral_required": false,
+      "subsidy_amount": 25000,
+      "subsidy_pct": null,
+      "subsidy_notes": "Non-recurring setup grant of ₹25,000 for toys and safety equipment + recurring operational grant."
+    },
+    "documents": [
+      {
+        "id": "aadhaar",
+        "name": "Aadhaar Card",
+        "required": true,
+        "note": "Identity proof"
+      },
+      {
+        "id": "edu_certificate",
+        "name": "Educational Qualification Certificate (Min 10th/12th)",
+        "required": true,
+        "note": "Minimum education standard"
+      },
+      {
+        "id": "lease_agreement",
+        "name": "Proof of Safe Premises / Lease agreement (min 300 sq ft)",
+        "required": true,
+        "note": "Safety standards"
+      }
+    ],
+    "channel_partners": {
+      "types": [
+        "State Social Welfare Departments",
+        "Commercial Banks"
+      ],
+      "pm_suraj_integrated": false
+    },
+    "metadata": {
+      "active": true,
+      "version": "2026-09",
+      "official_url": "https://wcd.nic.in/schemes/palna",
+      "application_portal": "District Child Protection Unit / WCD",
+      "nodal_agency": "Ministry of Women and Child Development",
+      "helpline": "1800-11-2244"
+    }
+  },
+  {
+    "scheme_id": "NMDFC_TERM_LOAN",
+    "name": "NMDFC Term Loan Scheme for Minority Communities",
+    "short_name": "NMDFC Minority Term Loan",
+    "ministry": "Ministry of Minority Affairs",
+    "category": "Minority",
+    "description": "Concessional credit up to ₹30 Lakh at 6% to 8% interest for minorities (Muslim, Christian, Sikh, Buddhist, Jain, Parsi) to initiate commercial, service, or industrial activities.",
+    "tags": [
+      "nmdfc",
+      "minority loan",
+      "muslim entrepreneur",
+      "sikh loan",
+      "christian entrepreneur",
+      "concessional loan"
+    ],
+    "eligibility": {
+      "age": {
+        "min": 18,
+        "max": 65
+      },
+      "income_annual": {
+        "min": null,
+        "max": 300000
+      },
+      "gender": [
+        "M",
+        "F",
+        "O"
+      ],
+      "social_categories": [
+        "MINORITY"
+      ],
+      "activities": [
+        "retail",
+        "services",
+        "manufacturing",
+        "transport",
+        "handicraft",
+        "tailoring",
+        "food_processing"
+      ],
+      "activity_categories": [
+        "msme",
+        "services",
+        "agriculture"
+      ],
+      "location": {
+        "states": [
+          "all"
+        ],
+        "urban_only": false,
+        "rural_only": false
+      },
+      "occupation": [
+        "self_employed",
+        "entrepreneur"
+      ],
+      "existing_business": null,
+      "disability": null,
+      "minority": true,
+      "min_project_cost": 50000,
+      "max_project_cost": 3000000,
+      "custom_rules": []
+    },
+    "financing": {
+      "type": "loan",
+      "max_amount": 3000000,
+      "min_amount": 50000,
+      "interest_rate": {
+        "base": 6,
+        "subsidy_rate": 0,
+        "effective_rate": 6
+      },
+      "own_contribution_pct": 10,
+      "tenure_months": {
+        "min": 36,
+        "max": 96
+      },
+      "moratorium_months": 6,
+      "collateral_required": false,
+      "subsidy_amount": null,
+      "subsidy_pct": null,
+      "subsidy_notes": "Fixed 6% interest for loans up to ₹20 Lakh (Credit Line 1); 8% for higher tier (Credit Line 2)."
+    },
+    "documents": [
+      {
+        "id": "aadhaar",
+        "name": "Aadhaar Card",
+        "required": true,
+        "note": "Identity and address proof"
+      },
+      {
+        "id": "minority_cert",
+        "name": "Minority Status Self-Declaration Affidavit",
+        "required": true,
+        "note": "Recognized minority community"
+      },
+      {
+        "id": "income_cert",
+        "name": "Income Certificate (Family income <= ₹3 Lakh)",
+        "required": true,
+        "note": "From Tehsildar"
+      },
+      {
+        "id": "project_report",
+        "name": "Business Estimate / Machinery Quotation",
+        "required": true,
+        "note": "Project proposal"
+      }
+    ],
+    "channel_partners": {
+      "types": [
+        "State Minority Financial Corporations",
+        "Public Sector Banks",
+        "RRBs"
+      ],
+      "pm_suraj_integrated": true
+    },
+    "metadata": {
+      "active": true,
+      "version": "2026-09",
+      "official_url": "https://nmdfc.org",
+      "application_portal": "PM-SURAJ Portal (pmsuraj.dosje.gov.in)",
+      "nodal_agency": "NMDFC / Ministry of Minority Affairs",
+      "helpline": "1800-11-4088"
+    }
+  },
+  {
+    "scheme_id": "NMDFC_VIRASAT",
+    "name": "Virasat Scheme for Artisans and Craftspersons",
+    "short_name": "NMDFC Virasat Craft Loan",
+    "ministry": "Ministry of Minority Affairs",
+    "category": "Minority",
+    "description": "Concessional loan up to ₹10 Lakh at a special low rate of 5% for male craftspersons and 4% for female craftspersons belonging to notified minority communities.",
+    "tags": [
+      "virasat",
+      "minority artisan",
+      "craftsman loan",
+      "4 percent interest",
+      "women craftsperson",
+      "handicraft"
+    ],
+    "eligibility": {
+      "age": {
+        "min": 18,
+        "max": 65
+      },
+      "income_annual": {
+        "min": null,
+        "max": 300000
+      },
+      "gender": [
+        "M",
+        "F",
+        "O"
+      ],
+      "social_categories": [
+        "MINORITY"
+      ],
+      "activities": [
+        "handicraft",
+        "weaving",
+        "tailoring",
+        "manufacturing"
+      ],
+      "activity_categories": [
+        "msme"
+      ],
+      "location": {
+        "states": [
+          "all"
+        ],
+        "urban_only": false,
+        "rural_only": false
+      },
+      "occupation": [
+        "self_employed",
+        "entrepreneur"
+      ],
+      "existing_business": null,
+      "disability": null,
+      "minority": true,
+      "min_project_cost": 25000,
+      "max_project_cost": 1000000,
+      "custom_rules": []
+    },
+    "financing": {
+      "type": "loan",
+      "max_amount": 1000000,
+      "min_amount": 25000,
+      "interest_rate": {
+        "base": 5,
+        "subsidy_rate": 1,
+        "effective_rate": 4
+      },
+      "own_contribution_pct": 5,
+      "tenure_months": {
+        "min": 24,
+        "max": 60
+      },
+      "moratorium_months": 6,
+      "collateral_required": false,
+      "subsidy_amount": null,
+      "subsidy_pct": null,
+      "subsidy_notes": "4% fixed interest rate for women artisans; 5% fixed interest rate for male artisans."
+    },
+    "documents": [
+      {
+        "id": "aadhaar",
+        "name": "Aadhaar Card",
+        "required": true,
+        "note": "Identity proof"
+      },
+      {
+        "id": "artisan_card",
+        "name": "Artisan Pehchan Card / Craft Certificate",
+        "required": true,
+        "note": "From DC Handicrafts"
+      },
+      {
+        "id": "minority_cert",
+        "name": "Minority Status Declaration",
+        "required": true,
+        "note": "Notified community"
+      }
+    ],
+    "channel_partners": {
+      "types": [
+        "State Minority Financial Corporations",
+        "Regional Rural Banks"
+      ],
+      "pm_suraj_integrated": true
+    },
+    "metadata": {
+      "active": true,
+      "version": "2026-09",
+      "official_url": "https://nmdfc.org/schemes/virasat",
+      "application_portal": "PM-SURAJ Portal / State SCA Offices",
+      "nodal_agency": "NMDFC / Ministry of Minority Affairs",
+      "helpline": "1800-11-4088"
+    }
+  },
+  {
+    "scheme_id": "NHFDC_TERM_LOAN",
+    "name": "NHFDC Term Loan Scheme for Divyangjan Entrepreneurs",
+    "short_name": "NHFDC Divyangjan Term Loan",
+    "ministry": "Ministry of Social Justice and Empowerment",
+    "category": "SocialWelfare",
+    "description": "Financial assistance up to ₹50 Lakh at low interest rates (4% to 8% p.a.) with special 0.5% interest rebate for women with disabilities for self-employment ventures.",
+    "tags": [
+      "nhfdc",
+      "divyangjan loan",
+      "pwd loan",
+      "disabled entrepreneur",
+      "concessional interest",
+      "pm suraj"
+    ],
+    "eligibility": {
+      "age": {
+        "min": 18,
+        "max": 65
+      },
+      "income_annual": {
+        "min": null,
+        "max": null
+      },
+      "gender": [
+        "M",
+        "F",
+        "O"
+      ],
+      "social_categories": [
+        "PWD",
+        "SC",
+        "ST",
+        "OBC",
+        "GEN",
+        "MINORITY",
+        "EWS"
+      ],
+      "activities": [
+        "retail",
+        "services",
+        "manufacturing",
+        "electronics",
+        "tailoring",
+        "agriculture"
+      ],
+      "activity_categories": [
+        "msme",
+        "services",
+        "agriculture"
+      ],
+      "location": {
+        "states": [
+          "all"
+        ],
+        "urban_only": false,
+        "rural_only": false
+      },
+      "occupation": [
+        "self_employed",
+        "entrepreneur"
+      ],
+      "existing_business": null,
+      "disability": true,
+      "minority": null,
+      "min_project_cost": 25000,
+      "max_project_cost": 5000000,
+      "custom_rules": []
+    },
+    "financing": {
+      "type": "loan",
+      "max_amount": 5000000,
+      "min_amount": 25000,
+      "interest_rate": {
+        "base": 5,
+        "subsidy_rate": 0.5,
+        "effective_rate": 4.5
+      },
+      "own_contribution_pct": 5,
+      "tenure_months": {
+        "min": 36,
+        "max": 120
+      },
+      "moratorium_months": 6,
+      "collateral_required": false,
+      "subsidy_amount": null,
+      "subsidy_pct": null,
+      "subsidy_notes": "Interest rates: 4% for loans up to ₹50,000; 5% for up to ₹5 Lakh; 6-8% for higher amounts. 0.5% rebate for women PwD."
+    },
+    "documents": [
+      {
+        "id": "aadhaar",
+        "name": "Aadhaar Card",
+        "required": true,
+        "note": "Identity and address proof"
+      },
+      {
+        "id": "disability_cert",
+        "name": "Unique Disability ID (UDID) Card or Certificate (>= 40% disability)",
+        "required": true,
+        "note": "Mandatory disability proof"
+      },
+      {
+        "id": "project_report",
+        "name": "Quotation / Business Plan",
+        "required": true,
+        "note": "For equipment purchase"
+      }
+    ],
+    "channel_partners": {
+      "types": [
+        "State Channelising Agencies",
+        "Public Sector Banks",
+        "RRBs"
+      ],
+      "pm_suraj_integrated": true
+    },
+    "metadata": {
+      "active": true,
+      "version": "2026-09",
+      "official_url": "https://nhfdc.nic.in",
+      "application_portal": "PM-SURAJ Portal (pmsuraj.dosje.gov.in)",
+      "nodal_agency": "NHFDC / Department of Empowerment of PwDs",
+      "helpline": "0129-2226910"
+    }
+  },
+  {
+    "scheme_id": "DIVYANGJAN_SWAVALAMBAN",
+    "name": "Divyangjan Swavalamban Self-Employment Scheme",
+    "short_name": "Divyangjan Swavalamban Yojana",
+    "ministry": "Ministry of Social Justice and Empowerment",
+    "category": "SocialWelfare",
+    "description": "Loans up to ₹50 Lakh for establishing vocational micro-enterprises with 1% interest rebate on timely repayment and special coverage for accessible retrofitted vehicles.",
+    "tags": [
+      "swavalamban",
+      "divyang",
+      "retrofitted vehicle",
+      "accessible shop",
+      "revolving loan"
+    ],
+    "eligibility": {
+      "age": {
+        "min": 18,
+        "max": 65
+      },
+      "income_annual": {
+        "min": null,
+        "max": null
+      },
+      "gender": [
+        "M",
+        "F",
+        "O"
+      ],
+      "social_categories": [
+        "PWD",
+        "SC",
+        "ST",
+        "OBC",
+        "GEN",
+        "MINORITY",
+        "EWS"
+      ],
+      "activities": [
+        "transport",
+        "services",
+        "retail",
+        "electronics",
+        "tailoring",
+        "beauty_services"
+      ],
+      "activity_categories": [
+        "msme",
+        "services"
+      ],
+      "location": {
+        "states": [
+          "all"
+        ],
+        "urban_only": false,
+        "rural_only": false
+      },
+      "occupation": [
+        "self_employed",
+        "entrepreneur"
+      ],
+      "existing_business": null,
+      "disability": true,
+      "minority": null,
+      "min_project_cost": 50000,
+      "max_project_cost": 5000000,
+      "custom_rules": []
+    },
+    "financing": {
+      "type": "loan",
+      "max_amount": 5000000,
+      "min_amount": 50000,
+      "interest_rate": {
+        "base": 6,
+        "subsidy_rate": 1,
+        "effective_rate": 5
+      },
+      "own_contribution_pct": 10,
+      "tenure_months": {
+        "min": 36,
+        "max": 84
+      },
+      "moratorium_months": 6,
+      "collateral_required": false,
+      "subsidy_amount": null,
+      "subsidy_pct": null,
+      "subsidy_notes": "1% annual interest rebate for timely quarterly repayment."
+    },
+    "documents": [
+      {
+        "id": "aadhaar",
+        "name": "Aadhaar Card",
+        "required": true,
+        "note": "Identity proof"
+      },
+      {
+        "id": "disability_cert",
+        "name": "UDID Card (minimum 40% disability certified)",
+        "required": true,
+        "note": "Mandatory"
+      },
+      {
+        "id": "project_report",
+        "name": "Estimate for retrofitted vehicle / shop setup",
+        "required": true,
+        "note": "Cost sheet"
+      }
+    ],
+    "channel_partners": {
+      "types": [
+        "Public Sector Banks",
+        "State PwD Development Agencies"
+      ],
+      "pm_suraj_integrated": true
+    },
+    "metadata": {
+      "active": true,
+      "version": "2026-09",
+      "official_url": "https://nhfdc.nic.in/schemes",
+      "application_portal": "PM-SURAJ Portal (pmsuraj.dosje.gov.in)",
+      "nodal_agency": "DEPwD / MoSJ&E",
+      "helpline": "0129-2226910"
+    }
+  },
+  {
+    "scheme_id": "SAFIM",
+    "name": "Swachhta Udyami Yojana for Mechanized Sanitation",
+    "short_name": "Swachhta Udyami Yojana",
+    "ministry": "Ministry of Social Justice and Empowerment",
+    "category": "SocialWelfare",
+    "description": "Concessional finance up to ₹50 Lakh with capital subsidy up to ₹5 Lakh for sanitation workers and Safai Karamcharis to purchase mechanized sewer/drain cleaning vehicles and vacuum loaders.",
+    "tags": [
+      "swachhta udyami",
+      "safai karamchari",
+      "sanitation vehicle",
+      "sewer cleaning machine",
+      "nsfdc subsidy"
+    ],
+    "eligibility": {
+      "age": {
+        "min": 18,
+        "max": 60
+      },
+      "income_annual": {
+        "min": null,
+        "max": null
+      },
+      "gender": [
+        "M",
+        "F",
+        "O"
+      ],
+      "social_categories": [
+        "SC",
+        "ST",
+        "OBC",
+        "GEN",
+        "MINORITY",
+        "EWS",
+        "PWD"
+      ],
+      "activities": [
+        "services",
+        "transport"
+      ],
+      "activity_categories": [
+        "services"
+      ],
+      "location": {
+        "states": [
+          "all"
+        ],
+        "urban_only": false,
+        "rural_only": false
+      },
+      "occupation": [
+        "self_employed",
+        "entrepreneur"
+      ],
+      "existing_business": null,
+      "disability": null,
+      "minority": null,
+      "min_project_cost": 500000,
+      "max_project_cost": 5000000,
+      "custom_rules": []
+    },
+    "financing": {
+      "type": "composite",
+      "max_amount": 5000000,
+      "min_amount": 500000,
+      "interest_rate": {
+        "base": 4,
+        "subsidy_rate": 0,
+        "effective_rate": 4
+      },
+      "own_contribution_pct": 0,
+      "tenure_months": {
+        "min": 36,
+        "max": 84
+      },
+      "moratorium_months": 6,
+      "collateral_required": false,
+      "subsidy_amount": 500000,
+      "subsidy_pct": 50,
+      "subsidy_notes": "Capital subsidy up to 50% of project cost (max ₹5,00,000); concessional loan @ 4% p.a. (3.5% for women)."
+    },
+    "documents": [
+      {
+        "id": "aadhaar",
+        "name": "Aadhaar Card",
+        "required": true,
+        "note": "Identity proof"
+      },
+      {
+        "id": "safai_cert",
+        "name": "Certificate of Safai Karamchari / Sanitation Worker",
+        "required": true,
+        "note": "From Municipal body / ULB / Gram Panchayat"
+      },
+      {
+        "id": "quotation",
+        "name": "Quotation for Mechanized Cleaning Equipment / Vehicle",
+        "required": true,
+        "note": "From authorized supplier"
+      }
+    ],
+    "channel_partners": {
+      "types": [
+        "NSKFDC",
+        "Commercial Banks",
+        "State Channelising Agencies"
+      ],
+      "pm_suraj_integrated": true
+    },
+    "metadata": {
+      "active": true,
+      "version": "2026-09",
+      "official_url": "https://nskfdc.nic.in",
+      "application_portal": "PM-SURAJ Portal (pmsuraj.dosje.gov.in)",
+      "nodal_agency": "NSKFDC / MoSJ&E",
+      "helpline": "1800-200-3354"
+    }
+  },
+  {
+    "scheme_id": "SRMS",
+    "name": "Self Employment Scheme for Rehabilitation of Manual Scavengers",
+    "short_name": "SRMS Rehabilitation Grant",
+    "ministry": "Ministry of Social Justice and Empowerment",
+    "category": "SocialWelfare",
+    "description": "One-time cash assistance of ₹40,000 + capital subsidy up to ₹5 Lakh + concessional loan @ 4% to 6% p.a. for alternative self-employment in shops, transport, and dairy.",
+    "tags": [
+      "srms",
+      "manual scavenger rehabilitation",
+      "cash assistance",
+      "alternative livelihood",
+      "sanitation reform"
+    ],
+    "eligibility": {
+      "age": {
+        "min": 18,
+        "max": 65
+      },
+      "income_annual": {
+        "min": null,
+        "max": null
+      },
+      "gender": [
+        "M",
+        "F",
+        "O"
+      ],
+      "social_categories": [
+        "SC",
+        "ST",
+        "OBC",
+        "GEN",
+        "MINORITY",
+        "EWS",
+        "PWD"
+      ],
+      "activities": [
+        "retail",
+        "services",
+        "transport",
+        "dairy",
+        "poultry",
+        "tailoring"
+      ],
+      "activity_categories": [
+        "msme",
+        "services",
+        "agriculture"
+      ],
+      "location": {
+        "states": [
+          "all"
+        ],
+        "urban_only": false,
+        "rural_only": false
+      },
+      "occupation": [
+        "self_employed"
+      ],
+      "existing_business": false,
+      "disability": null,
+      "minority": null,
+      "min_project_cost": 50000,
+      "max_project_cost": 1500000,
+      "custom_rules": []
+    },
+    "financing": {
+      "type": "composite",
+      "max_amount": 1500000,
+      "min_amount": 50000,
+      "interest_rate": {
+        "base": 4,
+        "subsidy_rate": 0,
+        "effective_rate": 4
+      },
+      "own_contribution_pct": 0,
+      "tenure_months": {
+        "min": 36,
+        "max": 60
+      },
+      "moratorium_months": 6,
+      "collateral_required": false,
+      "subsidy_amount": 500000,
+      "subsidy_pct": 50,
+      "subsidy_notes": "₹40,000 immediate cash assistance + up to ₹5,00,000 capital subsidy (50% of project cost) + concessional loan @ 4%."
+    },
+    "documents": [
+      {
+        "id": "aadhaar",
+        "name": "Aadhaar Card",
+        "required": true,
+        "note": "Identity proof"
+      },
+      {
+        "id": "srms_card",
+        "name": "Identified Manual Scavenger Identification Certificate",
+        "required": true,
+        "note": "Issued by District Magistrate"
+      },
+      {
+        "id": "bank_passbook",
+        "name": "Bank Account Passbook copy",
+        "required": true,
+        "note": "Active account"
+      }
+    ],
+    "channel_partners": {
+      "types": [
+        "NSKFDC",
+        "District Social Welfare Offices",
+        "Commercial Banks"
+      ],
+      "pm_suraj_integrated": true
+    },
+    "metadata": {
+      "active": true,
+      "version": "2026-09",
+      "official_url": "https://nskfdc.nic.in/schemes/srms",
+      "application_portal": "District Magistrate Office / PM-SURAJ Portal",
+      "nodal_agency": "NSKFDC / MoSJ&E",
+      "helpline": "1800-200-3354"
+    }
+  },
+  {
+    "scheme_id": "SMILE",
+    "name": "SMILE - Support for Marginalized Individuals for Livelihood & Enterprise",
+    "short_name": "SMILE Transgender & Livelihood",
+    "ministry": "Ministry of Social Justice and Empowerment",
+    "category": "SocialWelfare",
+    "description": "Comprehensive rehabilitation, composite capital support, skill development, and health insurance for transgender persons and marginalized individuals starting micro-enterprises.",
+    "tags": [
+      "smile",
+      "transgender loan",
+      "third gender",
+      "marginalized livelihood",
+      "transgender enterprise",
+      "pm suraj"
+    ],
+    "eligibility": {
+      "age": {
+        "min": 18,
+        "max": 60
+      },
+      "income_annual": {
+        "min": null,
+        "max": null
+      },
+      "gender": [
+        "O"
+      ],
+      "social_categories": [
+        "SC",
+        "ST",
+        "OBC",
+        "GEN",
+        "MINORITY",
+        "EWS",
+        "PWD"
+      ],
+      "activities": [
+        "retail",
+        "services",
+        "beauty_services",
+        "food_services",
+        "tailoring",
+        "handicraft"
+      ],
+      "activity_categories": [
+        "services",
+        "msme"
+      ],
+      "location": {
+        "states": [
+          "all"
+        ],
+        "urban_only": false,
+        "rural_only": false
+      },
+      "occupation": [
+        "self_employed",
+        "entrepreneur"
+      ],
+      "existing_business": null,
+      "disability": null,
+      "minority": null,
+      "min_project_cost": 25000,
+      "max_project_cost": 500000,
+      "custom_rules": []
+    },
+    "financing": {
+      "type": "composite",
+      "max_amount": 500000,
+      "min_amount": 25000,
+      "interest_rate": {
+        "base": 6,
+        "subsidy_rate": 0,
+        "effective_rate": 6
+      },
+      "own_contribution_pct": 0,
+      "tenure_months": {
+        "min": 24,
+        "max": 60
+      },
+      "moratorium_months": 6,
+      "collateral_required": false,
+      "subsidy_amount": 50000,
+      "subsidy_pct": null,
+      "subsidy_notes": "Free certified skill training with monthly stipend + ₹50,000 capital subsidy + concessional credit @ 6% p.a."
+    },
+    "documents": [
+      {
+        "id": "aadhaar",
+        "name": "Aadhaar Card",
+        "required": true,
+        "note": "Identity proof"
+      },
+      {
+        "id": "transgender_id",
+        "name": "Transgender Identity Certificate / Card",
+        "required": true,
+        "note": "From National Portal for Transgender Persons"
+      },
+      {
+        "id": "bank_passbook",
+        "name": "Bank Passbook copy",
+        "required": true,
+        "note": "DBT bank account"
+      }
+    ],
+    "channel_partners": {
+      "types": [
+        "National Portal for Transgender Persons",
+        "State Social Welfare Boards",
+        "Banks"
+      ],
+      "pm_suraj_integrated": true
+    },
+    "metadata": {
+      "active": true,
+      "version": "2026-09",
+      "official_url": "https://transgender.dosje.gov.in",
+      "application_portal": "National Portal for Transgender Persons / PM-SURAJ",
+      "nodal_agency": "Ministry of Social Justice and Empowerment",
+      "helpline": "011-23386981"
+    }
+  },
+  {
+    "scheme_id": "ADIP",
+    "name": "Assistance to Disabled Persons for Purchase/Fitting of Aids and Appliances",
+    "short_name": "ADIP Scheme for Divyangjan",
+    "ministry": "Ministry of Social Justice and Empowerment",
+    "category": "SocialWelfare",
+    "description": "100% grant for motorized tricycles, smart hearing aids, braille kits, prosthetics, and mobility appliances for PwD individuals to access livelihoods and employment.",
+    "tags": [
+      "adip",
+      "motorized tricycle",
+      "hearing aid",
+      "prosthetics",
+      "wheelchair",
+      "free aids",
+      "divyang"
+    ],
+    "eligibility": {
+      "age": {
+        "min": 5,
+        "max": 75
+      },
+      "income_annual": {
+        "min": null,
+        "max": 240000
+      },
+      "gender": [
+        "M",
+        "F",
+        "O"
+      ],
+      "social_categories": [
+        "PWD",
+        "SC",
+        "ST",
+        "OBC",
+        "GEN",
+        "MINORITY",
+        "EWS"
+      ],
+      "activities": [
+        "retail",
+        "services",
+        "self_employed",
+        "education"
+      ],
+      "activity_categories": [
+        "services",
+        "msme",
+        "agriculture"
+      ],
+      "location": {
+        "states": [
+          "all"
+        ],
+        "urban_only": false,
+        "rural_only": false
+      },
+      "occupation": [
+        "self_employed",
+        "student"
+      ],
+      "existing_business": null,
+      "disability": true,
+      "minority": null,
+      "min_project_cost": 5000,
+      "max_project_cost": 50000,
+      "custom_rules": []
+    },
+    "financing": {
+      "type": "grant",
+      "max_amount": 50000,
+      "min_amount": 5000,
+      "interest_rate": {
+        "base": 0,
+        "subsidy_rate": 0,
+        "effective_rate": 0
+      },
+      "own_contribution_pct": 0,
+      "tenure_months": {
+        "min": 0,
+        "max": 0
+      },
+      "moratorium_months": 0,
+      "collateral_required": false,
+      "subsidy_amount": 50000,
+      "subsidy_pct": 100,
+      "subsidy_notes": "100% free distribution of motorized tricycles and specialized assistive mobility devices."
+    },
+    "documents": [
+      {
+        "id": "aadhaar",
+        "name": "Aadhaar Card",
+        "required": true,
+        "note": "Identity proof"
+      },
+      {
+        "id": "disability_cert",
+        "name": "UDID Card / Disability Certificate (min 40%)",
+        "required": true,
+        "note": "Authorized CMO"
+      },
+      {
+        "id": "income_cert",
+        "name": "Income Certificate (Family income <= ₹2.4 Lakh)",
+        "required": true,
+        "note": "Tehsildar issued"
+      }
+    ],
+    "channel_partners": {
+      "types": [
+        "ALIMCO (Artificial Limbs Manufacturing Corporation)",
+        "District Disability Rehabilitation Centres"
+      ],
+      "pm_suraj_integrated": true
+    },
+    "metadata": {
+      "active": true,
+      "version": "2026-09",
+      "official_url": "https://adip.depwd.gov.in",
+      "application_portal": "ALIMCO / ADIP Camp Portal",
+      "nodal_agency": "DEPwD / ALIMCO",
+      "helpline": "1800-180-5129"
+    }
+  },
+  {
+    "scheme_id": "PMKSY_PDMC",
+    "name": "PM Krishi Sinchayee Yojana - Per Drop More Crop (Micro-Irrigation)",
+    "short_name": "PMKSY Micro-Irrigation Subsidy",
+    "ministry": "Ministry of Agriculture and Farmers Welfare",
+    "category": "Agriculture",
+    "description": "45% to 55% financial subsidy for small, marginal, and general farmers to install drip irrigation systems and sprinkler sets, saving up to 50% water while increasing crop yields.",
+    "tags": [
+      "drip irrigation",
+      "sprinkler",
+      "water saving",
+      "micro irrigation",
+      "pmksy",
+      "crop yield",
+      "subsidy"
+    ],
+    "eligibility": {
+      "age": {
+        "min": 18,
+        "max": 70
+      },
+      "income_annual": {
+        "min": null,
+        "max": null
+      },
+      "gender": [
+        "M",
+        "F",
+        "O"
+      ],
+      "social_categories": [
+        "SC",
+        "ST",
+        "OBC",
+        "GEN",
+        "MINORITY",
+        "EWS",
+        "PWD"
+      ],
+      "activities": [
+        "agriculture"
+      ],
+      "activity_categories": [
+        "agriculture"
+      ],
+      "location": {
+        "states": [
+          "all"
+        ],
+        "urban_only": false,
+        "rural_only": true
+      },
+      "occupation": [
+        "farmer"
+      ],
+      "existing_business": null,
+      "disability": null,
+      "minority": null,
+      "min_project_cost": 25000,
+      "max_project_cost": 200000,
+      "custom_rules": []
+    },
+    "financing": {
+      "type": "subsidy",
+      "max_amount": 200000,
+      "min_amount": 25000,
+      "interest_rate": {
+        "base": 8.5,
+        "subsidy_rate": 0,
+        "effective_rate": 8.5
+      },
+      "own_contribution_pct": 10,
+      "tenure_months": {
+        "min": 12,
+        "max": 36
+      },
+      "moratorium_months": 0,
+      "collateral_required": false,
+      "subsidy_amount": null,
+      "subsidy_pct": 55,
+      "subsidy_notes": "55% subsidy for Small and Marginal farmers; 45% for other farmers. Transferred directly to vendor/farmer DBT."
+    },
+    "documents": [
+      {
+        "id": "aadhaar",
+        "name": "Aadhaar Card",
+        "required": true,
+        "note": "Identity proof"
+      },
+      {
+        "id": "land_doc",
+        "name": "Land Record (7/12 extract / Khasra-Khatauni)",
+        "required": true,
+        "note": "Proof of cultivable land"
+      },
+      {
+        "id": "water_source",
+        "name": "Electricity bill / Borewell proof showing operational water source",
+        "required": true,
+        "note": "Water availability"
+      }
+    ],
+    "channel_partners": {
+      "types": [
+        "State Agriculture Departments",
+        "Horticulture Departments",
+        "Registered Micro-Irrigation Manufacturers"
+      ],
+      "pm_suraj_integrated": false
+    },
+    "metadata": {
+      "active": true,
+      "version": "2026-09",
+      "official_url": "https://pmksy.gov.in",
+      "application_portal": "State Drip Irrigation Portals / DBT Agri Portals",
+      "nodal_agency": "Department of Agriculture and Farmers Welfare",
+      "helpline": "1800-180-1551"
+    }
+  },
+  {
+    "scheme_id": "MIDH",
+    "name": "Mission for Integrated Development of Horticulture",
+    "short_name": "MIDH Horticulture Subsidy",
+    "ministry": "Ministry of Agriculture and Farmers Welfare",
+    "category": "Agriculture",
+    "description": "35% to 50% capital subsidy for establishing fruit orchards, polyhouses, shade net houses, mushroom cultivation units, and commercial flower cultivation.",
+    "tags": [
+      "horticulture",
+      "polyhouse",
+      "greenhouse",
+      "mushroom",
+      "shade net",
+      "flowers",
+      "orchard",
+      "midh"
+    ],
+    "eligibility": {
+      "age": {
+        "min": 18,
+        "max": 70
+      },
+      "income_annual": {
+        "min": null,
+        "max": null
+      },
+      "gender": [
+        "M",
+        "F",
+        "O"
+      ],
+      "social_categories": [
+        "SC",
+        "ST",
+        "OBC",
+        "GEN",
+        "MINORITY",
+        "EWS",
+        "PWD"
+      ],
+      "activities": [
+        "agriculture",
+        "food_processing"
+      ],
+      "activity_categories": [
+        "agriculture"
+      ],
+      "location": {
+        "states": [
+          "all"
+        ],
+        "urban_only": false,
+        "rural_only": true
+      },
+      "occupation": [
+        "farmer",
+        "entrepreneur"
+      ],
+      "existing_business": null,
+      "disability": null,
+      "minority": null,
+      "min_project_cost": 100000,
+      "max_project_cost": 3000000,
+      "custom_rules": []
+    },
+    "financing": {
+      "type": "composite",
+      "max_amount": 3000000,
+      "min_amount": 100000,
+      "interest_rate": {
+        "base": 8.5,
+        "subsidy_rate": 0,
+        "effective_rate": 8.5
+      },
+      "own_contribution_pct": 10,
+      "tenure_months": {
+        "min": 36,
+        "max": 84
+      },
+      "moratorium_months": 12,
+      "collateral_required": false,
+      "subsidy_amount": null,
+      "subsidy_pct": 50,
+      "subsidy_notes": "50% capital subsidy on greenhouse/polyhouse and poly-tunnel structures; 40% on mushroom spawn units."
+    },
+    "documents": [
+      {
+        "id": "aadhaar",
+        "name": "Aadhaar Card",
+        "required": true,
+        "note": "Identity proof"
+      },
+      {
+        "id": "land_doc",
+        "name": "Land Record (Khatauni / Khasra)",
+        "required": true,
+        "note": "Land ownership"
+      },
+      {
+        "id": "project_report",
+        "name": "DPR of Polyhouse / Orchard cultivation",
+        "required": true,
+        "note": "Certified cost estimate"
+      }
+    ],
+    "channel_partners": {
+      "types": [
+        "National Horticulture Board (NHB)",
+        "State Horticulture Missions",
+        "Commercial Banks"
+      ],
+      "pm_suraj_integrated": true
+    },
+    "metadata": {
+      "active": true,
+      "version": "2026-09",
+      "official_url": "https://midh.gov.in",
+      "application_portal": "National Horticulture Board Online Portal",
+      "nodal_agency": "National Horticulture Board / MoA&FW",
+      "helpline": "0124-2342992"
+    }
+  },
+  {
+    "scheme_id": "SMAM",
+    "name": "Sub-Mission on Agricultural Mechanization",
+    "short_name": "SMAM Farm Machinery Subsidy",
+    "ministry": "Ministry of Agriculture and Farmers Welfare",
+    "category": "Agriculture",
+    "description": "40% to 50% subsidy for farmers on tractors, rotavators, power tillers, seed drills, and 80% subsidy for setting up Custom Hiring Centres (CHC) at village level.",
+    "tags": [
+      "tractor subsidy",
+      "farm machinery",
+      "rotavator",
+      "custom hiring centre",
+      "smam",
+      "mechanization"
+    ],
+    "eligibility": {
+      "age": {
+        "min": 18,
+        "max": 65
+      },
+      "income_annual": {
+        "min": null,
+        "max": null
+      },
+      "gender": [
+        "M",
+        "F",
+        "O"
+      ],
+      "social_categories": [
+        "SC",
+        "ST",
+        "OBC",
+        "GEN",
+        "MINORITY",
+        "EWS",
+        "PWD"
+      ],
+      "activities": [
+        "agriculture"
+      ],
+      "activity_categories": [
+        "agriculture"
+      ],
+      "location": {
+        "states": [
+          "all"
+        ],
+        "urban_only": false,
+        "rural_only": true
+      },
+      "occupation": [
+        "farmer",
+        "entrepreneur"
+      ],
+      "existing_business": null,
+      "disability": null,
+      "minority": null,
+      "min_project_cost": 50000,
+      "max_project_cost": 1000000,
+      "custom_rules": []
+    },
+    "financing": {
+      "type": "subsidy",
+      "max_amount": 1000000,
+      "min_amount": 50000,
+      "interest_rate": {
+        "base": 8.5,
+        "subsidy_rate": 0,
+        "effective_rate": 8.5
+      },
+      "own_contribution_pct": 10,
+      "tenure_months": {
+        "min": 24,
+        "max": 60
+      },
+      "moratorium_months": 0,
+      "collateral_required": false,
+      "subsidy_amount": null,
+      "subsidy_pct": 50,
+      "subsidy_notes": "40-50% subsidy on purchase of individual agricultural equipment; up to 80% subsidy (up to ₹8 Lakh) for Custom Hiring Centres (CHC)."
+    },
+    "documents": [
+      {
+        "id": "aadhaar",
+        "name": "Aadhaar Card",
+        "required": true,
+        "note": "Identity proof"
+      },
+      {
+        "id": "land_doc",
+        "name": "Land Record (Khatauni/Khasra)",
+        "required": true,
+        "note": "Farm land proof"
+      },
+      {
+        "id": "bank_passbook",
+        "name": "Bank Passbook copy",
+        "required": true,
+        "note": "Direct DBT transfer"
+      }
+    ],
+    "channel_partners": {
+      "types": [
+        "State Agriculture Mechanization Portals",
+        "Direct Benefit Transfer (DBT) Agri Portal",
+        "Banks"
+      ],
+      "pm_suraj_integrated": false
+    },
+    "metadata": {
+      "active": true,
+      "version": "2026-09",
+      "official_url": "https://agrimachinery.nic.in",
+      "application_portal": "Direct Benefit Transfer in Agriculture Mechanization Portal",
+      "nodal_agency": "Department of Agriculture & Farmers Welfare",
+      "helpline": "1800-180-1551"
+    }
+  },
+  {
+    "scheme_id": "PARAM_KRISHI",
+    "name": "Paramparagat Krishi Vikas Yojana (Organic Farming Clusters)",
+    "short_name": "PKVY Organic Farming Grant",
+    "ministry": "Ministry of Agriculture and Farmers Welfare",
+    "category": "Agriculture",
+    "description": "Financial assistance of ₹50,000 per hectare for farmers forming clusters of 20 hectares to adopt certified organic farming, bio-fertilizers, vermicompost, and organic branding.",
+    "tags": [
+      "organic farming",
+      "pkvy",
+      "vermicompost",
+      "bio fertilizer",
+      "cluster farming",
+      "jaivik kheti"
+    ],
+    "eligibility": {
+      "age": {
+        "min": 18,
+        "max": 70
+      },
+      "income_annual": {
+        "min": null,
+        "max": null
+      },
+      "gender": [
+        "M",
+        "F",
+        "O"
+      ],
+      "social_categories": [
+        "SC",
+        "ST",
+        "OBC",
+        "GEN",
+        "MINORITY",
+        "EWS",
+        "PWD"
+      ],
+      "activities": [
+        "agriculture"
+      ],
+      "activity_categories": [
+        "agriculture"
+      ],
+      "location": {
+        "states": [
+          "all"
+        ],
+        "urban_only": false,
+        "rural_only": true
+      },
+      "occupation": [
+        "farmer"
+      ],
+      "existing_business": null,
+      "disability": null,
+      "minority": null,
+      "min_project_cost": 20000,
+      "max_project_cost": 150000,
+      "custom_rules": []
+    },
+    "financing": {
+      "type": "grant",
+      "max_amount": 150000,
+      "min_amount": 20000,
+      "interest_rate": {
+        "base": 0,
+        "subsidy_rate": 0,
+        "effective_rate": 0
+      },
+      "own_contribution_pct": 0,
+      "tenure_months": {
+        "min": 0,
+        "max": 0
+      },
+      "moratorium_months": 0,
+      "collateral_required": false,
+      "subsidy_amount": 50000,
+      "subsidy_pct": 100,
+      "subsidy_notes": "₹50,000/ha provided over 3 years: ₹31,000/ha directly for organic inputs (seeds, bio-fertilizers, vermicompost) + ₹19,000 for cluster management."
+    },
+    "documents": [
+      {
+        "id": "aadhaar",
+        "name": "Aadhaar Card",
+        "required": true,
+        "note": "Identity proof"
+      },
+      {
+        "id": "land_doc",
+        "name": "Land Record (Khatauni) for organic plot",
+        "required": true,
+        "note": "Plot geo-tagging"
+      },
+      {
+        "id": "bank_passbook",
+        "name": "Bank Passbook copy",
+        "required": true,
+        "note": "Direct grant transfer"
+      }
+    ],
+    "channel_partners": {
+      "types": [
+        "State Agriculture Departments",
+        "Organic Farming Certification Agencies (PGS-India)"
+      ],
+      "pm_suraj_integrated": false
+    },
+    "metadata": {
+      "active": true,
+      "version": "2026-09",
+      "official_url": "https://pgsindia-ncof.gov.in",
+      "application_portal": "Jaivik Kheti Portal (jaivikkheti.in)",
+      "nodal_agency": "National Centre of Organic and Natural Farming",
+      "helpline": "0120-2764906"
+    }
+  },
+  {
+    "scheme_id": "AGRI_CLINIC_ABC",
+    "name": "Agri-Clinics and Agri-Business Centres Scheme",
+    "short_name": "Agri-Clinic & Agri-Business (ACABC)",
+    "ministry": "Ministry of Agriculture and Farmers Welfare",
+    "category": "Agriculture",
+    "description": "36% capital subsidy for general and 44% for SC/ST and women agriculture graduates to set up soil testing labs, agri-input centres, farm advisory clinics, and equipment rentals up to ₹20-100 Lakh.",
+    "tags": [
+      "acabc",
+      "agri clinic",
+      "agri business",
+      "soil testing",
+      "agriculture graduate",
+      "manage",
+      "nabard subsidy"
+    ],
+    "eligibility": {
+      "age": {
+        "min": 18,
+        "max": 60
+      },
+      "income_annual": {
+        "min": null,
+        "max": null
+      },
+      "gender": [
+        "M",
+        "F",
+        "O"
+      ],
+      "social_categories": [
+        "SC",
+        "ST",
+        "OBC",
+        "GEN",
+        "MINORITY",
+        "EWS",
+        "PWD"
+      ],
+      "activities": [
+        "agriculture",
+        "services",
+        "retail"
+      ],
+      "activity_categories": [
+        "agriculture",
+        "services"
+      ],
+      "location": {
+        "states": [
+          "all"
+        ],
+        "urban_only": false,
+        "rural_only": false
+      },
+      "occupation": [
+        "entrepreneur"
+      ],
+      "existing_business": false,
+      "disability": null,
+      "minority": null,
+      "min_project_cost": 200000,
+      "max_project_cost": 10000000,
+      "custom_rules": []
+    },
+    "financing": {
+      "type": "composite",
+      "max_amount": 10000000,
+      "min_amount": 200000,
+      "interest_rate": {
+        "base": 8.5,
+        "subsidy_rate": 0,
+        "effective_rate": 8.5
+      },
+      "own_contribution_pct": 10,
+      "tenure_months": {
+        "min": 36,
+        "max": 84
+      },
+      "moratorium_months": 12,
+      "collateral_required": false,
+      "subsidy_amount": null,
+      "subsidy_pct": 36,
+      "subsidy_notes": "36% back-ended capital subsidy for General category (up to ₹7.2 Lakh); 44% for Women, SC, ST, and NE States (up to ₹8.8 Lakh)."
+    },
+    "documents": [
+      {
+        "id": "aadhaar",
+        "name": "Aadhaar Card",
+        "required": true,
+        "note": "Identity proof"
+      },
+      {
+        "id": "edu_certificate",
+        "name": "B.Sc Agriculture / Diploma / Allied Degree Certificate",
+        "required": true,
+        "note": "Mandatory technical qualification"
+      },
+      {
+        "id": "training_cert",
+        "name": "45-Day MANAGE Certified ACABC Training Certificate",
+        "required": true,
+        "note": "Completed at training institute"
+      },
+      {
+        "id": "project_report",
+        "name": "Detailed Project Report (DPR)",
+        "required": true,
+        "note": "Bank loan DPR"
+      }
+    ],
+    "channel_partners": {
+      "types": [
+        "NABARD",
+        "MANAGE",
+        "Commercial Banks",
+        "RRBs"
+      ],
+      "pm_suraj_integrated": true
+    },
+    "metadata": {
+      "active": true,
+      "version": "2026-09",
+      "official_url": "https://www.agriclinics.net",
+      "application_portal": "ACABC Portal / MANAGE Hyderabad",
+      "nodal_agency": "MANAGE / NABARD / MoA&FW",
+      "helpline": "1800-425-1556"
+    }
+  },
+  {
+    "scheme_id": "RKVY_RAFTAAR",
+    "name": "Rashtriya Krishi Vikas Yojana - RAFTAAR Agri-Startup Grant",
+    "short_name": "RKVY-RAFTAAR Agri-Startup",
+    "ministry": "Ministry of Agriculture and Farmers Welfare",
+    "category": "Agriculture",
+    "description": "Grant-in-aid up to ₹5 Lakh at Idea/Pre-Seed stage and up to ₹25 Lakh at Seed/Commercialization stage for agri-tech startups creating innovative post-harvest, IoT, AI, or processing solutions.",
+    "tags": [
+      "agri startup",
+      "rkvy",
+      "raftaar",
+      "iari",
+      "agritech",
+      "grant in aid",
+      "seed grant"
+    ],
+    "eligibility": {
+      "age": {
+        "min": 18,
+        "max": 55
+      },
+      "income_annual": {
+        "min": null,
+        "max": null
+      },
+      "gender": [
+        "M",
+        "F",
+        "O"
+      ],
+      "social_categories": [
+        "SC",
+        "ST",
+        "OBC",
+        "GEN",
+        "MINORITY",
+        "EWS",
+        "PWD"
+      ],
+      "activities": [
+        "agriculture",
+        "technology",
+        "food_processing",
+        "energy"
+      ],
+      "activity_categories": [
+        "agriculture",
+        "msme"
+      ],
+      "location": {
+        "states": [
+          "all"
+        ],
+        "urban_only": false,
+        "rural_only": false
+      },
+      "occupation": [
+        "entrepreneur"
+      ],
+      "existing_business": true,
+      "disability": null,
+      "minority": null,
+      "min_project_cost": 500000,
+      "max_project_cost": 2500000,
+      "custom_rules": []
+    },
+    "financing": {
+      "type": "grant",
+      "max_amount": 2500000,
+      "min_amount": 500000,
+      "interest_rate": {
+        "base": 0,
+        "subsidy_rate": 0,
+        "effective_rate": 0
+      },
+      "own_contribution_pct": 10,
+      "tenure_months": {
+        "min": 0,
+        "max": 0
+      },
+      "moratorium_months": 0,
+      "collateral_required": false,
+      "subsidy_amount": 2500000,
+      "subsidy_pct": 90,
+      "subsidy_notes": "100% non-repayable grant: ₹5 Lakh for idea stage (ANVESHAK); ₹25 Lakh for commercialization (YUKTI)."
+    },
+    "documents": [
+      {
+        "id": "aadhaar",
+        "name": "Aadhaar Card of Founders",
+        "required": true,
+        "note": "Founders KYC"
+      },
+      {
+        "id": "cin_cert",
+        "name": "Company Incorporation / Partnership Certificate",
+        "required": true,
+        "note": "Incorporated <= 3 years"
+      },
+      {
+        "id": "pitch_deck",
+        "name": "Product Prototype & Business Proposal Pitch Deck",
+        "required": true,
+        "note": "Innovation showcase"
+      }
+    ],
+    "channel_partners": {
+      "types": [
+        "Knowledge Partners (IARI Pusa, MANAGE, CCS HAU)",
+        "R-ABIs (Agri-Business Incubators)"
+      ],
+      "pm_suraj_integrated": false
+    },
+    "metadata": {
+      "active": true,
+      "version": "2026-09",
+      "official_url": "https://rkvy.nic.in",
+      "application_portal": "RKVY-RAFTAAR Incubation Centre Portals",
+      "nodal_agency": "Department of Agriculture and Farmers Welfare",
+      "helpline": "011-25841021"
+    }
+  },
+  {
+    "scheme_id": "GOBARDHAN",
+    "name": "Galvanizing Organic Bio-Agro Resources Dhan (GOBARdhan)",
+    "short_name": "GOBARdhan Biogas Plant Scheme",
+    "ministry": "Ministry of Jal Shakti",
+    "category": "Rural",
+    "description": "Financial assistance up to ₹50 Lakh per community biogas/CBG plant for converting cattle dung and organic farm waste into clean cooking gas, bio-CNG, and organic slurry fertilizer.",
+    "tags": [
+      "gobardhan",
+      "biogas",
+      "bio cng",
+      "cattle dung",
+      "renewable energy",
+      "swachh bharat",
+      "dung energy"
+    ],
+    "eligibility": {
+      "age": {
+        "min": 18,
+        "max": 65
+      },
+      "income_annual": {
+        "min": null,
+        "max": null
+      },
+      "gender": [
+        "M",
+        "F",
+        "O"
+      ],
+      "social_categories": [
+        "SC",
+        "ST",
+        "OBC",
+        "GEN",
+        "MINORITY",
+        "EWS",
+        "PWD"
+      ],
+      "activities": [
+        "energy",
+        "agriculture",
+        "dairy",
+        "manufacturing"
+      ],
+      "activity_categories": [
+        "agriculture",
+        "msme"
+      ],
+      "location": {
+        "states": [
+          "all"
+        ],
+        "urban_only": false,
+        "rural_only": true
+      },
+      "occupation": [
+        "entrepreneur",
+        "farmer"
+      ],
+      "existing_business": null,
+      "disability": null,
+      "minority": null,
+      "min_project_cost": 500000,
+      "max_project_cost": 5000000,
+      "custom_rules": []
+    },
+    "financing": {
+      "type": "composite",
+      "max_amount": 5000000,
+      "min_amount": 500000,
+      "interest_rate": {
+        "base": 8.5,
+        "subsidy_rate": 0,
+        "effective_rate": 8.5
+      },
+      "own_contribution_pct": 10,
+      "tenure_months": {
+        "min": 36,
+        "max": 84
+      },
+      "moratorium_months": 6,
+      "collateral_required": false,
+      "subsidy_amount": 5000000,
+      "subsidy_pct": 70,
+      "subsidy_notes": "Financial support of up to ₹50 Lakh per district for community biogas setups; central financial assistance for commercial CBG plants."
+    },
+    "documents": [
+      {
+        "id": "aadhaar",
+        "name": "Aadhaar of Lead Promoter / Gram Panchayat Head",
+        "required": true,
+        "note": "Identity proof"
+      },
+      {
+        "id": "land_doc",
+        "name": "Land Record for Biogas Digester site",
+        "required": true,
+        "note": "Site proof"
+      },
+      {
+        "id": "cattle_proof",
+        "name": "Cattle Dung Supply Agreement / Dairy Cluster Linkage",
+        "required": true,
+        "note": "Raw material availability"
+      },
+      {
+        "id": "project_report",
+        "name": "Techno-Economic Biogas Feasibility Report",
+        "required": true,
+        "note": "DPR"
+      }
+    ],
+    "channel_partners": {
+      "types": [
+        "Department of Drinking Water & Sanitation",
+        "State Swachh Bharat Missions",
+        "Commercial Banks"
+      ],
+      "pm_suraj_integrated": false
+    },
+    "metadata": {
+      "active": true,
+      "version": "2026-09",
+      "official_url": "https://gobardhan.co.in",
+      "application_portal": "Unified GOBARdhan Portal",
+      "nodal_agency": "Department of Drinking Water & Sanitation",
+      "helpline": "011-24362193"
+    }
+  },
+  {
+    "scheme_id": "OPERATION_GREENS",
+    "name": "Operation Greens - Comprehensive Value Chain Development",
+    "short_name": "Operation Greens Scheme",
+    "ministry": "Ministry of Food Processing Industries",
+    "category": "Agriculture",
+    "description": "50% capital subsidy on cold chain, refrigerated transport, packhouses, sorting, grading, and processing infrastructure for 22 perishable crops (Tomato, Onion, Potato, Fruits).",
+    "tags": [
+      "operation greens",
+      "cold storage",
+      "tomato onion potato",
+      "food processing",
+      "perishable supply chain",
+      "mofpi"
+    ],
+    "eligibility": {
+      "age": {
+        "min": 18,
+        "max": 65
+      },
+      "income_annual": {
+        "min": null,
+        "max": null
+      },
+      "gender": [
+        "M",
+        "F",
+        "O"
+      ],
+      "social_categories": [
+        "SC",
+        "ST",
+        "OBC",
+        "GEN",
+        "MINORITY",
+        "EWS",
+        "PWD"
+      ],
+      "activities": [
+        "food_processing",
+        "agriculture",
+        "logistics",
+        "transport"
+      ],
+      "activity_categories": [
+        "agriculture",
+        "msme"
+      ],
+      "location": {
+        "states": [
+          "all"
+        ],
+        "urban_only": false,
+        "rural_only": false
+      },
+      "occupation": [
+        "entrepreneur"
+      ],
+      "existing_business": true,
+      "disability": null,
+      "minority": null,
+      "min_project_cost": 1000000,
+      "max_project_cost": 50000000,
+      "custom_rules": []
+    },
+    "financing": {
+      "type": "composite",
+      "max_amount": 50000000,
+      "min_amount": 1000000,
+      "interest_rate": {
+        "base": 8.5,
+        "subsidy_rate": 0,
+        "effective_rate": 8.5
+      },
+      "own_contribution_pct": 20,
+      "tenure_months": {
+        "min": 36,
+        "max": 120
+      },
+      "moratorium_months": 12,
+      "collateral_required": false,
+      "subsidy_amount": null,
+      "subsidy_pct": 50,
+      "subsidy_notes": "50% capital subsidy of the total eligible project cost (up to ₹15 Crore for integrated projects, 50% transport & storage subsidy)."
+    },
+    "documents": [
+      {
+        "id": "aadhaar",
+        "name": "Aadhaar of Promoters",
+        "required": true,
+        "note": "Identity proof"
+      },
+      {
+        "id": "pan",
+        "name": "Company & Promoter PAN Card",
+        "required": true,
+        "note": "Tax registration"
+      },
+      {
+        "id": "land_doc",
+        "name": "Registered Land Ownership / Lease (minimum 15 years)",
+        "required": true,
+        "note": "Factory/Packhouse site"
+      },
+      {
+        "id": "project_report",
+        "name": "Detailed Project Report (DPR) with Machinery Quotation",
+        "required": true,
+        "note": "Food processing design"
+      }
+    ],
+    "channel_partners": {
+      "types": [
+        "Ministry of Food Processing Industries",
+        "Scheduled Commercial Banks",
+        "NABARD"
+      ],
+      "pm_suraj_integrated": true
+    },
+    "metadata": {
+      "active": true,
+      "version": "2026-09",
+      "official_url": "https://mofpi.gov.in/schemes/operation-greens",
+      "application_portal": "SAMPADA Portal / MoFPI Online",
+      "nodal_agency": "Ministry of Food Processing Industries",
+      "helpline": "011-26492216"
+    }
+  },
+  {
+    "scheme_id": "NATIONAL_BEE_BOARD",
+    "name": "National Beekeeping and Honey Mission",
+    "short_name": "National Honey Mission (NBHM)",
+    "ministry": "Ministry of Agriculture and Farmers Welfare",
+    "category": "Agriculture",
+    "description": "Up to 80% subsidy for beekeepers to acquire bee colonies, wooden hives, honey extractors, testing equipment, and migration kits, generating supplementary rural income.",
+    "tags": [
+      "beekeeping",
+      "honey",
+      "bee colonies",
+      "madhumakhi",
+      "sweet revolution",
+      "nbhm",
+      "apiary"
+    ],
+    "eligibility": {
+      "age": {
+        "min": 18,
+        "max": 65
+      },
+      "income_annual": {
+        "min": null,
+        "max": null
+      },
+      "gender": [
+        "M",
+        "F",
+        "O"
+      ],
+      "social_categories": [
+        "SC",
+        "ST",
+        "OBC",
+        "GEN",
+        "MINORITY",
+        "EWS",
+        "PWD"
+      ],
+      "activities": [
+        "agriculture",
+        "handicraft",
+        "food_processing"
+      ],
+      "activity_categories": [
+        "agriculture",
+        "msme"
+      ],
+      "location": {
+        "states": [
+          "all"
+        ],
+        "urban_only": false,
+        "rural_only": true
+      },
+      "occupation": [
+        "farmer",
+        "self_employed"
+      ],
+      "existing_business": null,
+      "disability": null,
+      "minority": null,
+      "min_project_cost": 20000,
+      "max_project_cost": 500000,
+      "custom_rules": []
+    },
+    "financing": {
+      "type": "subsidy",
+      "max_amount": 500000,
+      "min_amount": 20000,
+      "interest_rate": {
+        "base": 0,
+        "subsidy_rate": 0,
+        "effective_rate": 0
+      },
+      "own_contribution_pct": 20,
+      "tenure_months": {
+        "min": 0,
+        "max": 0
+      },
+      "moratorium_months": 0,
+      "collateral_required": false,
+      "subsidy_amount": null,
+      "subsidy_pct": 80,
+      "subsidy_notes": "Up to 80% financial subsidy on wooden bee boxes and bee colonies (50 hives per individual beekeeper)."
+    },
+    "documents": [
+      {
+        "id": "aadhaar",
+        "name": "Aadhaar Card",
+        "required": true,
+        "note": "Identity proof"
+      },
+      {
+        "id": "training_cert",
+        "name": "Beekeeping Training Certificate from KVK / KVIC / State Dept",
+        "required": true,
+        "note": "Basic beekeeping skills"
+      },
+      {
+        "id": "bank_passbook",
+        "name": "Bank Passbook copy",
+        "required": true,
+        "note": "Direct subsidy transfer"
+      }
+    ],
+    "channel_partners": {
+      "types": [
+        "National Bee Board (NBB)",
+        "State Horticulture Departments",
+        "KVIC"
+      ],
+      "pm_suraj_integrated": false
+    },
+    "metadata": {
+      "active": true,
+      "version": "2026-09",
+      "official_url": "https://nbb.gov.in",
+      "application_portal": "Madhukranti Portal (madhukranti.in)",
+      "nodal_agency": "National Bee Board / MoA&FW",
+      "helpline": "011-23382012"
+    }
+  },
+  {
+    "scheme_id": "SERICULTURE_SILK",
+    "name": "Silk Samagra - Integrated Development of Silk Industry",
+    "short_name": "Silk Samagra Sericulture Scheme",
+    "ministry": "Ministry of Textiles",
+    "category": "Agriculture",
+    "description": "50% to 75% capital subsidy on mulberry plantation, silkworm rearing sheds, automatic silk reeling machines, and grainages for sericulture farmers and rural reelers.",
+    "tags": [
+      "sericulture",
+      "silk",
+      "mulberry",
+      "tasar",
+      "muga",
+      "reeling machine",
+      "cocoon",
+      "silk samagra"
+    ],
+    "eligibility": {
+      "age": {
+        "min": 18,
+        "max": 65
+      },
+      "income_annual": {
+        "min": null,
+        "max": null
+      },
+      "gender": [
+        "M",
+        "F",
+        "O"
+      ],
+      "social_categories": [
+        "SC",
+        "ST",
+        "OBC",
+        "GEN",
+        "MINORITY",
+        "EWS",
+        "PWD"
+      ],
+      "activities": [
+        "weaving",
+        "agriculture",
+        "manufacturing"
+      ],
+      "activity_categories": [
+        "agriculture",
+        "msme"
+      ],
+      "location": {
+        "states": [
+          "all"
+        ],
+        "urban_only": false,
+        "rural_only": true
+      },
+      "occupation": [
+        "farmer",
+        "self_employed"
+      ],
+      "existing_business": null,
+      "disability": null,
+      "minority": null,
+      "min_project_cost": 50000,
+      "max_project_cost": 1500000,
+      "custom_rules": []
+    },
+    "financing": {
+      "type": "composite",
+      "max_amount": 1500000,
+      "min_amount": 50000,
+      "interest_rate": {
+        "base": 8.5,
+        "subsidy_rate": 0,
+        "effective_rate": 8.5
+      },
+      "own_contribution_pct": 10,
+      "tenure_months": {
+        "min": 36,
+        "max": 84
+      },
+      "moratorium_months": 6,
+      "collateral_required": false,
+      "subsidy_amount": null,
+      "subsidy_pct": 65,
+      "subsidy_notes": "50% to 75% financial assistance on rearing sheds and computerized reeling equipment depending on category."
+    },
+    "documents": [
+      {
+        "id": "aadhaar",
+        "name": "Aadhaar Card",
+        "required": true,
+        "note": "Identity proof"
+      },
+      {
+        "id": "land_doc",
+        "name": "Proof of Mulberry / Host Plant Cultivation Land",
+        "required": true,
+        "note": "Farming area"
+      },
+      {
+        "id": "bank_passbook",
+        "name": "Bank Passbook copy",
+        "required": true,
+        "note": "Direct subsidy transfer"
+      }
+    ],
+    "channel_partners": {
+      "types": [
+        "Central Silk Board (CSB)",
+        "State Sericulture Directorates",
+        "Commercial Banks"
+      ],
+      "pm_suraj_integrated": false
+    },
+    "metadata": {
+      "active": true,
+      "version": "2026-09",
+      "official_url": "https://csb.gov.in",
+      "application_portal": "Central Silk Board Regional Offices / State Sericulture Portal",
+      "nodal_agency": "Central Silk Board / Ministry of Textiles",
+      "helpline": "080-26282699"
+    }
+  },
+  {
+    "scheme_id": "SAMARTH_TEXTILE",
+    "name": "SAMARTH - Scheme for Capacity Building in Textile Sector",
+    "short_name": "SAMARTH Textile Skill Scheme",
+    "ministry": "Ministry of Textiles",
+    "category": "MSME",
+    "description": "100% free government-sponsored training and placement program in sewing machine operation, textile processing, apparel stitching, with wage compensation and wage employment linkage.",
+    "tags": [
+      "samarth",
+      "textile training",
+      "sewing operator",
+      "tailoring skill",
+      "apparel training",
+      "placement"
+    ],
+    "eligibility": {
+      "age": {
+        "min": 18,
+        "max": 45
+      },
+      "income_annual": {
+        "min": null,
+        "max": null
+      },
+      "gender": [
+        "M",
+        "F",
+        "O"
+      ],
+      "social_categories": [
+        "SC",
+        "ST",
+        "OBC",
+        "GEN",
+        "MINORITY",
+        "EWS",
+        "PWD"
+      ],
+      "activities": [
+        "tailoring",
+        "weaving",
+        "manufacturing"
+      ],
+      "activity_categories": [
+        "msme",
+        "services"
+      ],
+      "location": {
+        "states": [
+          "all"
+        ],
+        "urban_only": false,
+        "rural_only": false
+      },
+      "occupation": [
+        "student",
+        "self_employed"
+      ],
+      "existing_business": null,
+      "disability": null,
+      "minority": null,
+      "min_project_cost": 0,
+      "max_project_cost": 100000,
+      "custom_rules": []
+    },
+    "financing": {
+      "type": "grant",
+      "max_amount": 100000,
+      "min_amount": 0,
+      "interest_rate": {
+        "base": 0,
+        "subsidy_rate": 0,
+        "effective_rate": 0
+      },
+      "own_contribution_pct": 0,
+      "tenure_months": {
+        "min": 0,
+        "max": 0
+      },
+      "moratorium_months": 0,
+      "collateral_required": false,
+      "subsidy_amount": 100000,
+      "subsidy_pct": 100,
+      "subsidy_notes": "100% free certified skill training with biometric attendance, assessment certification, and guaranteed placement linkage."
+    },
+    "documents": [
+      {
+        "id": "aadhaar",
+        "name": "Aadhaar Card",
+        "required": true,
+        "note": "Biometric registration"
+      },
+      {
+        "id": "bank_passbook",
+        "name": "Bank Passbook copy",
+        "required": true,
+        "note": "For stipend transfer"
+      },
+      {
+        "id": "photo",
+        "name": "Passport Size Photographs (2)",
+        "required": true,
+        "note": "Recent photos"
+      }
+    ],
+    "channel_partners": {
+      "types": [
+        "Textile Industry Associations",
+        "Empanelled Training Centres",
+        "Apparel Training & Design Centres (ATDC)"
+      ],
+      "pm_suraj_integrated": false
+    },
+    "metadata": {
+      "active": true,
+      "version": "2026-09",
+      "official_url": "https://samarth-textiles.gov.in",
+      "application_portal": "SAMARTH MIS Portal",
+      "nodal_agency": "Ministry of Textiles",
+      "helpline": "1800-208-4800"
+    }
+  },
+  {
+    "scheme_id": "POWER_TEX_INDIA",
+    "name": "PowerTex India - Comprehensive Scheme for Powerloom Sector",
+    "short_name": "PowerTex India Weavers Scheme",
+    "ministry": "Ministry of Textiles",
+    "category": "MSME",
+    "description": "Up to 50% capital subsidy on conversion of ordinary powerlooms to auto shuttleless looms, solar energy panels for powerloom units, and yarn bank credit facility.",
+    "tags": [
+      "powertex",
+      "powerloom",
+      "loom upgrade",
+      "solar powerloom",
+      "yarn bank",
+      "textile msme"
+    ],
+    "eligibility": {
+      "age": {
+        "min": 18,
+        "max": 65
+      },
+      "income_annual": {
+        "min": null,
+        "max": null
+      },
+      "gender": [
+        "M",
+        "F",
+        "O"
+      ],
+      "social_categories": [
+        "SC",
+        "ST",
+        "OBC",
+        "GEN",
+        "MINORITY",
+        "EWS",
+        "PWD"
+      ],
+      "activities": [
+        "weaving",
+        "manufacturing"
+      ],
+      "activity_categories": [
+        "msme"
+      ],
+      "location": {
+        "states": [
+          "all"
+        ],
+        "urban_only": false,
+        "rural_only": false
+      },
+      "occupation": [
+        "self_employed",
+        "entrepreneur"
+      ],
+      "existing_business": true,
+      "disability": null,
+      "minority": null,
+      "min_project_cost": 100000,
+      "max_project_cost": 2500000,
+      "custom_rules": []
+    },
+    "financing": {
+      "type": "composite",
+      "max_amount": 2500000,
+      "min_amount": 100000,
+      "interest_rate": {
+        "base": 8.5,
+        "subsidy_rate": 0,
+        "effective_rate": 8.5
+      },
+      "own_contribution_pct": 10,
+      "tenure_months": {
+        "min": 36,
+        "max": 84
+      },
+      "moratorium_months": 6,
+      "collateral_required": false,
+      "subsidy_amount": null,
+      "subsidy_pct": 50,
+      "subsidy_notes": "Up to 50% capital subsidy on attachment of modern electronic jacquards, rapier kits, and on-grid solar power setups."
+    },
+    "documents": [
+      {
+        "id": "aadhaar",
+        "name": "Aadhaar Card",
+        "required": true,
+        "note": "Identity proof"
+      },
+      {
+        "id": "powerloom_reg",
+        "name": "Powerloom Registration Permit / Udyam Certificate",
+        "required": true,
+        "note": "Operational verification"
+      },
+      {
+        "id": "electricity_bill",
+        "name": "Commercial Electricity Connection Bill (Last 3 months)",
+        "required": true,
+        "note": "Power supply proof"
+      }
+    ],
+    "channel_partners": {
+      "types": [
+        "Textile Commissioner Regional Offices",
+        "Powerloom Service Centres (PSC)",
+        "Banks"
+      ],
+      "pm_suraj_integrated": false
+    },
+    "metadata": {
+      "active": true,
+      "version": "2026-09",
+      "official_url": "https://txcindia.gov.in",
+      "application_portal": "Office of Textile Commissioner Portal",
+      "nodal_agency": "Office of Textile Commissioner / Ministry of Textiles",
+      "helpline": "022-22001050"
+    }
+  },
+  {
+    "scheme_id": "JUTE_ICARE",
+    "name": "Jute-ICARE and Jute Diversified Products Scheme",
+    "short_name": "Jute ICARE Livelihood Scheme",
+    "ministry": "Ministry of Textiles",
+    "category": "Agriculture",
+    "description": "Subsidized distribution of certified jute seeds, microbial retting consortium, seed drills, and training for micro-units producing eco-friendly jute bags, files, and handicrafts.",
+    "tags": [
+      "jute",
+      "golden fibre",
+      "jute bag",
+      "retting",
+      "eco friendly packaging",
+      "handicraft",
+      "jute craft"
+    ],
+    "eligibility": {
+      "age": {
+        "min": 18,
+        "max": 65
+      },
+      "income_annual": {
+        "min": null,
+        "max": null
+      },
+      "gender": [
+        "M",
+        "F",
+        "O"
+      ],
+      "social_categories": [
+        "SC",
+        "ST",
+        "OBC",
+        "GEN",
+        "MINORITY",
+        "EWS",
+        "PWD"
+      ],
+      "activities": [
+        "handicraft",
+        "agriculture",
+        "manufacturing",
+        "tailoring"
+      ],
+      "activity_categories": [
+        "agriculture",
+        "msme"
+      ],
+      "location": {
+        "states": [
+          "all"
+        ],
+        "urban_only": false,
+        "rural_only": false
+      },
+      "occupation": [
+        "farmer",
+        "self_employed"
+      ],
+      "existing_business": null,
+      "disability": null,
+      "minority": null,
+      "min_project_cost": 25000,
+      "max_project_cost": 500000,
+      "custom_rules": []
+    },
+    "financing": {
+      "type": "composite",
+      "max_amount": 500000,
+      "min_amount": 25000,
+      "interest_rate": {
+        "base": 8.5,
+        "subsidy_rate": null,
+        "effective_rate": 8.5
+      },
+      "own_contribution_pct": 10,
+      "tenure_months": {
+        "min": 12,
+        "max": 48
+      },
+      "moratorium_months": 3,
+      "collateral_required": false,
+      "subsidy_amount": 50000,
+      "subsidy_pct": null,
+      "subsidy_notes": "Free seed & microbial inputs + capital assistance on modern heavy-duty stitching machines for jute diversification."
+    },
+    "documents": [
+      {
+        "id": "aadhaar",
+        "name": "Aadhaar Card",
+        "required": true,
+        "note": "Identity proof"
+      },
+      {
+        "id": "bank_passbook",
+        "name": "Bank Passbook copy",
+        "required": true,
+        "note": "Account details"
+      },
+      {
+        "id": "quotation",
+        "name": "Quotation for Jute Bag Stitching Machinery",
+        "required": true,
+        "note": "Equipment estimate"
+      }
+    ],
+    "channel_partners": {
+      "types": [
+        "National Jute Board (NJB)",
+        "Jute Corporation of India (JCI)",
+        "Commercial Banks"
+      ],
+      "pm_suraj_integrated": false
+    },
+    "metadata": {
+      "active": true,
+      "version": "2026-09",
+      "official_url": "https://jute.com",
+      "application_portal": "National Jute Board Portal",
+      "nodal_agency": "National Jute Board / Ministry of Textiles",
+      "helpline": "033-22879552"
+    }
+  },
+  {
+    "scheme_id": "MEGA_LEATHER_FOOTWEAR",
+    "name": "Indian Footwear and Leather Development Programme",
+    "short_name": "IFLDP Leather & Footwear Scheme",
+    "ministry": "Ministry of Commerce and Industry",
+    "category": "MSME",
+    "description": "Up to 30% capital subsidy on modern machinery for MSMEs in footwear, shoe uppers, leather garments, bags, and traditional artisanal leather craft (Kolhapuri, Mojari).",
+    "tags": [
+      "leather",
+      "footwear",
+      "shoe manufacturing",
+      "mojari",
+      "kolhapuri",
+      "cobbler",
+      "leather goods"
+    ],
+    "eligibility": {
+      "age": {
+        "min": 18,
+        "max": 65
+      },
+      "income_annual": {
+        "min": null,
+        "max": null
+      },
+      "gender": [
+        "M",
+        "F",
+        "O"
+      ],
+      "social_categories": [
+        "SC",
+        "ST",
+        "OBC",
+        "GEN",
+        "MINORITY",
+        "EWS",
+        "PWD"
+      ],
+      "activities": [
+        "manufacturing",
+        "handicraft",
+        "retail"
+      ],
+      "activity_categories": [
+        "msme"
+      ],
+      "location": {
+        "states": [
+          "all"
+        ],
+        "urban_only": false,
+        "rural_only": false
+      },
+      "occupation": [
+        "self_employed",
+        "entrepreneur"
+      ],
+      "existing_business": null,
+      "disability": null,
+      "minority": null,
+      "min_project_cost": 100000,
+      "max_project_cost": 5000000,
+      "custom_rules": []
+    },
+    "financing": {
+      "type": "composite",
+      "max_amount": 5000000,
+      "min_amount": 100000,
+      "interest_rate": {
+        "base": 9,
+        "subsidy_rate": 0,
+        "effective_rate": 9
+      },
+      "own_contribution_pct": 10,
+      "tenure_months": {
+        "min": 36,
+        "max": 84
+      },
+      "moratorium_months": 6,
+      "collateral_required": false,
+      "subsidy_amount": null,
+      "subsidy_pct": 30,
+      "subsidy_notes": "30% capital subsidy on procurement of contemporary machinery for leather goods and footwear micro-enterprises."
+    },
+    "documents": [
+      {
+        "id": "aadhaar",
+        "name": "Aadhaar Card",
+        "required": true,
+        "note": "Identity proof"
+      },
+      {
+        "id": "pan",
+        "name": "PAN Card",
+        "required": true,
+        "note": "Tax registration"
+      },
+      {
+        "id": "udyam_reg",
+        "name": "Udyam Registration Certificate",
+        "required": true,
+        "note": "MSME status"
+      },
+      {
+        "id": "quotation",
+        "name": "Machinery Quotation from Registered Manufacturer",
+        "required": true,
+        "note": "Equipment purchase"
+      }
+    ],
+    "channel_partners": {
+      "types": [
+        "Council for Leather Exports (CLE)",
+        "Footwear Design & Development Institute (FDDI)",
+        "Banks"
+      ],
+      "pm_suraj_integrated": true
+    },
+    "metadata": {
+      "active": true,
+      "version": "2026-09",
+      "official_url": "https://dpiit.gov.in/ifldp",
+      "application_portal": "DPIIT National Leather Portal",
+      "nodal_agency": "DPIIT / Ministry of Commerce and Industry",
+      "helpline": "011-23061222"
+    }
+  },
+  {
+    "scheme_id": "COIR_VIKAS_YOJANA",
+    "name": "Coir Industry Technology Upgradation Scheme",
+    "short_name": "CITUS Coir Technology Scheme",
+    "ministry": "Ministry of Micro, Small and Medium Enterprises",
+    "category": "MSME",
+    "description": "25% capital subsidy (up to ₹2.5 Crore) for modernizing coir defibering units, automatic curling, coir geotextile looms, and pith block manufacturing.",
+    "tags": [
+      "coir technology",
+      "coir pith",
+      "geotextile",
+      "defibering",
+      "coconut fibre",
+      "msme coir"
+    ],
+    "eligibility": {
+      "age": {
+        "min": 18,
+        "max": 65
+      },
+      "income_annual": {
+        "min": null,
+        "max": null
+      },
+      "gender": [
+        "M",
+        "F",
+        "O"
+      ],
+      "social_categories": [
+        "SC",
+        "ST",
+        "OBC",
+        "GEN",
+        "MINORITY",
+        "EWS",
+        "PWD"
+      ],
+      "activities": [
+        "manufacturing",
+        "agriculture"
+      ],
+      "activity_categories": [
+        "msme"
+      ],
+      "location": {
+        "states": [
+          "all"
+        ],
+        "urban_only": false,
+        "rural_only": false
+      },
+      "occupation": [
+        "entrepreneur"
+      ],
+      "existing_business": null,
+      "disability": null,
+      "minority": null,
+      "min_project_cost": 500000,
+      "max_project_cost": 25000000,
+      "custom_rules": []
+    },
+    "financing": {
+      "type": "composite",
+      "max_amount": 25000000,
+      "min_amount": 500000,
+      "interest_rate": {
+        "base": 9,
+        "subsidy_rate": 0,
+        "effective_rate": 9
+      },
+      "own_contribution_pct": 10,
+      "tenure_months": {
+        "min": 36,
+        "max": 84
+      },
+      "moratorium_months": 6,
+      "collateral_required": false,
+      "subsidy_amount": null,
+      "subsidy_pct": 25,
+      "subsidy_notes": "25% capital investment subsidy on procurement of modern coir processing plant and machinery."
+    },
+    "documents": [
+      {
+        "id": "aadhaar",
+        "name": "Aadhaar Card",
+        "required": true,
+        "note": "Identity proof"
+      },
+      {
+        "id": "pan",
+        "name": "PAN Card",
+        "required": true,
+        "note": "Tax registration"
+      },
+      {
+        "id": "udyam_reg",
+        "name": "Udyam Registration Certificate",
+        "required": true,
+        "note": "MSME registration"
+      },
+      {
+        "id": "project_report",
+        "name": "DPR with Machinery Quotes",
+        "required": true,
+        "note": "Detailed plan"
+      }
+    ],
+    "channel_partners": {
+      "types": [
+        "Coir Board",
+        "Commercial Banks",
+        "State Financial Corporations"
+      ],
+      "pm_suraj_integrated": true
+    },
+    "metadata": {
+      "active": true,
+      "version": "2026-09",
+      "official_url": "https://coirboard.gov.in",
+      "application_portal": "Coir Board Online Portal",
+      "nodal_agency": "Coir Board / MoMSME",
+      "helpline": "0484-2351988"
+    }
+  },
+  {
+    "scheme_id": "KHADI_REHABILITATION",
+    "name": "Interest Subsidy Eligibility Certificate Scheme for Khadi",
+    "short_name": "ISEC Khadi Concessional Credit",
+    "ministry": "Ministry of Micro, Small and Medium Enterprises",
+    "category": "Rural",
+    "description": "Bridges the gap between commercial bank lending rates and 4% concessional interest for certified Khadi and Polyvastra institutions and artisan cooperatives.",
+    "tags": [
+      "khadi",
+      "isec",
+      "interest subsidy",
+      "4 percent",
+      "khadi institution",
+      "spinning",
+      "weaving"
+    ],
+    "eligibility": {
+      "age": {
+        "min": 18,
+        "max": 70
+      },
+      "income_annual": {
+        "min": null,
+        "max": null
+      },
+      "gender": [
+        "M",
+        "F",
+        "O"
+      ],
+      "social_categories": [
+        "SC",
+        "ST",
+        "OBC",
+        "GEN",
+        "MINORITY",
+        "EWS",
+        "PWD"
+      ],
+      "activities": [
+        "weaving",
+        "handicraft",
+        "manufacturing"
+      ],
+      "activity_categories": [
+        "msme"
+      ],
+      "location": {
+        "states": [
+          "all"
+        ],
+        "urban_only": false,
+        "rural_only": false
+      },
+      "occupation": [
+        "self_employed",
+        "entrepreneur"
+      ],
+      "existing_business": true,
+      "disability": null,
+      "minority": null,
+      "min_project_cost": 100000,
+      "max_project_cost": 10000000,
+      "custom_rules": []
+    },
+    "financing": {
+      "type": "loan",
+      "max_amount": 10000000,
+      "min_amount": 100000,
+      "interest_rate": {
+        "base": 11,
+        "subsidy_rate": 7,
+        "effective_rate": 4
+      },
+      "own_contribution_pct": 5,
+      "tenure_months": {
+        "min": 12,
+        "max": 60
+      },
+      "moratorium_months": 3,
+      "collateral_required": false,
+      "subsidy_amount": null,
+      "subsidy_pct": null,
+      "subsidy_notes": "Lending bank charges normal interest; KVIC pays the entire interest portion above 4% directly to the bank."
+    },
+    "documents": [
+      {
+        "id": "aadhaar",
+        "name": "Aadhaar of Office Bearers",
+        "required": true,
+        "note": "Identity proof"
+      },
+      {
+        "id": "khadi_cert",
+        "name": "Khadi Institution Recognition Certificate from KVIC",
+        "required": true,
+        "note": "Valid certificate"
+      },
+      {
+        "id": "audit_report",
+        "name": "Audited Financial Accounts (last 3 years)",
+        "required": true,
+        "note": "Financial statements"
+      }
+    ],
+    "channel_partners": {
+      "types": [
+        "KVIC",
+        "State KVIBs",
+        "Nationalized Banks"
+      ],
+      "pm_suraj_integrated": false
+    },
+    "metadata": {
+      "active": true,
+      "version": "2026-09",
+      "official_url": "https://kvic.gov.in",
+      "application_portal": "KVIC Portal",
+      "nodal_agency": "Khadi and Village Industries Commission",
+      "helpline": "1800-3000-0034"
+    }
+  },
+  {
+    "scheme_id": "MSIPS_ELECTRONICS",
+    "name": "Modified Special Incentive Package Scheme for Electronics",
+    "short_name": "M-SIPS Electronics Subsidy",
+    "ministry": "Ministry of Electronics and Information Technology",
+    "category": "MSME",
+    "description": "20% to 25% capital expenditure subsidy for manufacturing electronic hardware, IoT devices, solar modules, battery packs, and assembly units.",
+    "tags": [
+      "electronics manufacturing",
+      "msips",
+      "meity",
+      "iot device",
+      "hardware",
+      "assembly unit",
+      "circuit board"
+    ],
+    "eligibility": {
+      "age": {
+        "min": 18,
+        "max": 65
+      },
+      "income_annual": {
+        "min": null,
+        "max": null
+      },
+      "gender": [
+        "M",
+        "F",
+        "O"
+      ],
+      "social_categories": [
+        "SC",
+        "ST",
+        "OBC",
+        "GEN",
+        "MINORITY",
+        "EWS",
+        "PWD"
+      ],
+      "activities": [
+        "electronics",
+        "technology",
+        "manufacturing"
+      ],
+      "activity_categories": [
+        "msme"
+      ],
+      "location": {
+        "states": [
+          "all"
+        ],
+        "urban_only": false,
+        "rural_only": false
+      },
+      "occupation": [
+        "entrepreneur"
+      ],
+      "existing_business": null,
+      "disability": null,
+      "minority": null,
+      "min_project_cost": 1000000,
+      "max_project_cost": 50000000,
+      "custom_rules": []
+    },
+    "financing": {
+      "type": "composite",
+      "max_amount": 50000000,
+      "min_amount": 1000000,
+      "interest_rate": {
+        "base": 9,
+        "subsidy_rate": 0,
+        "effective_rate": 9
+      },
+      "own_contribution_pct": 15,
+      "tenure_months": {
+        "min": 36,
+        "max": 120
+      },
+      "moratorium_months": 12,
+      "collateral_required": false,
+      "subsidy_amount": null,
+      "subsidy_pct": 25,
+      "subsidy_notes": "20% capital expenditure subsidy for units located in SEZs; 25% subsidy for non-SEZ units, plus reimbursement of central taxes."
+    },
+    "documents": [
+      {
+        "id": "aadhaar",
+        "name": "Aadhaar Card of Promoters",
+        "required": true,
+        "note": "Identity proof"
+      },
+      {
+        "id": "pan",
+        "name": "Company PAN Card",
+        "required": true,
+        "note": "Tax registration"
+      },
+      {
+        "id": "udyam_reg",
+        "name": "Udyam Registration Certificate",
+        "required": true,
+        "note": "MSME certificate"
+      },
+      {
+        "id": "project_report",
+        "name": "Comprehensive DPR for Electronic Assembly Facility",
+        "required": true,
+        "note": "Hardware machinery plan"
+      }
+    ],
+    "channel_partners": {
+      "types": [
+        "MeitY",
+        "IFCI",
+        "Scheduled Commercial Banks"
+      ],
+      "pm_suraj_integrated": true
+    },
+    "metadata": {
+      "active": true,
+      "version": "2026-09",
+      "official_url": "https://meity.gov.in/esdm",
+      "application_portal": "MeitY ESDM Online Portal",
+      "nodal_agency": "Ministry of Electronics & Information Technology",
+      "helpline": "011-24301100"
+    }
+  },
+  {
+    "scheme_id": "SPECS_CHIPS",
+    "name": "Scheme for Promotion of Manufacturing of Electronic Components and Semiconductors",
+    "short_name": "SPECS Semiconductor Incentive",
+    "ministry": "Ministry of Electronics and Information Technology",
+    "category": "MSME",
+    "description": "Financial incentive of 25% on capital expenditure for manufacturing electronic components, passive components, PCBs, sensors, and semiconductor sub-assemblies.",
+    "tags": [
+      "semiconductor",
+      "specs",
+      "pcb",
+      "sensors",
+      "electronic components",
+      "chips",
+      "meity incentive"
+    ],
+    "eligibility": {
+      "age": {
+        "min": 18,
+        "max": 65
+      },
+      "income_annual": {
+        "min": null,
+        "max": null
+      },
+      "gender": [
+        "M",
+        "F",
+        "O"
+      ],
+      "social_categories": [
+        "SC",
+        "ST",
+        "OBC",
+        "GEN",
+        "MINORITY",
+        "EWS",
+        "PWD"
+      ],
+      "activities": [
+        "electronics",
+        "technology",
+        "manufacturing"
+      ],
+      "activity_categories": [
+        "msme"
+      ],
+      "location": {
+        "states": [
+          "all"
+        ],
+        "urban_only": false,
+        "rural_only": false
+      },
+      "occupation": [
+        "entrepreneur"
+      ],
+      "existing_business": null,
+      "disability": null,
+      "minority": null,
+      "min_project_cost": 2500000,
+      "max_project_cost": 50000000,
+      "custom_rules": []
+    },
+    "financing": {
+      "type": "composite",
+      "max_amount": 50000000,
+      "min_amount": 2500000,
+      "interest_rate": {
+        "base": 9,
+        "subsidy_rate": 0,
+        "effective_rate": 9
+      },
+      "own_contribution_pct": 15,
+      "tenure_months": {
+        "min": 36,
+        "max": 120
+      },
+      "moratorium_months": 12,
+      "collateral_required": false,
+      "subsidy_amount": null,
+      "subsidy_pct": 25,
+      "subsidy_notes": "Reimbursement of 25% of eligible capital expenditure on plant, machinery, equipment, clean rooms, and related utilities."
+    },
+    "documents": [
+      {
+        "id": "aadhaar",
+        "name": "Aadhaar Card",
+        "required": true,
+        "note": "Identity proof"
+      },
+      {
+        "id": "pan",
+        "name": "PAN Card",
+        "required": true,
+        "note": "Tax registration"
+      },
+      {
+        "id": "project_report",
+        "name": "Techno-Commercial DPR for Component Manufacturing",
+        "required": true,
+        "note": "Clean room and tool quotes"
+      }
+    ],
+    "channel_partners": {
+      "types": [
+        "MeitY Project Management Agency (IFCI)",
+        "Scheduled Commercial Banks"
+      ],
+      "pm_suraj_integrated": true
+    },
+    "metadata": {
+      "active": true,
+      "version": "2026-09",
+      "official_url": "https://specs.meity.gov.in",
+      "application_portal": "SPECS Online Application Portal",
+      "nodal_agency": "MeitY / IFCI",
+      "helpline": "011-24301100"
+    }
+  },
+  {
+    "scheme_id": "PLI_DRONE",
+    "name": "Production Linked Incentive (PLI) Scheme for Drones & Drone Components",
+    "short_name": "PLI Drone & Components",
+    "ministry": "Ministry of Civil Aviation",
+    "category": "MSME",
+    "description": "Incentive of up to 20% on net value addition for MSME and startup manufacturers of agricultural drones, surveillance drones, motors, batteries, and flight controllers.",
+    "tags": [
+      "drone pli",
+      "kisan drone",
+      "agri drone",
+      "flight controller",
+      "surveillance",
+      "civil aviation"
+    ],
+    "eligibility": {
+      "age": {
+        "min": 18,
+        "max": 60
+      },
+      "income_annual": {
+        "min": null,
+        "max": null
+      },
+      "gender": [
+        "M",
+        "F",
+        "O"
+      ],
+      "social_categories": [
+        "SC",
+        "ST",
+        "OBC",
+        "GEN",
+        "MINORITY",
+        "EWS",
+        "PWD"
+      ],
+      "activities": [
+        "technology",
+        "electronics",
+        "manufacturing"
+      ],
+      "activity_categories": [
+        "msme"
+      ],
+      "location": {
+        "states": [
+          "all"
+        ],
+        "urban_only": false,
+        "rural_only": false
+      },
+      "occupation": [
+        "entrepreneur"
+      ],
+      "existing_business": true,
+      "disability": null,
+      "minority": null,
+      "min_project_cost": 1000000,
+      "max_project_cost": 50000000,
+      "custom_rules": []
+    },
+    "financing": {
+      "type": "subsidy",
+      "max_amount": 30000000,
+      "min_amount": 1000000,
+      "interest_rate": {
+        "base": 0,
+        "subsidy_rate": 0,
+        "effective_rate": 0
+      },
+      "own_contribution_pct": 10,
+      "tenure_months": {
+        "min": 0,
+        "max": 0
+      },
+      "moratorium_months": 0,
+      "collateral_required": false,
+      "subsidy_amount": null,
+      "subsidy_pct": 20,
+      "subsidy_notes": "Direct production incentive equal to 20% of net annual value addition over 3 financial years."
+    },
+    "documents": [
+      {
+        "id": "aadhaar",
+        "name": "Aadhaar Card of Founders",
+        "required": true,
+        "note": "Founders KYC"
+      },
+      {
+        "id": "pan",
+        "name": "Company PAN Card",
+        "required": true,
+        "note": "Tax registration"
+      },
+      {
+        "id": "dgca_cert",
+        "name": "DGCA Type Certificate / Drone Registration Proof",
+        "required": true,
+        "note": "Regulatory approval"
+      },
+      {
+        "id": "audit_report",
+        "name": "Statutory Auditor Certificate of Value Addition",
+        "required": true,
+        "note": "CA certified"
+      }
+    ],
+    "channel_partners": {
+      "types": [
+        "Ministry of Civil Aviation",
+        "DGCA",
+        "SIDBI"
+      ],
+      "pm_suraj_integrated": false
+    },
+    "metadata": {
+      "active": true,
+      "version": "2026-09",
+      "official_url": "https://civilaviation.gov.in",
+      "application_portal": "MoCA Drone PLI Portal",
+      "nodal_agency": "Ministry of Civil Aviation",
+      "helpline": "011-24622495"
+    }
+  },
+  {
+    "scheme_id": "CSIS_EDUCATION_LOAN",
+    "name": "Central Sector Interest Subsidy Scheme on Education Loans",
+    "short_name": "CSIS Education Loan Subsidy",
+    "ministry": "Ministry of Education",
+    "category": "Education",
+    "description": "100% full interest subsidy during the moratorium period (course duration + 1 year) for students from Economically Weaker Sections (annual family income < ₹4.5 Lakh) pursuing higher professional education.",
+    "tags": [
+      "education loan",
+      "csis",
+      "vidyalakshmi",
+      "interest subsidy student",
+      "professional degree",
+      "ews student"
+    ],
+    "eligibility": {
+      "age": {
+        "min": 17,
+        "max": 35
+      },
+      "income_annual": {
+        "min": null,
+        "max": 450000
+      },
+      "gender": [
+        "M",
+        "F",
+        "O"
+      ],
+      "social_categories": [
+        "SC",
+        "ST",
+        "OBC",
+        "GEN",
+        "MINORITY",
+        "EWS",
+        "PWD"
+      ],
+      "activities": [
+        "education"
+      ],
+      "activity_categories": [
+        "education"
+      ],
+      "location": {
+        "states": [
+          "all"
+        ],
+        "urban_only": false,
+        "rural_only": false
+      },
+      "occupation": [
+        "student"
+      ],
+      "existing_business": null,
+      "disability": null,
+      "minority": null,
+      "min_project_cost": 50000,
+      "max_project_cost": 1500000,
+      "custom_rules": []
+    },
+    "financing": {
+      "type": "loan",
+      "max_amount": 1500000,
+      "min_amount": 50000,
+      "interest_rate": {
+        "base": 8.5,
+        "subsidy_rate": 8.5,
+        "effective_rate": 0
+      },
+      "own_contribution_pct": 0,
+      "tenure_months": {
+        "min": 36,
+        "max": 180
+      },
+      "moratorium_months": 48,
+      "collateral_required": false,
+      "subsidy_amount": null,
+      "subsidy_pct": null,
+      "subsidy_notes": "100% full interest waiver during course duration plus 1 year; no interest payment burden during studies."
+    },
+    "documents": [
+      {
+        "id": "aadhaar",
+        "name": "Aadhaar Card of Student and Parent",
+        "required": true,
+        "note": "Identity proof"
+      },
+      {
+        "id": "income_cert",
+        "name": "Authorized Income Certificate (Family income <= ₹4.5 Lakh)",
+        "required": true,
+        "note": "Competent authority"
+      },
+      {
+        "id": "admission_letter",
+        "name": "College Admission Letter with Fee Structure",
+        "required": true,
+        "note": "Recognized university"
+      }
+    ],
+    "channel_partners": {
+      "types": [
+        "All Scheduled Commercial Banks",
+        "Vidya Lakshmi Portal",
+        "Canara Bank Nodal Cell"
+      ],
+      "pm_suraj_integrated": true
+    },
+    "metadata": {
+      "active": true,
+      "version": "2026-09",
+      "official_url": "https://www.vidyalakshmi.co.in",
+      "application_portal": "Vidya Lakshmi Education Portal",
+      "nodal_agency": "Department of Higher Education / Canara Bank",
+      "helpline": "1800-425-0018"
+    }
+  },
+  {
+    "scheme_id": "PMAY_CLSS",
+    "name": "Pradhan Mantri Awas Yojana - Credit Linked Subsidy Scheme",
+    "short_name": "PMAY Housing Interest Subsidy",
+    "ministry": "Ministry of Housing and Urban Affairs",
+    "category": "Housing",
+    "description": "Upfront capital interest subsidy up to ₹2.67 Lakh on home loans for EWS/LIG families purchasing or constructing their first pucca house, bringing down monthly home loan EMI.",
+    "tags": [
+      "pmay",
+      "home loan subsidy",
+      "housing for all",
+      "clss",
+      "pucca house",
+      "ews housing",
+      "interest subsidy"
+    ],
+    "eligibility": {
+      "age": {
+        "min": 18,
+        "max": 70
+      },
+      "income_annual": {
+        "min": null,
+        "max": 600000
+      },
+      "gender": [
+        "M",
+        "F",
+        "O"
+      ],
+      "social_categories": [
+        "EWS",
+        "SC",
+        "ST",
+        "OBC",
+        "GEN",
+        "MINORITY",
+        "PWD"
+      ],
+      "activities": [
+        "services",
+        "self_employed",
+        "retail",
+        "agriculture"
+      ],
+      "activity_categories": [
+        "services",
+        "msme",
+        "agriculture"
+      ],
+      "location": {
+        "states": [
+          "all"
+        ],
+        "urban_only": false,
+        "rural_only": false
+      },
+      "occupation": [
+        "self_employed",
+        "salaried",
+        "farmer"
+      ],
+      "existing_business": null,
+      "disability": null,
+      "minority": null,
+      "min_project_cost": 300000,
+      "max_project_cost": 3000000,
+      "custom_rules": []
+    },
+    "financing": {
+      "type": "subsidy",
+      "max_amount": 3000000,
+      "min_amount": 300000,
+      "interest_rate": {
+        "base": 8.5,
+        "subsidy_rate": 6.5,
+        "effective_rate": 2
+      },
+      "own_contribution_pct": 10,
+      "tenure_months": {
+        "min": 60,
+        "max": 240
+      },
+      "moratorium_months": 0,
+      "collateral_required": true,
+      "subsidy_amount": 267280,
+      "subsidy_pct": null,
+      "subsidy_notes": "Upfront interest subsidy of 6.50% p.a. credited directly to loan principal (net NPV benefit up to ₹2,67,280)."
+    },
+    "documents": [
+      {
+        "id": "aadhaar",
+        "name": "Aadhaar Card of all family members",
+        "required": true,
+        "note": "Identity proof"
+      },
+      {
+        "id": "income_cert",
+        "name": "Income Certificate (Family income <= ₹6 Lakh for EWS/LIG)",
+        "required": true,
+        "note": "Economic criteria"
+      },
+      {
+        "id": "no_house_affidavit",
+        "name": "Self-declaration affidavit confirming no pucca house anywhere in India",
+        "required": true,
+        "note": "First home verification"
+      }
+    ],
+    "channel_partners": {
+      "types": [
+        "Housing Finance Companies (HFC)",
+        "Commercial Banks",
+        "NHB",
+        "HUDCO"
+      ],
+      "pm_suraj_integrated": true
+    },
+    "metadata": {
+      "active": true,
+      "version": "2026-09",
+      "official_url": "https://pmay-urban.gov.in",
+      "application_portal": "PMAY CLSS Awas Portal (CLAP)",
+      "nodal_agency": "MoHUA / National Housing Bank",
+      "helpline": "1800-11-3377"
+    }
+  },
+  {
+    "scheme_id": "PM_SURAJ_NATIONAL",
+    "name": "Pradhan Mantri Samajik Utthan evam Rozgar Adharit Jankalyan (PM-SURAJ)",
+    "short_name": "PM-SURAJ Direct Credit Scheme",
+    "ministry": "Ministry of Social Justice and Empowerment",
+    "category": "SocialWelfare",
+    "description": "National single-window credit facilitation platform providing direct credit linkage up to ₹15 Lakh to marginalized sections (SC, ST, OBC, Safai Karamcharis) without visiting middlemen.",
+    "tags": [
+      "pm suraj",
+      "direct credit",
+      "dalit",
+      "adivasi",
+      "obc",
+      "safai karamchari",
+      "single window loan"
+    ],
+    "eligibility": {
+      "age": {
+        "min": 18,
+        "max": 65
+      },
+      "income_annual": {
+        "min": null,
+        "max": 300000
+      },
+      "gender": [
+        "M",
+        "F",
+        "O"
+      ],
+      "social_categories": [
+        "SC",
+        "ST",
+        "OBC"
+      ],
+      "activities": [
+        "retail",
+        "services",
+        "transport",
+        "dairy",
+        "manufacturing",
+        "tailoring",
+        "electronics"
+      ],
+      "activity_categories": [
+        "msme",
+        "services",
+        "agriculture"
+      ],
+      "location": {
+        "states": [
+          "all"
+        ],
+        "urban_only": false,
+        "rural_only": false
+      },
+      "occupation": [
+        "self_employed",
+        "entrepreneur"
+      ],
+      "existing_business": null,
+      "disability": null,
+      "minority": null,
+      "min_project_cost": 25000,
+      "max_project_cost": 1500000,
+      "custom_rules": []
+    },
+    "financing": {
+      "type": "loan",
+      "max_amount": 1500000,
+      "min_amount": 25000,
+      "interest_rate": {
+        "base": 6,
+        "subsidy_rate": 0,
+        "effective_rate": 6
+      },
+      "own_contribution_pct": 5,
+      "tenure_months": {
+        "min": 24,
+        "max": 96
+      },
+      "moratorium_months": 6,
+      "collateral_required": false,
+      "subsidy_amount": null,
+      "subsidy_pct": null,
+      "subsidy_notes": "Concessional interest rate between 5% and 7% p.a. directly routed to lending bank through PM-SURAJ."
+    },
+    "documents": [
+      {
+        "id": "aadhaar",
+        "name": "Aadhaar Card (Mobile linked)",
+        "required": true,
+        "note": "Online verification"
+      },
+      {
+        "id": "category_cert",
+        "name": "Caste Certificate (SC/ST/OBC)",
+        "required": true,
+        "note": "State authorized"
+      },
+      {
+        "id": "income_cert",
+        "name": "Family Income Certificate",
+        "required": true,
+        "note": "Income proof"
+      }
+    ],
+    "channel_partners": {
+      "types": [
+        "NSFDC",
+        "NSTFDC",
+        "NBCFDC",
+        "NSKFDC",
+        "All Public Sector Banks",
+        "CSC"
+      ],
+      "pm_suraj_integrated": true
+    },
+    "metadata": {
+      "active": true,
+      "version": "2026-09",
+      "official_url": "https://pmsuraj.dosje.gov.in",
+      "application_portal": "PM-SURAJ Unified Portal",
+      "nodal_agency": "Ministry of Social Justice & Empowerment",
+      "helpline": "1800-11-0505"
+    }
+  },
+  {
+    "scheme_id": "CHIEF_MINISTER_ROJGAR_UP",
+    "name": "Mukhyamantri Yuva Swarojgar Yojana (Uttar Pradesh)",
+    "short_name": "UP Yuva Swarojgar Yojana",
+    "ministry": "Department of MSME & Export Promotion (Govt of UP)",
+    "category": "MSME",
+    "description": "Loans up to ₹25 Lakh for industrial units and up to ₹10 Lakh for service sectors with 25% margin money capital subsidy for educated unemployed youth of Uttar Pradesh.",
+    "tags": [
+      "up swarojgar",
+      "uttar pradesh loan",
+      "yuva rojgar",
+      "up msme subsidy",
+      "margin money up"
+    ],
+    "eligibility": {
+      "age": {
+        "min": 18,
+        "max": 40
+      },
+      "income_annual": {
+        "min": null,
+        "max": null
+      },
+      "gender": [
+        "M",
+        "F",
+        "O"
+      ],
+      "social_categories": [
+        "SC",
+        "ST",
+        "OBC",
+        "GEN",
+        "MINORITY",
+        "EWS",
+        "PWD"
+      ],
+      "activities": [
+        "manufacturing",
+        "services",
+        "food_processing",
+        "retail",
+        "electronics"
+      ],
+      "activity_categories": [
+        "msme",
+        "services"
+      ],
+      "location": {
+        "states": [
+          "Uttar Pradesh"
+        ],
+        "urban_only": false,
+        "rural_only": false
+      },
+      "occupation": [
+        "self_employed",
+        "entrepreneur"
+      ],
+      "existing_business": false,
+      "disability": null,
+      "minority": null,
+      "min_project_cost": 100000,
+      "max_project_cost": 2500000,
+      "custom_rules": []
+    },
+    "financing": {
+      "type": "composite",
+      "max_amount": 2500000,
+      "min_amount": 100000,
+      "interest_rate": {
+        "base": 8.5,
+        "subsidy_rate": 0,
+        "effective_rate": 8.5
+      },
+      "own_contribution_pct": 10,
+      "tenure_months": {
+        "min": 36,
+        "max": 84
+      },
+      "moratorium_months": 6,
+      "collateral_required": false,
+      "subsidy_amount": 625000,
+      "subsidy_pct": 25,
+      "subsidy_notes": "25% margin money subsidy (maximum ₹6.25 Lakh for industry / ₹2.5 Lakh for service sector) converted to grant after 2 years of successful operation."
+    },
+    "documents": [
+      {
+        "id": "aadhaar",
+        "name": "Aadhaar Card",
+        "required": true,
+        "note": "Identity proof"
+      },
+      {
+        "id": "domicile_cert",
+        "name": "Uttar Pradesh Domicile Certificate (Niwas Praman Patra)",
+        "required": true,
+        "note": "State resident proof"
+      },
+      {
+        "id": "edu_certificate",
+        "name": "High School (10th) Pass Certificate",
+        "required": true,
+        "note": "Minimum education proof"
+      },
+      {
+        "id": "project_report",
+        "name": "DPR of proposed business unit",
+        "required": true,
+        "note": "Project proposal"
+      }
+    ],
+    "channel_partners": {
+      "types": [
+        "District Industries Centres (DIC UP)",
+        "Commercial Banks",
+        "Gramin Bank of Aryavart"
+      ],
+      "pm_suraj_integrated": false
+    },
+    "metadata": {
+      "active": true,
+      "version": "2026-09",
+      "official_url": "https://diupmsme.upsdc.gov.in",
+      "application_portal": "UP MSME Portal (diupmsme.upsdc.gov.in)",
+      "nodal_agency": "Directorate of Industries, UP",
+      "helpline": "1800-1800-888"
+    }
+  },
+  {
+    "scheme_id": "BIHAR_UDYAMI_YOJANA",
+    "name": "Mukhyamantri Udyami Yojana (Bihar - SC/ST/EBC/Women/Youth)",
+    "short_name": "Bihar Mukhyamantri Udyami Yojana",
+    "ministry": "Department of Industries (Govt of Bihar)",
+    "category": "MSME",
+    "description": "Financial assistance of ₹10 Lakh (₹5 Lakh direct non-repayable grant + ₹5 Lakh interest-free loan repayable in 84 installments) for setting up new manufacturing and processing units in Bihar.",
+    "tags": [
+      "bihar udyami",
+      "interest free loan",
+      "bihar grant",
+      "5 lakh grant",
+      "sc st udyami",
+      "mahila udyami bihar"
+    ],
+    "eligibility": {
+      "age": {
+        "min": 18,
+        "max": 50
+      },
+      "income_annual": {
+        "min": null,
+        "max": null
+      },
+      "gender": [
+        "M",
+        "F",
+        "O"
+      ],
+      "social_categories": [
+        "SC",
+        "ST",
+        "OBC",
+        "GEN",
+        "MINORITY",
+        "EWS",
+        "PWD"
+      ],
+      "activities": [
+        "manufacturing",
+        "food_processing",
+        "tailoring",
+        "electronics",
+        "services"
+      ],
+      "activity_categories": [
+        "msme"
+      ],
+      "location": {
+        "states": [
+          "Bihar"
+        ],
+        "urban_only": false,
+        "rural_only": false
+      },
+      "occupation": [
+        "self_employed",
+        "entrepreneur"
+      ],
+      "existing_business": false,
+      "disability": null,
+      "minority": null,
+      "min_project_cost": 500000,
+      "max_project_cost": 1000000,
+      "custom_rules": []
+    },
+    "financing": {
+      "type": "composite",
+      "max_amount": 1000000,
+      "min_amount": 500000,
+      "interest_rate": {
+        "base": 1,
+        "subsidy_rate": 1,
+        "effective_rate": 0
+      },
+      "own_contribution_pct": 0,
+      "tenure_months": {
+        "min": 84,
+        "max": 84
+      },
+      "moratorium_months": 12,
+      "collateral_required": false,
+      "subsidy_amount": 500000,
+      "subsidy_pct": 50,
+      "subsidy_notes": "₹5 Lakh pure grant (50% of project cost) + ₹5 Lakh loan @ 0% interest (1% for general youth) repayable in 84 monthly installments."
+    },
+    "documents": [
+      {
+        "id": "aadhaar",
+        "name": "Aadhaar Card",
+        "required": true,
+        "note": "Identity proof"
+      },
+      {
+        "id": "domicile_cert",
+        "name": "Bihar Domicile Certificate (Awasiya Praman Patra)",
+        "required": true,
+        "note": "State resident"
+      },
+      {
+        "id": "category_cert",
+        "name": "Caste Certificate (Jati Praman Patra)",
+        "required": true,
+        "note": "From CO/SDM"
+      },
+      {
+        "id": "edu_certificate",
+        "name": "Intermediate (10+2) or ITI / Polytechnic Diploma Certificate",
+        "required": true,
+        "note": "Educational qualification"
+      },
+      {
+        "id": "bank_statement",
+        "name": "Current Bank Account Statement & Cancelled Cheque",
+        "required": true,
+        "note": "Entity account"
+      }
+    ],
+    "channel_partners": {
+      "types": [
+        "Department of Industries Bihar",
+        "State Financial Corporation"
+      ],
+      "pm_suraj_integrated": false
+    },
+    "metadata": {
+      "active": true,
+      "version": "2026-09",
+      "official_url": "https://udyami.bihar.gov.in",
+      "application_portal": "Bihar Udyami Portal (udyami.bihar.gov.in)",
+      "nodal_agency": "Department of Industries, Govt of Bihar",
+      "helpline": "1800-345-6214"
+    }
+  },
+  {
+    "scheme_id": "RAJASTHAN_LIVELIHOOD_RIPS",
+    "name": "Rajasthan Investment Promotion Scheme (RIPS) MSME Incentive",
+    "short_name": "Rajasthan RIPS MSME Subsidy",
+    "ministry": "Department of Industries (Govt of Rajasthan)",
+    "category": "MSME",
+    "description": "Up to 8% interest subsidy on bank loans for micro and small enterprises in Rajasthan, 100% electricity duty exemption for 7 years, and 100% stamp duty exemption.",
+    "tags": [
+      "rajasthan msme",
+      "rips subsidy",
+      "interest subvention rajasthan",
+      "rajasthan industry",
+      "stamp duty exemption"
+    ],
+    "eligibility": {
+      "age": {
+        "min": 18,
+        "max": 65
+      },
+      "income_annual": {
+        "min": null,
+        "max": null
+      },
+      "gender": [
+        "M",
+        "F",
+        "O"
+      ],
+      "social_categories": [
+        "SC",
+        "ST",
+        "OBC",
+        "GEN",
+        "MINORITY",
+        "EWS",
+        "PWD"
+      ],
+      "activities": [
+        "manufacturing",
+        "services",
+        "food_processing",
+        "handicraft",
+        "textiles"
+      ],
+      "activity_categories": [
+        "msme"
+      ],
+      "location": {
+        "states": [
+          "Rajasthan"
+        ],
+        "urban_only": false,
+        "rural_only": false
+      },
+      "occupation": [
+        "entrepreneur"
+      ],
+      "existing_business": null,
+      "disability": null,
+      "minority": null,
+      "min_project_cost": 500000,
+      "max_project_cost": 50000000,
+      "custom_rules": []
+    },
+    "financing": {
+      "type": "composite",
+      "max_amount": 50000000,
+      "min_amount": 500000,
+      "interest_rate": {
+        "base": 8.5,
+        "subsidy_rate": 6,
+        "effective_rate": 2.5
+      },
+      "own_contribution_pct": 10,
+      "tenure_months": {
+        "min": 36,
+        "max": 84
+      },
+      "moratorium_months": 6,
+      "collateral_required": false,
+      "subsidy_amount": null,
+      "subsidy_pct": null,
+      "subsidy_notes": "6% to 8% interest subvention for 5 years on bank term loans, plus 75% reimbursement of SGST for 7 years."
+    },
+    "documents": [
+      {
+        "id": "aadhaar",
+        "name": "Aadhaar Card",
+        "required": true,
+        "note": "Identity proof"
+      },
+      {
+        "id": "domicile_cert",
+        "name": "Rajasthan Domicile Proof",
+        "required": true,
+        "note": "Resident proof"
+      },
+      {
+        "id": "udyam_reg",
+        "name": "Udyam Registration Certificate",
+        "required": true,
+        "note": "MSME registration"
+      },
+      {
+        "id": "project_report",
+        "name": "DPR and Bank Loan Sanction Letter",
+        "required": true,
+        "note": "Approved loan"
+      }
+    ],
+    "channel_partners": {
+      "types": [
+        "Bureau of Investment Promotion (BIP)",
+        "District Industries Centres Rajasthan",
+        "RIICO",
+        "Banks"
+      ],
+      "pm_suraj_integrated": true
+    },
+    "metadata": {
+      "active": true,
+      "version": "2026-09",
+      "official_url": "https://invest.rajasthan.gov.in",
+      "application_portal": "RajNivesh Single Window System",
+      "nodal_agency": "BIP Rajasthan / Industries Dept",
+      "helpline": "0141-2227274"
+    }
+  },
+  {
+    "scheme_id": "KALAIGNAR_MAGALIR_URIMAI",
+    "name": "Kalaignar Magalir Urimai Thittam & Women Enterprise Assistance",
+    "short_name": "TN Women Livelihood Assistance",
+    "ministry": "Department of Social Welfare (Govt of Tamil Nadu)",
+    "category": "Women",
+    "description": "Direct basic income grant of ₹1,000/month plus credit linkage up to ₹1 Lakh at subsidized rates for women running petty shops, flower vending, tailoring, and food stalls in Tamil Nadu.",
+    "tags": [
+      "tamil nadu women",
+      "magalir urimai",
+      "women basic income",
+      "flower vendor",
+      "petty shop",
+      "tn shg"
+    ],
+    "eligibility": {
+      "age": {
+        "min": 21,
+        "max": 60
+      },
+      "income_annual": {
+        "min": null,
+        "max": 250000
+      },
+      "gender": [
+        "F"
+      ],
+      "social_categories": [
+        "SC",
+        "ST",
+        "OBC",
+        "GEN",
+        "MINORITY",
+        "EWS",
+        "PWD"
+      ],
+      "activities": [
+        "retail",
+        "services",
+        "street_vending",
+        "tailoring",
+        "food_services"
+      ],
+      "activity_categories": [
+        "services",
+        "msme"
+      ],
+      "location": {
+        "states": [
+          "Tamil Nadu"
+        ],
+        "urban_only": false,
+        "rural_only": false
+      },
+      "occupation": [
+        "self_employed"
+      ],
+      "existing_business": null,
+      "disability": null,
+      "minority": null,
+      "min_project_cost": 10000,
+      "max_project_cost": 100000,
+      "custom_rules": []
+    },
+    "financing": {
+      "type": "composite",
+      "max_amount": 100000,
+      "min_amount": 10000,
+      "interest_rate": {
+        "base": 6,
+        "subsidy_rate": 0,
+        "effective_rate": 6
+      },
+      "own_contribution_pct": 0,
+      "tenure_months": {
+        "min": 12,
+        "max": 36
+      },
+      "moratorium_months": 1,
+      "collateral_required": false,
+      "subsidy_amount": 12000,
+      "subsidy_pct": null,
+      "subsidy_notes": "₹1,000 monthly direct bank transfer + micro-credit support for small trades."
+    },
+    "documents": [
+      {
+        "id": "aadhaar",
+        "name": "Aadhaar Card",
+        "required": true,
+        "note": "Identity proof"
+      },
+      {
+        "id": "ration_card",
+        "name": "Tamil Nadu Smart Family Card (PHH / NPHH)",
+        "required": true,
+        "note": "Ration card"
+      },
+      {
+        "id": "bank_passbook",
+        "name": "Bank Passbook copy",
+        "required": true,
+        "note": "Direct cash transfer"
+      }
+    ],
+    "channel_partners": {
+      "types": [
+        "Tamil Nadu Corporation for Development of Women (TNCDW)",
+        "Cooperative Banks",
+        "e-Seva Centres"
+      ],
+      "pm_suraj_integrated": false
+    },
+    "metadata": {
+      "active": true,
+      "version": "2026-09",
+      "official_url": "https://kmut.tn.gov.in",
+      "application_portal": "e-Seva Centres / KMUT Portal",
+      "nodal_agency": "Special Programme Implementation Department, Govt of Tamil Nadu",
+      "helpline": "044-25619208"
+    }
+  },
+  {
+    "scheme_id": "MP_GRAMODYOG_ROZGAR",
+    "name": "Mukhyamantri Gramodyog Rozgar Yojana (Madhya Pradesh)",
+    "short_name": "MP Gramodyog Rozgar Yojana",
+    "ministry": "Cottage and Rural Industries Department (Govt of MP)",
+    "category": "Rural",
+    "description": "Loans up to ₹10 Lakh with 15% to 40% margin money subsidy and 5% interest subvention for 7 years for rural youth in Madhya Pradesh establishing village industries.",
+    "tags": [
+      "mp gramodyog",
+      "madhya pradesh subsidy",
+      "rural youth loan",
+      "cottage industry mp",
+      "khadi mp"
+    ],
+    "eligibility": {
+      "age": {
+        "min": 18,
+        "max": 45
+      },
+      "income_annual": {
+        "min": null,
+        "max": null
+      },
+      "gender": [
+        "M",
+        "F",
+        "O"
+      ],
+      "social_categories": [
+        "SC",
+        "ST",
+        "OBC",
+        "GEN",
+        "MINORITY",
+        "EWS",
+        "PWD"
+      ],
+      "activities": [
+        "manufacturing",
+        "services",
+        "food_processing",
+        "tailoring",
+        "handicraft",
+        "dairy"
+      ],
+      "activity_categories": [
+        "msme",
+        "services",
+        "agriculture"
+      ],
+      "location": {
+        "states": [
+          "Madhya Pradesh"
+        ],
+        "urban_only": false,
+        "rural_only": true
+      },
+      "occupation": [
+        "self_employed",
+        "entrepreneur"
+      ],
+      "existing_business": false,
+      "disability": null,
+      "minority": null,
+      "min_project_cost": 50000,
+      "max_project_cost": 1000000,
+      "custom_rules": []
+    },
+    "financing": {
+      "type": "composite",
+      "max_amount": 1000000,
+      "min_amount": 50000,
+      "interest_rate": {
+        "base": 8.5,
+        "subsidy_rate": 5,
+        "effective_rate": 3.5
+      },
+      "own_contribution_pct": 10,
+      "tenure_months": {
+        "min": 36,
+        "max": 84
+      },
+      "moratorium_months": 6,
+      "collateral_required": false,
+      "subsidy_amount": 400000,
+      "subsidy_pct": 30,
+      "subsidy_notes": "15-25% subsidy for General/OBC; 30-40% subsidy for SC/ST and women, plus 5% interest subsidy for 7 years."
+    },
+    "documents": [
+      {
+        "id": "aadhaar",
+        "name": "Aadhaar Card",
+        "required": true,
+        "note": "Identity proof"
+      },
+      {
+        "id": "domicile_cert",
+        "name": "Madhya Pradesh Mool Niwasi Certificate",
+        "required": true,
+        "note": "Resident proof"
+      },
+      {
+        "id": "edu_certificate",
+        "name": "8th Pass Marksheet / Certificate",
+        "required": true,
+        "note": "Minimum education proof"
+      },
+      {
+        "id": "project_report",
+        "name": "Project DPR / Machinery Quotation",
+        "required": true,
+        "note": "Estimate"
+      }
+    ],
+    "channel_partners": {
+      "types": [
+        "MP Khadi and Village Industries Board",
+        "Commercial Banks",
+        "RRBs"
+      ],
+      "pm_suraj_integrated": true
+    },
+    "metadata": {
+      "active": true,
+      "version": "2026-09",
+      "official_url": "https://msme.mponline.gov.in",
+      "application_portal": "MP Online Portal",
+      "nodal_agency": "Cottage and Rural Industries Department, MP",
+      "helpline": "0755-2555620"
+    }
+  },
+  {
+    "scheme_id": "MAHA_SWAROJGAR",
+    "name": "Maharashtra Sant Rohidas & Annabhau Sathe Swarojgar Yojana",
+    "short_name": "Maha Swarojgar Concessional Loan",
+    "ministry": "Social Justice and Special Assistance Department (Govt of Maharashtra)",
+    "category": "SocialWelfare",
+    "description": "Up to ₹5 Lakh concessional loan with ₹50,000 capital subsidy @ 4% interest for SC, Navbuddha, and Matang community youth in Maharashtra starting small retail and transport business.",
+    "tags": [
+      "maharashtra swarojgar",
+      "annabhau sathe",
+      "leather artisan maharashtra",
+      "sc loan maharashtra",
+      "sant rohidas"
+    ],
+    "eligibility": {
+      "age": {
+        "min": 18,
+        "max": 50
+      },
+      "income_annual": {
+        "min": null,
+        "max": 300000
+      },
+      "gender": [
+        "M",
+        "F",
+        "O"
+      ],
+      "social_categories": [
+        "SC"
+      ],
+      "activities": [
+        "retail",
+        "services",
+        "transport",
+        "tailoring",
+        "manufacturing",
+        "leather"
+      ],
+      "activity_categories": [
+        "msme",
+        "services"
+      ],
+      "location": {
+        "states": [
+          "Maharashtra"
+        ],
+        "urban_only": false,
+        "rural_only": false
+      },
+      "occupation": [
+        "self_employed",
+        "entrepreneur"
+      ],
+      "existing_business": null,
+      "disability": null,
+      "minority": null,
+      "min_project_cost": 25000,
+      "max_project_cost": 500000,
+      "custom_rules": []
+    },
+    "financing": {
+      "type": "composite",
+      "max_amount": 500000,
+      "min_amount": 25000,
+      "interest_rate": {
+        "base": 4,
+        "subsidy_rate": 0,
+        "effective_rate": 4
+      },
+      "own_contribution_pct": 5,
+      "tenure_months": {
+        "min": 24,
+        "max": 60
+      },
+      "moratorium_months": 3,
+      "collateral_required": false,
+      "subsidy_amount": 50000,
+      "subsidy_pct": 20,
+      "subsidy_notes": "₹50,000 direct subsidy + remaining 80% loan at 4% per annum."
+    },
+    "documents": [
+      {
+        "id": "aadhaar",
+        "name": "Aadhaar Card",
+        "required": true,
+        "note": "Identity proof"
+      },
+      {
+        "id": "domicile_cert",
+        "name": "Maharashtra Domicile Certificate",
+        "required": true,
+        "note": "Resident proof"
+      },
+      {
+        "id": "category_cert",
+        "name": "Caste Certificate (Jati Dakhla) verified by scrutiny committee",
+        "required": true,
+        "note": "Mandatory"
+      },
+      {
+        "id": "income_cert",
+        "name": "Income Certificate from Tahsildar (Family income <= ₹3 Lakh)",
+        "required": true,
+        "note": "Income proof"
+      }
+    ],
+    "channel_partners": {
+      "types": [
+        "LIDCOM",
+        "Sant Rohidas Leather Industries Corporation",
+        "BARTi",
+        "Banks"
+      ],
+      "pm_suraj_integrated": true
+    },
+    "metadata": {
+      "active": true,
+      "version": "2026-09",
+      "official_url": "https://sjsa.maharashtra.gov.in",
+      "application_portal": "MahaDBT Portal (mahadbt.maharashtra.gov.in)",
+      "nodal_agency": "Social Justice Department, Govt of Maharashtra",
+      "helpline": "1800-102-5311"
+    }
+  },
+  {
+    "scheme_id": "WB_BHABISHYAT_CARD",
+    "name": "West Bengal Bhabishyat Credit Card Scheme",
+    "short_name": "WB Bhabishyat Credit Card",
+    "ministry": "Department of Micro, Small and Medium Enterprises (Govt of West Bengal)",
+    "category": "MSME",
+    "description": "Bank loans up to ₹5 Lakh with 10% government subsidy (max ₹25,000) and 85% credit guarantee cover for youth in West Bengal to establish micro-enterprises and service trades.",
+    "tags": [
+      "bhabishyat",
+      "west bengal loan",
+      "bccs",
+      "kolkata business loan",
+      "wb youth entrepreneur",
+      "credit guarantee"
+    ],
+    "eligibility": {
+      "age": {
+        "min": 18,
+        "max": 45
+      },
+      "income_annual": {
+        "min": null,
+        "max": null
+      },
+      "gender": [
+        "M",
+        "F",
+        "O"
+      ],
+      "social_categories": [
+        "SC",
+        "ST",
+        "OBC",
+        "GEN",
+        "MINORITY",
+        "EWS",
+        "PWD"
+      ],
+      "activities": [
+        "retail",
+        "services",
+        "manufacturing",
+        "food_processing",
+        "tailoring",
+        "handicraft"
+      ],
+      "activity_categories": [
+        "msme",
+        "services"
+      ],
+      "location": {
+        "states": [
+          "West Bengal"
+        ],
+        "urban_only": false,
+        "rural_only": false
+      },
+      "occupation": [
+        "self_employed",
+        "entrepreneur"
+      ],
+      "existing_business": null,
+      "disability": null,
+      "minority": null,
+      "min_project_cost": 25000,
+      "max_project_cost": 500000,
+      "custom_rules": []
+    },
+    "financing": {
+      "type": "composite",
+      "max_amount": 500000,
+      "min_amount": 25000,
+      "interest_rate": {
+        "base": 8.5,
+        "subsidy_rate": null,
+        "effective_rate": 8.5
+      },
+      "own_contribution_pct": 5,
+      "tenure_months": {
+        "min": 24,
+        "max": 60
+      },
+      "moratorium_months": 6,
+      "collateral_required": false,
+      "subsidy_amount": 25000,
+      "subsidy_pct": 10,
+      "subsidy_notes": "10% government margin money subsidy (maximum ₹25,000); 85% credit guarantee provided by West Bengal Government."
+    },
+    "documents": [
+      {
+        "id": "aadhaar",
+        "name": "Aadhaar Card",
+        "required": true,
+        "note": "Identity proof"
+      },
+      {
+        "id": "domicile_cert",
+        "name": "Proof of Residence in West Bengal (minimum 10 years)",
+        "required": true,
+        "note": "Domicile verification"
+      },
+      {
+        "id": "project_report",
+        "name": "Brief Business Plan / Quotation",
+        "required": true,
+        "note": "Cost estimate"
+      }
+    ],
+    "channel_partners": {
+      "types": [
+        "Bangiya Gramin Vikash Bank",
+        "UCO Bank",
+        "State Cooperative Banks",
+        "Commercial Banks"
+      ],
+      "pm_suraj_integrated": false
+    },
+    "metadata": {
+      "active": true,
+      "version": "2026-09",
+      "official_url": "https://bccs.wb.gov.in",
+      "application_portal": "Bhabishyat Credit Card Portal (bccs.wb.gov.in)",
+      "nodal_agency": "MSME & Textiles Department, Govt of West Bengal",
+      "helpline": "033-22145555"
+    }
+  },
+  {
+    "scheme_id": "GUJARAT_VAJPAYEE_BANKABLE",
+    "name": "Shri Vajpayee Bankable Yojana (Gujarat)",
+    "short_name": "Gujarat Vajpayee Bankable Yojana",
+    "ministry": "Cottage and Rural Industries (Govt of Gujarat)",
+    "category": "Rural",
+    "description": "Subsidized self-employment loan up to ₹8 Lakh for industrial units and ₹4 Lakh for service/business units with 20% to 40% capital subsidy for rural and urban youth in Gujarat.",
+    "tags": [
+      "vajpayee bankable",
+      "gujarat subsidy",
+      "cottage industry gujarat",
+      "self employment gujarat",
+      "vby"
+    ],
+    "eligibility": {
+      "age": {
+        "min": 18,
+        "max": 65
+      },
+      "income_annual": {
+        "min": null,
+        "max": null
+      },
+      "gender": [
+        "M",
+        "F",
+        "O"
+      ],
+      "social_categories": [
+        "SC",
+        "ST",
+        "OBC",
+        "GEN",
+        "MINORITY",
+        "EWS",
+        "PWD"
+      ],
+      "activities": [
+        "manufacturing",
+        "services",
+        "retail",
+        "tailoring",
+        "handicraft",
+        "food_services"
+      ],
+      "activity_categories": [
+        "msme",
+        "services"
+      ],
+      "location": {
+        "states": [
+          "Gujarat"
+        ],
+        "urban_only": false,
+        "rural_only": false
+      },
+      "occupation": [
+        "self_employed",
+        "entrepreneur"
+      ],
+      "existing_business": null,
+      "disability": null,
+      "minority": null,
+      "min_project_cost": 25000,
+      "max_project_cost": 800000,
+      "custom_rules": []
+    },
+    "financing": {
+      "type": "composite",
+      "max_amount": 800000,
+      "min_amount": 25000,
+      "interest_rate": {
+        "base": 8.5,
+        "subsidy_rate": null,
+        "effective_rate": 8.5
+      },
+      "own_contribution_pct": 10,
+      "tenure_months": {
+        "min": 24,
+        "max": 60
+      },
+      "moratorium_months": 6,
+      "collateral_required": false,
+      "subsidy_amount": 125000,
+      "subsidy_pct": 40,
+      "subsidy_notes": "20% to 40% subsidy: 40% for rural women and disabled; 30% for general rural; 20% for urban areas (max ₹1.25 Lakh)."
+    },
+    "documents": [
+      {
+        "id": "aadhaar",
+        "name": "Aadhaar Card",
+        "required": true,
+        "note": "Identity proof"
+      },
+      {
+        "id": "domicile_cert",
+        "name": "Gujarat Domicile Proof",
+        "required": true,
+        "note": "Resident check"
+      },
+      {
+        "id": "edu_certificate",
+        "name": "Educational / ITI Certificate (minimum 4th pass)",
+        "required": true,
+        "note": "Educational requirement"
+      },
+      {
+        "id": "project_report",
+        "name": "Machinery / Equipment Quotation",
+        "required": true,
+        "note": "Invoice estimate"
+      }
+    ],
+    "channel_partners": {
+      "types": [
+        "District Industries Centres (DIC Gujarat)",
+        "Nationalized Banks",
+        "Cooperative Banks"
+      ],
+      "pm_suraj_integrated": false
+    },
+    "metadata": {
+      "active": true,
+      "version": "2026-09",
+      "official_url": "https://cottage.gujarat.gov.in",
+      "application_portal": "e-Kutir Portal (ekutir.gujarat.gov.in)",
+      "nodal_agency": "Commissioner of Cottage and Rural Industries, Gujarat",
+      "helpline": "1800-233-0265"
+    }
+  },
+  {
+    "scheme_id": "ODISHA_BALARAM",
+    "name": "Bhoomiheen Agriculturist Loan Assistance (BALARAM - Odisha)",
+    "short_name": "Odisha BALARAM Scheme",
+    "ministry": "Agriculture and Farmers Empowerment (Govt of Odisha)",
+    "category": "Agriculture",
+    "description": "Institutional credit up to ₹1.6 Lakh without collateral for landless sharecroppers and tenant farmers through Joint Liability Groups (JLGs) for agricultural production.",
+    "tags": [
+      "balaram",
+      "odisha farmer",
+      "landless farmer",
+      "sharecropper",
+      "jlg loan",
+      "tenant farmer credit"
+    ],
+    "eligibility": {
+      "age": {
+        "min": 18,
+        "max": 65
+      },
+      "income_annual": {
+        "min": null,
+        "max": 200000
+      },
+      "gender": [
+        "M",
+        "F",
+        "O"
+      ],
+      "social_categories": [
+        "SC",
+        "ST",
+        "OBC",
+        "GEN",
+        "MINORITY",
+        "EWS",
+        "PWD"
+      ],
+      "activities": [
+        "agriculture",
+        "dairy"
+      ],
+      "activity_categories": [
+        "agriculture"
+      ],
+      "location": {
+        "states": [
+          "Odisha"
+        ],
+        "urban_only": false,
+        "rural_only": true
+      },
+      "occupation": [
+        "farmer"
+      ],
+      "existing_business": null,
+      "disability": null,
+      "minority": null,
+      "min_project_cost": 20000,
+      "max_project_cost": 160000,
+      "custom_rules": []
+    },
+    "financing": {
+      "type": "loan",
+      "max_amount": 160000,
+      "min_amount": 20000,
+      "interest_rate": {
+        "base": 7,
+        "subsidy_rate": 7,
+        "effective_rate": 0
+      },
+      "own_contribution_pct": 0,
+      "tenure_months": {
+        "min": 12,
+        "max": 24
+      },
+      "moratorium_months": 0,
+      "collateral_required": false,
+      "subsidy_amount": null,
+      "subsidy_pct": null,
+      "subsidy_notes": "0% effective interest rate on crop loans up to ₹1 Lakh in Odisha; zero collateral requirement through Joint Liability Group."
+    },
+    "documents": [
+      {
+        "id": "aadhaar",
+        "name": "Aadhaar Card",
+        "required": true,
+        "note": "Identity proof"
+      },
+      {
+        "id": "jlg_cert",
+        "name": "Joint Liability Group (JLG) Agreement (5 members)",
+        "required": true,
+        "note": "Group liability"
+      },
+      {
+        "id": "bank_passbook",
+        "name": "Bank Account Passbook copy",
+        "required": true,
+        "note": "Active account"
+      }
+    ],
+    "channel_partners": {
+      "types": [
+        "Odisha State Cooperative Bank (OSCB)",
+        "Utkal Grameen Bank",
+        "Commercial Banks"
+      ],
+      "pm_suraj_integrated": false
+    },
+    "metadata": {
+      "active": true,
+      "version": "2026-09",
+      "official_url": "https://agri.odisha.gov.in",
+      "application_portal": "Through Krushak Odisha Portal / ATMA Offices",
+      "nodal_agency": "Department of Agriculture, Govt of Odisha",
+      "helpline": "1800-180-1551"
+    }
+  },
+  {
+    "scheme_id": "ASSAM_SWANIRBHAR_NAARI",
+    "name": "Swanirbhar Naari Scheme for Indigenous Weavers (Assam)",
+    "short_name": "Assam Swanirbhar Naari Scheme",
+    "ministry": "Handloom, Textiles & Sericulture Department (Govt of Assam)",
+    "category": "Women",
+    "description": "Direct procurement of 31 traditional handwoven items (Gamosa, Mekhela Chador, Dokhona) directly from women weavers at fair assured prices through e-procurement without middlemen.",
+    "tags": [
+      "swanirbhar naari",
+      "assam weaver",
+      "gamosa",
+      "mekhela chador",
+      "indigenous handloom",
+      "direct procurement"
+    ],
+    "eligibility": {
+      "age": {
+        "min": 18,
+        "max": 65
+      },
+      "income_annual": {
+        "min": null,
+        "max": null
+      },
+      "gender": [
+        "F"
+      ],
+      "social_categories": [
+        "SC",
+        "ST",
+        "OBC",
+        "GEN",
+        "MINORITY",
+        "EWS",
+        "PWD"
+      ],
+      "activities": [
+        "weaving",
+        "handicraft"
+      ],
+      "activity_categories": [
+        "msme"
+      ],
+      "location": {
+        "states": [
+          "Assam"
+        ],
+        "urban_only": false,
+        "rural_only": false
+      },
+      "occupation": [
+        "self_employed"
+      ],
+      "existing_business": null,
+      "disability": null,
+      "minority": null,
+      "min_project_cost": 5000,
+      "max_project_cost": 100000,
+      "custom_rules": []
+    },
+    "financing": {
+      "type": "grant",
+      "max_amount": 100000,
+      "min_amount": 5000,
+      "interest_rate": {
+        "base": 0,
+        "subsidy_rate": 0,
+        "effective_rate": 0
+      },
+      "own_contribution_pct": 0,
+      "tenure_months": {
+        "min": 0,
+        "max": 0
+      },
+      "moratorium_months": 0,
+      "collateral_required": false,
+      "subsidy_amount": 100000,
+      "subsidy_pct": 100,
+      "subsidy_notes": "100% assured direct payment to weaver bank account within 72 hours of delivering woven handloom textiles to procurement centres."
+    },
+    "documents": [
+      {
+        "id": "aadhaar",
+        "name": "Aadhaar Card",
+        "required": true,
+        "note": "Identity proof"
+      },
+      {
+        "id": "weaver_reg",
+        "name": "Swanirbhar Naari Weaver Registration Card",
+        "required": true,
+        "note": "From Department Portal"
+      },
+      {
+        "id": "bank_passbook",
+        "name": "Bank Passbook copy",
+        "required": true,
+        "note": "Direct payment transfer"
+      }
+    ],
+    "channel_partners": {
+      "types": [
+        "ARTFED",
+        "AGMC (Assam Apex Weavers & Artisans Society)",
+        "District Handloom Offices"
+      ],
+      "pm_suraj_integrated": false
+    },
+    "metadata": {
+      "active": true,
+      "version": "2026-09",
+      "official_url": "https://swanirbharnaari.assam.gov.in",
+      "application_portal": "Swanirbhar Naari Portal (swanirbharnaari.assam.gov.in)",
+      "nodal_agency": "Directorate of Handloom & Textiles, Govt of Assam",
+      "helpline": "1800-345-3525"
+    }
+  }
+];
+
+export default SCHEMES;

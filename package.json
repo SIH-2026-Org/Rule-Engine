@@ -7,7 +7,9 @@
   "scripts": {
     "start": "node src/server.js",
     "dev": "node --watch src/server.js",
-    "test": "node --test test/webhook.test.js"
+    "test": "node --test test/*.test.js",
+    "test:engine": "node --test test/engine.test.js",
+    "test:webhook": "node --test test/webhook.test.js"
   },
   "repository": {
     "type": "git",

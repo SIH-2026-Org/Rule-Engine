@@ -8,44 +8,42 @@ import {
   LANGUAGE_ALIAS_MAP,
   GREETINGS,
 } from '../constants/messages.js';
-import * as whatsappService from '../services/whatsapp.service.js';
+import * as whatsappService  from '../services/whatsapp.service.js';
 import * as translationService from '../services/translation.service.js';
-import * as sessionService from '../services/session.service.js';
+import * as sessionService   from '../services/session.service.js';
+import { extractFromText, buildProfile } from '../services/profile.builder.js';
+import { matchSchemes }      from '../engine/rule.engine.js';
+
+// ─── Webhook Verification ─────────────────────────────────────────────────────
 
 /**
  * Webhook Verification (GET /webhook)
- * Handles Meta's initial challenge-response handshake
+ * Handles Meta's initial challenge-response handshake.
  */
 function verifyWebhook(req, res) {
-  const mode = req.query['hub.mode'];
-  const token = req.query['hub.verify_token'];
+  const mode      = req.query['hub.mode'];
+  const token     = req.query['hub.verify_token'];
   const challenge = req.query['hub.challenge'];
 
   if (mode === 'subscribe' && token === config.META_VERIFY_TOKEN) {
-    console.log('[Webhook Verification] Handshake successful.');
+    console.log('[Webhook] Handshake successful.');
     return res.status(200).send(challenge);
   }
-
-  console.warn('[Webhook Verification] Failed verification attempt. Token mismatch or invalid mode.');
+  console.warn('[Webhook] Verification failed — token mismatch.');
   return res.sendStatus(403);
 }
 
-/**
- * Prompts user to select a language from the official Indian languages supported by Sarvam AI
- * @param {string} senderPhone - User's phone number
- */
-async function promptLanguageSelectionList(senderPhone) {
-  console.log(`[Language Prompt] Presenting 10 official Indian languages to ${senderPhone}`);
+// ─── Language Selection ───────────────────────────────────────────────────────
 
-  // Immediately set session to awaiting language
+async function promptLanguageSelectionList(senderPhone) {
   sessionService.updateSession(senderPhone, {
     stage: 'AWAITING_LANGUAGE',
     selectedLanguageCode: null,
   });
 
-  const listRows = SUPPORTED_LANGUAGES.map((lang) => ({
-    id: lang.id,
-    title: lang.title,
+  const listRows = SUPPORTED_LANGUAGES.map(lang => ({
+    id:          lang.id,
+    title:       lang.title,
     description: lang.name,
   }));
 
@@ -58,28 +56,21 @@ async function promptLanguageSelectionList(senderPhone) {
   );
 }
 
-/**
- * Sends the main loan & scheme onboarding menu translated into user's selected language
- * @param {string} senderPhone - User's phone number
- * @param {string} languageCode - User's chosen language code
- */
+// ─── Scheme Menu ──────────────────────────────────────────────────────────────
+
 async function sendSchemeMenu(senderPhone, languageCode) {
-  // Update session state immediately
   sessionService.updateSession(senderPhone, {
     selectedLanguageCode: languageCode,
     stage: 'AWAITING_SCHEME_CATEGORY',
   });
 
-  // Translate scheme menu prompt into the user's chosen language
   const translatedMenuText = await translationService.translateText(
-    SCHEME_MENU_TEMPLATE,
-    languageCode,
-    'en-IN'
+    SCHEME_MENU_TEMPLATE, languageCode, 'en-IN'
   );
 
-  const labels = LOAN_BUTTON_LABELS[languageCode] || LOAN_BUTTON_LABELS['en-IN'];
+  const labels  = LOAN_BUTTON_LABELS[languageCode] || LOAN_BUTTON_LABELS['en-IN'];
   const buttons = [
-    { id: 'LOAN_EDU', title: labels.edu },
+    { id: 'LOAN_EDU',  title: labels.edu  },
     { id: 'LOAN_FARM', title: labels.farm },
     { id: 'LOAN_MSME', title: labels.msme },
   ];
@@ -87,144 +78,236 @@ async function sendSchemeMenu(senderPhone, languageCode) {
   await whatsappService.sendInteractiveButtons(senderPhone, translatedMenuText, buttons);
 }
 
+// ─── Rule Engine Integration ──────────────────────────────────────────────────
+
+/**
+ * Runs the Deterministic Rule Engine for the user's accumulated profile
+ * and sends the formatted results back via WhatsApp.
+ *
+ * @param {string} senderPhone
+ * @param {string} languageCode
+ */
+async function runEngineAndRespond(senderPhone, languageCode) {
+  // Build profile from accumulated session data
+  const sessionProfile = sessionService.getProfile(senderPhone);
+  const profile = buildProfile(
+    sessionProfile,
+    {},
+    'whatsapp',
+    languageCode,
+    senderPhone
+  );
+
+  console.log(`[RuleEngine] Running for ${senderPhone}:`, JSON.stringify(profile));
+
+  const result = await matchSchemes(profile, { topN: 3, nearMissN: 2 });
+
+  // Build WhatsApp-friendly response (max ~4096 chars per message)
+  let responseText = '';
+
+  // Echo what was understood
+  const understood = result.profile_summary?.understood;
+  if (understood) {
+    responseText += `🔍 *I understood your request as:*\n`;
+    if (understood.activity      !== 'not provided') responseText += `• Activity: ${understood.activity}\n`;
+    if (understood.project_cost  !== 'not provided') responseText += `• Amount: ${understood.project_cost}\n`;
+    if (understood.location      !== 'not provided') responseText += `• Location: ${understood.location}\n`;
+    if (understood.social_category !== 'not provided') responseText += `• Category: ${understood.social_category}\n`;
+    responseText += '\n';
+  }
+
+  if (result.status === 'OK' && result.eligible_schemes.length > 0) {
+    responseText += `✅ *Found ${result.eligible_schemes.length} matching scheme(s):*\n\n`;
+
+    result.eligible_schemes.slice(0, 3).forEach((ms, i) => {
+      const { scheme, score, simulation } = ms;
+      responseText += `${i + 1}️⃣ *${scheme.name}*\n`;
+      responseText += `   Ministry: ${scheme.ministry}\n`;
+      responseText += `   Score: ${score.total_score}/100\n`;
+      if (score.reasons.slice(0, 2).length > 0) {
+        responseText += `   ${score.reasons.slice(0, 2).join('\n   ')}\n`;
+      }
+      if (simulation?.available && simulation.emi_monthly > 0) {
+        responseText += `   💰 Est. EMI: ₹${simulation.emi_monthly.toLocaleString('en-IN')}/month\n`;
+      }
+      if (simulation?.eligible_financing) {
+        responseText += `   💵 Max Financing: ₹${simulation.eligible_financing.toLocaleString('en-IN')}\n`;
+      }
+      responseText += `   🔗 ${scheme.metadata?.application_portal || scheme.metadata?.official_url || 'Contact nearest bank'}\n`;
+      responseText += '\n';
+    });
+
+    // Document readiness for top scheme
+    const topDocs = result.eligible_schemes[0]?.documents;
+    if (topDocs && (topDocs.obtain?.length > 0 || topDocs.required?.length > 0)) {
+      responseText += `📋 *Documents to arrange (for ${result.eligible_schemes[0].scheme.short_name}):*\n`;
+      topDocs.obtain?.slice(0, 3).forEach(d => {
+        responseText += `• ${d.name}${d.required ? ' ✳️' : ''}\n`;
+      });
+      responseText += '\n';
+    }
+
+    responseText += `_Type "more" for full details or share more information to refine results._`;
+
+  } else if (result.status === 'NEEDS_MORE_INFO') {
+    if (result.partial_schemes.length > 0) {
+      responseText += `⚡ *Potential matches found — need a few more details:*\n\n`;
+      result.partial_schemes.slice(0, 2).forEach((ms, i) => {
+        responseText += `${i + 1}️⃣ *${ms.scheme.name}* (${ms.score.total_score}/100)\n`;
+      });
+      responseText += '\n';
+    }
+
+    if (result.clarification_questions.length > 0) {
+      responseText += `❓ *Please answer to get better results:*\n`;
+      result.clarification_questions.slice(0, 3).forEach((q, i) => {
+        responseText += `${i + 1}. ${q}\n`;
+      });
+    }
+
+  } else {
+    responseText += `❌ *No matching scheme found with current information.*\n\n`;
+    if (result.near_miss_schemes.length > 0) {
+      responseText += `*Closest options (not currently eligible):*\n`;
+      result.near_miss_schemes.slice(0, 2).forEach(nm => {
+        responseText += `• ${nm.scheme.name}: ${nm.failure_reasons[0] || 'Does not meet eligibility criteria'}\n`;
+      });
+      responseText += '\n';
+    }
+    responseText += `Please share more details or contact your nearest CSC centre for assisted help.`;
+  }
+
+  // Translate response if not English
+  const translated = await translationService.translateText(responseText, languageCode, 'en-IN');
+  await whatsappService.sendTextMessage(senderPhone, translated);
+}
+
+// ─── Main Webhook Handler ─────────────────────────────────────────────────────
+
 /**
  * Webhook Event Handler (POST /webhook)
- * Processes incoming WhatsApp messages and notifications
  */
 function handleWebhook(req, res) {
-  // 1. Non-Blocking Execution: Respond immediately with 200 OK to satisfy Meta's timeout requirements
+  // Respond immediately to satisfy Meta's 20-second timeout
   res.sendStatus(200);
 
-  // 2. Safely parse Meta's nested payload with strict null checks
   const changeValue = req.body?.entry?.[0]?.changes?.[0]?.value;
-  if (!changeValue) {
-    return;
-  }
+  if (!changeValue) return;
 
-  // Handle status updates (e.g. sent, delivered, read receipts) without throwing errors
-  if (changeValue.statuses && changeValue.statuses.length > 0) {
+  // Status updates (delivered/read receipts)
+  if (changeValue.statuses?.length > 0) {
     const status = changeValue.statuses[0];
-    console.log(`[Status Update] Message to ${status.recipient_id} status: ${status.status}`);
+    console.log(`[Status] → ${status.recipient_id}: ${status.status}`);
     return;
   }
 
-  // Safely extract incoming message
   const message = changeValue.messages?.[0];
-  if (!message) {
-    return;
-  }
+  if (!message) return;
 
   const senderPhone = message.from;
   const messageType = message.type;
-  const session = sessionService.getSession(senderPhone);
+  const session     = sessionService.getSession(senderPhone);
 
-  // =========================================================================
-  // 3. Process Interactive Responses (Button Replies OR List Replies)
-  // =========================================================================
+  // ── Interactive (button / list replies) ──────────────────────────────────
   if (messageType === 'interactive' && message.interactive) {
     const interaction = message.interactive.button_reply || message.interactive.list_reply;
-    if (!interaction) {
-      return;
-    }
+    if (!interaction) return;
 
     const optionId = interaction.id;
-    const optionTitle = interaction.title;
-    console.log(`[Interactive Response] From: ${senderPhone} | Selected ID: ${optionId} ("${optionTitle}")`);
+    console.log(`[Interactive] ${senderPhone} → ${optionId}`);
 
-    // A) User selected a language from the list
+    // Language selected
     if (optionId.startsWith('LANG_')) {
       const selectedLanguage = optionId.replace('LANG_', '');
-      console.log(`[Language Selected] User ${senderPhone} selected language: ${selectedLanguage}`);
-
-      sendSchemeMenu(senderPhone, selectedLanguage).catch((err) => {
-        console.error('[Dispatch Error] Failed to send scheme menu after language selection:', err);
-      });
+      sendSchemeMenu(senderPhone, selectedLanguage).catch(err =>
+        console.error('[Webhook] sendSchemeMenu error:', err)
+      );
       return;
     }
 
-    // B) User selected a loan category button
+    // Scheme category selected → prime the session with category context
     if (optionId.startsWith('LOAN_')) {
       const activeLanguage = session?.selectedLanguageCode || 'en-IN';
-      const englishTemplate =
-        LOAN_DETAILS_TEMPLATES[optionId] ||
-        'You have selected a scheme category. Please share details of your financial requirement.';
+      const categoryMap = { LOAN_EDU: 'education', LOAN_FARM: 'agriculture', LOAN_MSME: 'msme' };
+      const actCat = categoryMap[optionId] || null;
 
-      console.log(`[Scheme Category Selected] Button: ${optionId} | Language: ${activeLanguage}`);
+      if (actCat) {
+        sessionService.mergeProfileData(senderPhone, { activity_category: actCat });
+      }
 
-      // Update session stage immediately
       sessionService.updateSession(senderPhone, { stage: 'IN_CONVERSATION' });
 
-      // Translate response text into the user's chosen language
-      translationService
-        .translateText(englishTemplate, activeLanguage, 'en-IN')
-        .then((translatedResponse) => {
-          return whatsappService.sendTextMessage(senderPhone, translatedResponse);
-        })
-        .catch((err) => {
-          console.error('[Dispatch Error] Failed to send loan category response:', err);
-        });
+      const englishTemplate = LOAN_DETAILS_TEMPLATES[optionId]
+        || 'Please describe your requirement (e.g. activity, cost, location) to find matching schemes.';
+
+      translationService.translateText(englishTemplate, activeLanguage, 'en-IN')
+        .then(t => whatsappService.sendTextMessage(senderPhone, t))
+        .catch(err => console.error('[Webhook] loan category reply error:', err));
       return;
     }
   }
 
-  // =========================================================================
-  // 4. Process Inbound Text Messages
-  // =========================================================================
+  // ── Text messages ─────────────────────────────────────────────────────────
   if (messageType === 'text' && message.text?.body) {
-    const incomingText = message.text.body.trim();
+    const incomingText  = message.text.body.trim();
     const normalizedInput = incomingText.toLowerCase();
-    const isGreeting = GREETINGS.has(normalizedInput);
+    const isGreeting    = GREETINGS.has(normalizedInput);
 
-    console.log(`[Incoming Message] From: ${senderPhone} | Text: "${incomingText}" | isGreeting: ${isGreeting}`);
+    console.log(`[Message] ${senderPhone} → "${incomingText}"`);
 
-    // If greeting received: Start everything over with fresh language selection
+    // Greeting → restart
     if (isGreeting) {
-      if (session) {
-        console.log(`[Session Reset] Greeting "${incomingText}" received from active session ${senderPhone}. Restarting session.`);
-      }
       sessionService.resetSession(senderPhone);
-      promptLanguageSelectionList(senderPhone).catch((err) => {
-        console.error('[Dispatch Error] Failed to send language list on greeting:', err);
-      });
+      promptLanguageSelectionList(senderPhone).catch(err =>
+        console.error('[Webhook] Language prompt error:', err)
+      );
       return;
     }
 
-    // If user has NOT selected a language yet:
+    // No language selected yet
     if (!session || !session.selectedLanguageCode) {
-      // Check if user typed language number (1-10) or language name (e.g. "hindi", "punjabi")
       const matchedLang = LANGUAGE_ALIAS_MAP[normalizedInput];
       if (matchedLang) {
-        console.log(`[Text Language Select] Matched text input "${incomingText}" to ${matchedLang}`);
-        sendSchemeMenu(senderPhone, matchedLang).catch((err) => {
-          console.error('[Dispatch Error] Failed to send scheme menu from text selection:', err);
-        });
-        return;
+        sendSchemeMenu(senderPhone, matchedLang).catch(err =>
+          console.error('[Webhook] sendSchemeMenu error:', err)
+        );
+      } else {
+        promptLanguageSelectionList(senderPhone).catch(err =>
+          console.error('[Webhook] Language prompt error:', err)
+        );
       }
-
-      // If text doesn't match any language, present language list menu
-      promptLanguageSelectionList(senderPhone).catch((err) => {
-        console.error('[Dispatch Error] Failed to prompt language selection list:', err);
-      });
       return;
     }
 
-    // If user is already in session and provided scheme details / questions:
     const selectedLanguage = session.selectedLanguageCode;
-    const englishReply =
-      `Thank you for your message: "${incomingText}". Our scheme matching engine is analyzing your request to find government subsidies and loan schemes tailored for you.`;
 
-    translationService
-      .translateText(englishReply, selectedLanguage, 'en-IN')
-      .then((translatedReply) => {
-        return whatsappService.sendTextMessage(senderPhone, translatedReply);
-      })
-      .catch((err) => {
-        console.error('[Dispatch Error] Failed to dispatch user query response:', err);
-      });
+    // ── IN_CONVERSATION: extract entities + run engine ────────────────────
+    if (session.stage === 'IN_CONVERSATION' || session.stage === 'AWAITING_SCHEME_CATEGORY') {
+      sessionService.updateSession(senderPhone, { stage: 'IN_CONVERSATION' });
+
+      // Extract entities from this message and merge into session profile
+      const extracted = extractFromText(incomingText);
+      sessionService.mergeProfileData(senderPhone, extracted);
+
+      console.log(`[Engine] Extracted from message:`, extracted);
+
+      // Run the rule engine and respond
+      runEngineAndRespond(senderPhone, selectedLanguage).catch(err =>
+        console.error('[Webhook] Engine response error:', err)
+      );
+      return;
+    }
+
+    // Fallback for other stages
+    const fallbackMsg =
+      'Please describe your business or financial need (e.g. "I need ₹1.2 lakh for a dairy business in Rajasthan") to find matching government schemes.';
+    translationService.translateText(fallbackMsg, selectedLanguage, 'en-IN')
+      .then(t => whatsappService.sendTextMessage(senderPhone, t))
+      .catch(err => console.error('[Webhook] Fallback reply error:', err));
     return;
   }
 
-  console.log(`[Incoming Message] Unhandled message type: ${messageType} from ${senderPhone}`);
+  console.log(`[Webhook] Unhandled message type: ${messageType} from ${senderPhone}`);
 }
 
 export {
